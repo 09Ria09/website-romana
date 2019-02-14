@@ -1,10 +1,12 @@
-carte
+<div id="carte_container" style="z-index: -1;position: absolute;top: 0px; left: 0px;height: 100%; width: 100%">
+    carte
+</div>
 <script>
     $(function () {
         document.title= "Carte";
         $("body").attr("id", "carte_body");
     });
     $.get('switchBar.html', function (data) {
-        $("body").append(data);
+        $("#carte_container").append(data);
     });
 </script>

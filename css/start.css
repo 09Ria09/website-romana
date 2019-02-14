@@ -9,7 +9,7 @@
     transition-duration: 0.25s;
 }
 
-#fantastic {
+#fantastic_start {
     height: 100vh;
     flex-grow: 1;
     background-color: purple;
@@ -18,14 +18,14 @@
     transition-duration: 0.25s;
 }
 
-#text_fantastic {
+#text_fantastic_start {
     margin-top: 50vh;
     margin-left: auto;
     margin-right: auto;
     width: 45vw;
 }
 
-#carte {
+#carte_start {
     height: 100vh;
     flex-grow: 1;
     background-color: darkred;
@@ -34,7 +34,7 @@
     transition-duration: 0.25s;
 }
 
-#text_carte {
+#text_carte_start {
     margin-top: 50vh;
     margin-left: auto;
     margin-right: auto;

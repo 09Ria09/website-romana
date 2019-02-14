@@ -13,14 +13,14 @@
 </head>
 <body style="margin: 0">
 <div id="start">
-    <div id="fantastic">
-        <div id="text_fantastic"></div>
+    <div id="fantastic_start">
+        <div id="text_fantastic_start"></div>
     </div>
-    <div id="carte">
-        <div id="text_carte"></div>
+    <div id="carte_start">
+        <div id="text_carte_start"></div>
     </div>
 </div>
-<script>
+<script id="start_script">
     function animateCss(element, animationName, callback) {
         const node = document.querySelector(element);
         node.classList.add('animated', animationName);
@@ -34,42 +34,59 @@
 
         node.addEventListener('animationend', handleAnimationEnd);
     }
-    $(function() {
-        $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_fantastic").append(data)
+
+    function removeStart(chosen){
+        $("#fantastic_start").off();
+        $("#carte_start").off();
+
+        if(chosen==='fantastic_start')
+            notChosen='carte_start';
+        else notChosen='fantastic_start';
+
+        $.get(chosen.replace('_start','') + '.html', function (data) {
+            $("body").append(data);
         });
 
-        $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_carte").append(data)
-        });
-
-        $("#fantastic").on('mouseenter', function () {
-            $("#fantastic").css("flex-grow", "3").css("background-color", "#A500A5");
-        });
-        $("#fantastic").on('mouseleave', function () {
-            $("#fantastic").css("flex-grow", "1").css("background-color", "purple");
-        });
-        $("#fantastic").on("click", function () {
-            $("#text_carte").css("animation-duration", "0.25s");
-            animateCss("#text_carte", "fadeOut", function () {
-                $("#text_carte").remove();
-                $("#carte").css("flex", "0 0 15px");
-                setTimeout(function () {
+        $("#text_"+notChosen).css("animation-duration", "0.25s");
+        animateCss("#text_"+notChosen, "fadeOut", function () {
+             $("#text_"+notChosen).remove();
+            $("#"+notChosen).css("flex", "0 0 15px");
+            setTimeout(function () {
+                animateCss("#start", "fadeOut", function () {
                     $("#start").remove();
-                    $("body").load("fantastic.html");
-                }, parseFloat($("#carte").css("transition-duration").replace('s',''))*1000);
-            });
+                    $("#start_script").remove();
+                });
+            }, parseFloat($("#"+notChosen).css("transition-duration").replace('s', '')) * 1000);
+        });
+    }
+
+    $(function () {
+        $.get('texts/LoremIpsum.txt', function (data) {
+            $("#text_fantastic_start").append(data);
         });
 
-        $("#carte").on('mouseenter', function () {
-            $("#carte").css("flex-grow", "3").css("background-color", "#A50000");
+        $.get('texts/LoremIpsum.txt', function (data) {
+            $("#text_carte_start").append(data);
         });
-        $("#carte").on('mouseleave', function () {
-            $("#carte").css("flex-grow", "1").css("background-color", "darkred");
+
+        $("#fantastic_start").on('mouseenter', function () {
+            $("#fantastic_start").css("flex-grow", "3").css("background-color", "#A500A5");
         });
-        $("#carte").on("click", function () {
-            $("#start").remove();
-            $("body").load("carte.html");
+        $("#fantastic_start").on('mouseleave', function () {
+            $("#fantastic_start").css("flex-grow", "1").css("background-color", "purple");
+        });
+        $("#fantastic_start").on("click", function () {
+            removeStart("fantastic_start");
+        });
+
+        $("#carte_start").on('mouseenter', function () {
+            $("#carte_start").css("flex-grow", "3").css("background-color", "#A50000");
+        });
+        $("#carte_start").on('mouseleave', function () {
+            $("#carte_start").css("flex-grow", "1").css("background-color", "darkred");
+        });
+        $("#carte_start").on("click", function () {
+            removeStart("carte_start");
         })
     })
 </script>

@@ -1,13 +1,10 @@
-<div id="switch_bar" style="width: 5vw; height: 100%; display: inline-block; float:right">
-    yolow
-</div>
+<div id="switch_bar"></div>
 <script>
-if($("body").is("#fantastic_body"))
-{
-    $("#switch_bar").css("float", "right");
-}
-else if($("body").is("#carte_body"))
-{
-    $("#switch_bar").css("float", "left");
-}
+    $("head").append('<link rel="stylesheet" href="./css/switchBar.css">')
+    if ($("body").is("#fantastic_body")) {
+        $("#switch_bar").css("background-color", "darkred").css("float", "right").append("carte");
+    }
+    else if ($("body").is("#carte_body")) {
+        $("#switch_bar").css("background-color", "purple").css("float", "left").css("transform", "rotate(180deg)").append("fantastic");
+    }
 </script>
