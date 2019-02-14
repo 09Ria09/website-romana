@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="./css/start.css">
+</head>
+<body style="margin: 0">
+<div id="start">
+    <div id="fantastic">
+        <div id="text_fantastic"></div>
+    </div>
+    <div id="carte">
+        <div id="text_carte"></div>
+    </div>
+</div>
+<script>
+    function animateCss(element, animationName, callback) {
+        const node = document.querySelector(element);
+        node.classList.add('animated', animationName);
+
+        function handleAnimationEnd() {
+            node.classList.remove('animated', animationName);
+            node.removeEventListener('animationend', handleAnimationEnd);
+
+            if (typeof callback === 'function') callback()
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd);
+    }
+    $(function() {
+        $.get('texts/LoremIpsum.txt', function (data) {
+            $("#text_fantastic").append(data)
+        });
+
+        $.get('texts/LoremIpsum.txt', function (data) {
+            $("#text_carte").append(data)
+        });
+
+        $("#fantastic").on('mouseenter', function () {
+            $("#fantastic").css("flex-grow", "3").css("background-color", "#A500A5");
+        });
+        $("#fantastic").on('mouseleave', function () {
+            $("#fantastic").css("flex-grow", "1").css("background-color", "purple");
+        });
+        $("#fantastic").on("click", function () {
+            $("#text_carte").css("animation-duration", "0.25s");
+            animateCss("#text_carte", "fadeOut", function () {
+                $("#text_carte").remove();
+                $("#carte").css("flex", "0 0 15px");
+                setTimeout(function () {
+                    $("#start").remove();
+                    $("body").load("fantastic.html");
+                }, parseFloat($("#carte").css("transition-duration").replace('s',''))*1000);
+            });
+        });
+
+        $("#carte").on('mouseenter', function () {
+            $("#carte").css("flex-grow", "3").css("background-color", "#A50000");
+        });
+        $("#carte").on('mouseleave', function () {
+            $("#carte").css("flex-grow", "1").css("background-color", "darkred");
+        });
+        $("#carte").on("click", function () {
+            $("#start").remove();
+            $("body").load("carte.html");
+        })
+    })
+</script>
+</body>
+</html>

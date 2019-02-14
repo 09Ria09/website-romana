@@ -1,0 +1,10 @@
+carte
+<script>
+    $(function () {
+        document.title= "Carte";
+        $("body").attr("id", "carte_body");
+    });
+    $.get('switchBar.html', function (data) {
+        $("body").append(data);
+    });
+</script>

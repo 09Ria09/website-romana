@@ -1,0 +1,10 @@
+fantastic
+<script>
+    $(function () {
+        document.title= "Fantastic";
+        $("body").attr("id", "fantastic_body");
+    });
+    $.get('switchBar.html', function (data) {
+        $("body").append(data);
+    });
+</script>
