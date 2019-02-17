@@ -1,12 +1,14 @@
-<div id="carte_container" style="z-index: -1;position: absolute;top: 0px; left: 0px;height: 100%; width: 100%">
-    carte
+<div id="carte_subcontainer" style="margin-top: 30px; margin-left: 30px">
+
 </div>
-<script>
-    $(function () {
-        document.title= "Carte";
-        $("body").attr("id", "carte_body");
-    });
-    $.get('switchBar.html', function (data) {
-        $("#carte_container").append(data);
+<script id="carteInitScript">
+    document.title = "carte";
+    $("#carte_subcontainer").css("animation-duration", "0.5s");
+    animateCss($("#carte_subcontainer"), "fadeIn");
+    $("#carteInitScript").remove();
+
+
+    $.get('texts/LoremIpsum.txt', function (data) {
+        $("#carte_subcontainer").append(data);
     });
 </script>

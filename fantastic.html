@@ -1,13 +1,14 @@
+<div id="fantastic_subcontainer" style="margin-top: 30px; margin-left: 30px">
 
-<div id="fantastic_container">
-    <div id="fantastic_subcontainer">sasadsa</div>
 </div>
-<script>
-    $(function () {
-        document.title = "Fantastic";
-        $("body").attr("id", "fantastic_body");
+<script id="fantasticInitScript">
+    document.title = "fantastic";
+    $("#fantastic_subcontainer").css("animation-duration", "0.5s");
+    animateCss($("#fantastic_subcontainer"), "fadeIn");
+
+    $.get('texts/LoremIpsum.txt', function (data) {
+        $("#fantastic_subcontainer").append(data);
     });
-    $.get('switchBar.html', function (data) {
-        $("#fantastic_container").append(data);
-    });
+
+    $("#fantasticInitScript").remove();
 </script>
