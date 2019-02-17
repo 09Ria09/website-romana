@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6be7f8fc-2309-477b-b17d-b8fb5b306078" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6be7f8fc-2309-477b-b17d-b8fb5b306078" name="Default" comment="changed a few other things">
+      <change afterPath="$PROJECT_DIR$/switchBar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carte.html" beforeDir="false" afterPath="$PROJECT_DIR$/carte.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/fantastic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/start.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/switchBar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fantastic.html" beforeDir="false" afterPath="$PROJECT_DIR$/fantastic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/agent_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/agent_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/referer_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/referer_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/switchBar.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
-              <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+            <state relative-caret-position="373">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -39,23 +33,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/index.css">
+      <file leaf-file-name="switchBar.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/switchBar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state relative-caret-position="187">
+              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fantastic.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fantastic.html">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="362">
+              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -64,7 +55,19 @@
         <entry file="file://$PROJECT_DIR$/carte.html">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="36" selection-start-column="36" selection-end-column="36" />
+              <caret column="70" selection-start-column="48" selection-end-column="70" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fantastic.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fantastic.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -88,12 +91,19 @@
       <find>5s</find>
       <find>carte</find>
       <find>Fantastic</find>
-      <find>text_carte</find>
       <find>fantastic_container</find>
       <find>carte_start</find>
       <find>2.5</find>
       <find>children</find>
       <find>100vh</find>
+      <find>switch_bar</find>
+      <find>text_fantastic</find>
+      <find>text_carte</find>
+      <find>index_css</find>
+      <find>start_script</find>
+      <find>fantastic_subcontainer</find>
+      <find>carte_subcontainer</find>
+      <find>_</find>
       <find>fantastic</find>
     </findStrings>
     <replaceStrings>
@@ -107,8 +117,18 @@
       <replace>0.25</replace>
       <replace>contents</replace>
       <replace>100%</replace>
+      <replace>switchBar</replace>
+      <replace>textFantastic</replace>
+      <replace>textCarte</replace>
+      <replace>indexCSS</replace>
+      <replace>startScript</replace>
+      <replace>fantasticSubcontainer</replace>
+      <replace>carteSubcontainer</replace>
       <replace>carte</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>D:\Rares Iordan\Documents\Work\Website Romana</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
@@ -123,13 +143,13 @@
         <option value="$PROJECT_DIR$/start.css" />
         <option value="$PROJECT_DIR$/LoremIpsum.txt" />
         <option value="$PROJECT_DIR$/css/fantastic.css" />
-        <option value="$PROJECT_DIR$/switchBar.html" />
         <option value="$PROJECT_DIR$/css/switchBar.css" />
         <option value="$PROJECT_DIR$/css/start.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/carte.html" />
         <option value="$PROJECT_DIR$/fantastic.html" />
+        <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/switchBar.html" />
       </list>
     </option>
   </component>
@@ -171,11 +191,6 @@
               <item name="Website Romana" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website Romana" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Website Romana" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Website Romana" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -239,7 +254,8 @@
       <workItem from="1550176017704" duration="2000" />
       <workItem from="1550176213042" duration="58000" />
       <workItem from="1550412405947" duration="8226000" />
-      <workItem from="1550420902730" duration="4793000" />
+      <workItem from="1550420902730" duration="5320000" />
+      <workItem from="1550429080572" duration="5043000" />
     </task>
     <task id="LOCAL-00001" summary="changed a few things">
       <created>1550171280116</created>
@@ -252,7 +268,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38961000" />
+    <option name="totallyTimeSpent" value="44531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -260,8 +276,10 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.49947917" visible="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49895832" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -275,7 +293,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49947917" weight="0.32943678" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,7 +303,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="changed a few things" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed a few things" />
+    <MESSAGE value="changed a few other things" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed a few other things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -538,33 +556,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/switchBar.html" />
     <entry file="file://$PROJECT_DIR$/css/switchBar.css" />
     <entry file="file://$PROJECT_DIR$/css/fantastic.css" />
     <entry file="file://$USER_HOME$/AppData/Local/Packages/Microsoft.MicrosoftEdge_8wekyb3d8bbwe/TempState/Downloads/index (1).css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/carte.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+        <state relative-caret-position="373">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -573,11 +573,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fantastic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carte.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="70" selection-start-column="48" selection-end-column="70" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/switchBar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
       </provider>
     </entry>

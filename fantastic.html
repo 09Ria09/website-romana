@@ -1,13 +1,13 @@
-<div id="fantastic_subcontainer" style="margin-top: 30px; margin-left: 30px">
+<div id="fantasticSubcontainer" style="padding: 30px; text-align: justify;">
 
 </div>
 <script id="fantasticInitScript">
     document.title = "fantastic";
-    $("#fantastic_subcontainer").css("animation-duration", "0.5s");
-    animateCss($("#fantastic_subcontainer"), "fadeIn");
+    $("#fantasticSubcontainer").css("animation-duration", "0.5s");
+    animateCss($("#fantasticSubcontainer"), "fadeIn");
 
     $.get('texts/LoremIpsum.txt', function (data) {
-        $("#fantastic_subcontainer").append(data);
+        $("#fantasticSubcontainer").append(data);
     });
 
     $("#fantasticInitScript").remove();

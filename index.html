@@ -9,16 +9,18 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link id="index_css" rel="stylesheet" href="css/index.css">
+    <link id="indexCSS" rel="stylesheet" href="css/index.css">
 </head>
 <body style="margin: 0">
 <div id="fantastic">
-    <div id="text_fantastic"></div>
+    <div id="textFantastic"></div>
 </div>
 <div id="carte">
-    <div id="text_carte"></div>
+    <div id="textCarte"></div>
 </div>
 <script>
+    var current = "start";
+
     function animateCss(element, animationName, callback) {
         element.addClass("animated" + ' ' + animationName);
 
@@ -31,7 +33,7 @@
         element.on('animationend', handleAnimationEnd);
     }
 
-    function switchSides(chosen) {
+    function switchSides(chosen, htmlFile = chosen + ".html") {
 
         if (chosen === 'fantastic')
             notChosen = 'carte';
@@ -41,30 +43,41 @@
         $(".deleting").css("animation-duration", "0.5s");
         animateCss($(".deleting"), "fadeOut", function () {
             $(".deleting").remove();
+
+            $("#" + chosen).css("flex", "1 0 0");
             $("#" + notChosen).css("flex", "0 0 30px");
+
             setTimeout(function () {
-                $.get(chosen + '.html', function (data) {
+
+                $.get(htmlFile, function (data) {
                     $("#" + chosen).append(data);
                 });
-                $("#" + notChosen).append('<div id="switch_bar">'+notChosen+'</div>');
-                animateCss($("#switch_bar"), "fadeIn")
+
+                current = chosen;
+                $("#" + notChosen).append('<div id="switchBar"></div>');
+                $("#switchBarScript").remove();
+                $.get('switchBar.html', function (data) {
+                    $("body").append(data);
+                });
+                animateCss($("#switchBar"), "fadeIn");
+
             }, parseFloat($("#" + notChosen).css("transition-duration").replace('s', '')) * 1000);
         });
     }
 </script>
-<script id="start_script">
+<script id="startScript">
 
     $(function () {
         $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_fantastic").append(data);
+            $("#textFantastic").append(data);
         });
 
         $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_carte").append(data);
+            $("#textCarte").append(data);
         });
 
         $("#fantastic").on('mouseenter', function () {
-            $("#fantastic").css("flex-grow", "3").css("background-color", "#ffeccc");
+            $("#fantastic").css("flex-grow", "1.5").css("background-color", "#ffeccc");
         });
         $("#fantastic").on('mouseleave', function () {
             $("#fantastic").css("flex-grow", "1").css("background-color", "moccasin");
@@ -72,13 +85,13 @@
         $("#fantastic").on("click", function () {
             $("#fantastic").off();
             $("#carte").off();
-            $("#text_fantastic").addClass("deleting");
+            $("#textFantastic").addClass("deleting");
             switchSides("fantastic");
-            $("#start_script").remove();
+            $("#startScript").remove();
         });
 
         $("#carte").on('mouseenter', function () {
-            $("#carte").css("flex-grow", "3").css("background-color", "#b6e1fc");
+            $("#carte").css("flex-grow", "1.5").css("background-color", "#b6e1fc");
         });
         $("#carte").on('mouseleave', function () {
             $("#carte").css("flex-grow", "1").css("background-color", "lightskyblue");
@@ -86,9 +99,9 @@
         $("#carte").on("click", function () {
             $("#fantastic").off();
             $("#carte").off();
-            $("#text_carte").addClass("deleting");
+            $("#textCarte").addClass("deleting");
             switchSides("carte");
-            $("#start_script").remove();
+            $("#startScript").remove();
         })
     })
 </script>
