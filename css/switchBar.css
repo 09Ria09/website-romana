@@ -1,8 +1,10 @@
 #switch_bar {
-    width: 5vw;
+    width: 30px;
     height: 100%;
     display: inline-block;
     float:right;
     writing-mode: vertical-rl;
     text-align: center;
+	font-size:21px;
+    font-family: "Century Gothic";
 }

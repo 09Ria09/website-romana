@@ -20,8 +20,8 @@
         <div id="text_carte_start"></div>
     </div>
 </div>
-<script id="start_script">
-    function animateCss(element, animationName, callback) {
+<script>
+function animateCss(element, animationName, callback) {
         const node = document.querySelector(element);
         node.classList.add('animated', animationName);
 
@@ -34,6 +34,8 @@
 
         node.addEventListener('animationend', handleAnimationEnd);
     }
+</script>
+<script id="start_script">
 
     function removeStart(chosen){
         $("#fantastic_start").off();
@@ -50,7 +52,7 @@
         $("#text_"+notChosen).css("animation-duration", "0.25s");
         animateCss("#text_"+notChosen, "fadeOut", function () {
              $("#text_"+notChosen).remove();
-            $("#"+notChosen).css("flex", "0 0 15px");
+            $("#"+notChosen).css("flex", "0 0 20px");
             setTimeout(function () {
                 animateCss("#start", "fadeOut", function () {
                     $("#start").remove();
@@ -70,20 +72,20 @@
         });
 
         $("#fantastic_start").on('mouseenter', function () {
-            $("#fantastic_start").css("flex-grow", "3").css("background-color", "#A500A5");
+            $("#fantastic_start").css("flex-grow", "3").css("background-color", "#ffeccc");
         });
         $("#fantastic_start").on('mouseleave', function () {
-            $("#fantastic_start").css("flex-grow", "1").css("background-color", "purple");
+            $("#fantastic_start").css("flex-grow", "1").css("background-color", "moccasin");
         });
         $("#fantastic_start").on("click", function () {
             removeStart("fantastic_start");
         });
 
         $("#carte_start").on('mouseenter', function () {
-            $("#carte_start").css("flex-grow", "3").css("background-color", "#A50000");
+            $("#carte_start").css("flex-grow", "3").css("background-color", "#b6e1fc");
         });
         $("#carte_start").on('mouseleave', function () {
-            $("#carte_start").css("flex-grow", "1").css("background-color", "darkred");
+            $("#carte_start").css("flex-grow", "1").css("background-color", "lightskyblue");
         });
         $("#carte_start").on("click", function () {
             removeStart("carte_start");

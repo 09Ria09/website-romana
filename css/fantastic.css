@@ -1,3 +1,11 @@
 #fantastic_container {
     display: flex;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
+
+#fantastic_subcontainer {
+	display: inline-block;
 }
