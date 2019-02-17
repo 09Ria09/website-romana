@@ -1,4 +1,4 @@
-#start {
+body {
     display: flex;
     flex-direction: row;
     cursor: pointer;
@@ -6,37 +6,48 @@
     font-family: "Century Gothic";
     transition-property: all;
     transition-timing-function: ease;
-    transition-duration: 0.25s;
+    transition-duration: 0.5s;
 }
 
-#fantastic_start {
+#fantastic {
     height: 100vh;
     flex-grow: 1;
+    flex-basis: 70vh;
     background-color: moccasin;
     transition-property: all;
     transition-timing-function: ease;
-    transition-duration: 0.25s;
+    transition-duration: 0.5s;
 }
 
-#text_fantastic_start {
+#text_fantastic {
     margin-top: 50vh;
     margin-left: auto;
     margin-right: auto;
-    width: 45vw;
+    width: 42vw;
 }
 
-#carte_start {
+#carte {
     height: 100vh;
     flex-grow: 1;
+    flex-basis: 30vh;
     background-color: lightskyblue;
     transition-property: all;
     transition-timing-function: ease;
-    transition-duration: 0.25s;
+    transition-duration: 0.5s;
 }
 
-#text_carte_start {
+#text_carte {
     margin-top: 50vh;
     margin-left: auto;
     margin-right: auto;
-    width: 30vw;
+    width: 18vw;
+}
+
+#switch_bar {
+    width: 30px;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-size:21px;
+    font-family: "Century Gothic";
 }

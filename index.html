@@ -9,86 +9,86 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" href="./css/start.css">
+    <link id="index_css" rel="stylesheet" href="css/index.css">
 </head>
 <body style="margin: 0">
-<div id="start">
-    <div id="fantastic_start">
-        <div id="text_fantastic_start"></div>
-    </div>
-    <div id="carte_start">
-        <div id="text_carte_start"></div>
-    </div>
+<div id="fantastic">
+    <div id="text_fantastic"></div>
+</div>
+<div id="carte">
+    <div id="text_carte"></div>
 </div>
 <script>
-function animateCss(element, animationName, callback) {
-        const node = document.querySelector(element);
-        node.classList.add('animated', animationName);
+    function animateCss(element, animationName, callback) {
+        element.addClass("animated" + ' ' + animationName);
 
         function handleAnimationEnd() {
-            node.classList.remove('animated', animationName);
-            node.removeEventListener('animationend', handleAnimationEnd);
+            element.removeClass("animated" + ' ' + animationName);
 
             if (typeof callback === 'function') callback()
         }
 
-        node.addEventListener('animationend', handleAnimationEnd);
+        element.on('animationend', handleAnimationEnd);
+    }
+
+    function switchSides(chosen) {
+
+        if (chosen === 'fantastic')
+            notChosen = 'carte';
+        else notChosen = 'fantastic';
+
+        $("#" + notChosen).contents().addClass("deleting");
+        $(".deleting").css("animation-duration", "0.5s");
+        animateCss($(".deleting"), "fadeOut", function () {
+            $(".deleting").remove();
+            $("#" + notChosen).css("flex", "0 0 30px");
+            setTimeout(function () {
+                $.get(chosen + '.html', function (data) {
+                    $("#" + chosen).append(data);
+                });
+                $("#" + notChosen).append('<div id="switch_bar">'+notChosen+'</div>');
+                animateCss($("#switch_bar"), "fadeIn")
+            }, parseFloat($("#" + notChosen).css("transition-duration").replace('s', '')) * 1000);
+        });
     }
 </script>
 <script id="start_script">
 
-    function removeStart(chosen){
-        $("#fantastic_start").off();
-        $("#carte_start").off();
-
-        if(chosen==='fantastic_start')
-            notChosen='carte_start';
-        else notChosen='fantastic_start';
-
-        $.get(chosen.replace('_start','') + '.html', function (data) {
-            $("body").append(data);
-        });
-
-        $("#text_"+notChosen).css("animation-duration", "0.25s");
-        animateCss("#text_"+notChosen, "fadeOut", function () {
-             $("#text_"+notChosen).remove();
-            $("#"+notChosen).css("flex", "0 0 20px");
-            setTimeout(function () {
-                animateCss("#start", "fadeOut", function () {
-                    $("#start").remove();
-                    $("#start_script").remove();
-                });
-            }, parseFloat($("#"+notChosen).css("transition-duration").replace('s', '')) * 1000);
-        });
-    }
-
     $(function () {
         $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_fantastic_start").append(data);
+            $("#text_fantastic").append(data);
         });
 
         $.get('texts/LoremIpsum.txt', function (data) {
-            $("#text_carte_start").append(data);
+            $("#text_carte").append(data);
         });
 
-        $("#fantastic_start").on('mouseenter', function () {
-            $("#fantastic_start").css("flex-grow", "3").css("background-color", "#ffeccc");
+        $("#fantastic").on('mouseenter', function () {
+            $("#fantastic").css("flex-grow", "3").css("background-color", "#ffeccc");
         });
-        $("#fantastic_start").on('mouseleave', function () {
-            $("#fantastic_start").css("flex-grow", "1").css("background-color", "moccasin");
+        $("#fantastic").on('mouseleave', function () {
+            $("#fantastic").css("flex-grow", "1").css("background-color", "moccasin");
         });
-        $("#fantastic_start").on("click", function () {
-            removeStart("fantastic_start");
+        $("#fantastic").on("click", function () {
+            $("#fantastic").off();
+            $("#carte").off();
+            $("#text_fantastic").addClass("deleting");
+            switchSides("fantastic");
+            $("#start_script").remove();
         });
 
-        $("#carte_start").on('mouseenter', function () {
-            $("#carte_start").css("flex-grow", "3").css("background-color", "#b6e1fc");
+        $("#carte").on('mouseenter', function () {
+            $("#carte").css("flex-grow", "3").css("background-color", "#b6e1fc");
         });
-        $("#carte_start").on('mouseleave', function () {
-            $("#carte_start").css("flex-grow", "1").css("background-color", "lightskyblue");
+        $("#carte").on('mouseleave', function () {
+            $("#carte").css("flex-grow", "1").css("background-color", "lightskyblue");
         });
-        $("#carte_start").on("click", function () {
-            removeStart("carte_start");
+        $("#carte").on("click", function () {
+            $("#fantastic").off();
+            $("#carte").off();
+            $("#text_carte").addClass("deleting");
+            switchSides("carte");
+            $("#start_script").remove();
         })
     })
 </script>
