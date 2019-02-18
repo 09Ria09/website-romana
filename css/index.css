@@ -1,60 +1,65 @@
 html, body {
     margin: 0;
+    overflow:auto;
     padding: 0;
-    height: auto
 }
 
 body {
+    color: black;
+    cursor: pointer;
+    font-family: "Century Gothic";
+}
+
+#start {
+    color: black;
     display: flex;
     flex-direction: row;
-    cursor: pointer;
-    color: black;
-    font-family: "Century Gothic";
+    transition-duration: 0.5s;
     transition-property: all;
     transition-timing-function: ease;
-    transition-duration: 0.5s;
 }
 
-#fantastic {
-    min-height: 100vh;
-    flex-grow: 1;
-    flex-basis: 70vh;
+#startFantastic {
     background-color: moccasin;
-    transition-property: all;
-    transition-timing-function: ease;
-    transition-duration: 0.5s;
+    height: 60vh;
+    width: 100%;
+    z-index: 10;
 }
 
-#textFantastic {
-    margin-top: 50vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 42vw;
+#cuprins {
+    background-color: black;
+    height: 100vh;
+    z-index: 10;
 }
 
-#carte {
-    min-height: 100vh;
-    flex-grow: 1;
-    flex-basis: 30vh;
-    background-color: lightskyblue;
-    transition-property: all;
-    transition-timing-function: ease;
-    transition-duration: 0.5s;
-}
-
-#textCarte {
-    margin-top: 50vh;
-    margin-left: auto;
-    margin-right: auto;
-    width: 18vw;
+#carti {
+    background-color: brown;
+    height: 40vh;
+    position: relative;
+    width: 100%;
+    z-index: 10;
 }
 
 #switchBar {
-    width: 31px;
-    height: 100%;
-    position: fixed;
-    writing-mode: vertical-rl;
-    text-align: center;
-    font-size: 21px;
+    background-color: black;
+    color:white;
+    float:left;
     font-family: "Century Gothic";
+    font-size: 21px;
+    height: 100%;
+    margin-left: -1px;
+    padding-left: 1px;
+    position: fixed;
+    text-align: center;
+    transform: rotate(180deg);
+    width: 31px;
+    z-index: 5;
+    writing-mode: vertical-rl;
+}
+
+.textPlaceholder{
+    background-color: #99b954;
+    color: white;
+    padding: 10px;
+    text-align: justify;
 }

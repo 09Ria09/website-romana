@@ -11,17 +11,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link id="indexCSS" rel="stylesheet" href="css/index.css">
 </head>
-<body style="margin: 0">
-<div id="fantastic">
-    <div id="textFantastic"></div>
+<body>
+<div id="switchBar">Cuprins</div>
+
+<div id="start">
+    <div id="cuprins" style="flex-basis: 20%"></div>
+    <div style="flex-basis: 80%;">
+        <div id="startFantastic"></div>
+        <div id="carti"></div>
+    </div>
 </div>
-<div id="carte">
-    <div id="textCarte"></div>
+<div style="margin-left: 30px">
+
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
+    <div class="textPlaceholder"></div>
 </div>
 <script>
-    var current = "start";
+    $.get("texts/LoremIpsum.txt", function (data) {
+        $(".textPlaceholder").append(data);
+    });
+</script>
+<script>
+    /**
+     var current = "start";
 
-    function animateCss(element, animationName, callback) {
+     function animateCss(element, animationName, callback) {
         element.addClass("animated" + ' ' + animationName);
 
         function handleAnimationEnd() {
@@ -33,7 +63,7 @@
         element.on('animationend', handleAnimationEnd);
     }
 
-    function switchSides(chosen, htmlFile = chosen + ".html") {
+     function switchSides(chosen, htmlFile = chosen + ".html") {
 
         if (chosen === 'fantastic')
             notChosen = 'carte';
@@ -64,46 +94,7 @@
             }, parseFloat($("#" + notChosen).css("transition-duration").replace('s', '')) * 1000);
         });
     }
-</script>
-<script id="startScript">
-
-    $(function () {
-        $.get('texts/LoremIpsum.txt', function (data) {
-            $("#textFantastic").append(data);
-        });
-
-        $.get('texts/LoremIpsum.txt', function (data) {
-            $("#textCarte").append(data);
-        });
-
-        $("#fantastic").on('mouseenter', function () {
-            $("#fantastic").css("flex-grow", "1.5").css("background-color", "#ffeccc");
-        });
-        $("#fantastic").on('mouseleave', function () {
-            $("#fantastic").css("flex-grow", "1").css("background-color", "moccasin");
-        });
-        $("#fantastic").on("click", function () {
-            $("#fantastic").off();
-            $("#carte").off();
-            $("#textFantastic").addClass("deleting");
-            switchSides("fantastic");
-            $("#startScript").remove();
-        });
-
-        $("#carte").on('mouseenter', function () {
-            $("#carte").css("flex-grow", "1.5").css("background-color", "#b6e1fc");
-        });
-        $("#carte").on('mouseleave', function () {
-            $("#carte").css("flex-grow", "1").css("background-color", "lightskyblue");
-        });
-        $("#carte").on("click", function () {
-            $("#fantastic").off();
-            $("#carte").off();
-            $("#textCarte").addClass("deleting");
-            switchSides("carte");
-            $("#startScript").remove();
-        })
-    })
+     **/
 </script>
 </body>
 </html>
