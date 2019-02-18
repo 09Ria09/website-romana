@@ -9,49 +9,35 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link id="indexCSS" rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/cuprinsSlider.css">
 </head>
 <body>
-<div id="switchBar">Cuprins</div>
 
-<div id="start">
-    <div id="cuprins" style="flex-basis: 20%"></div>
-    <div style="flex-basis: 80%;">
-        <div id="startFantastic"></div>
-        <div id="carti"></div>
-    </div>
-</div>
-<div style="margin-left: 30px">
+<div id="startFantastic"></div>
+<div id="carti"></div>
 
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-    <div class="textPlaceholder"></div>
-</div>
 <script>
+    for (var i = 1; i <= 20; ++i)
+        $("body").append('<div class="textPlaceholder"></div>');
     $.get("texts/LoremIpsum.txt", function (data) {
         $(".textPlaceholder").append(data);
     });
+
+    $.get("cuprinsSlider.html", function (data) {
+        $("body").prepend(data);
+    });
 </script>
 <script>
-    /**
-     var current = "start";
-
-     function animateCss(element, animationName, callback) {
+    $(function () {
+        setTimeout(function () {
+            $('#switchBar').css("opacity", "0.2");
+        }, 1000);
+    })
+</script>
+<script>
+    function animateCss(element, animationName, callback) {
         element.addClass("animated" + ' ' + animationName);
 
         function handleAnimationEnd() {
@@ -63,6 +49,7 @@
         element.on('animationend', handleAnimationEnd);
     }
 
+     /**
      function switchSides(chosen, htmlFile = chosen + ".html") {
 
         if (chosen === 'fantastic')

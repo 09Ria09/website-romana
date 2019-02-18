@@ -1,6 +1,6 @@
 html, body {
     margin: 0;
-    overflow:auto;
+    overflow: auto;
     padding: 0;
 }
 
@@ -21,43 +21,18 @@ body {
 
 #startFantastic {
     background-color: moccasin;
-    height: 60vh;
-    width: 100%;
-    z-index: 10;
-}
-
-#cuprins {
-    background-color: black;
     height: 100vh;
-    z-index: 10;
+    width: 100%;
 }
 
 #carti {
     background-color: brown;
-    height: 40vh;
+    height: 100vh;
     position: relative;
     width: 100%;
-    z-index: 10;
 }
 
-#switchBar {
-    background-color: black;
-    color:white;
-    float:left;
-    font-family: "Century Gothic";
-    font-size: 21px;
-    height: 100%;
-    margin-left: -1px;
-    padding-left: 1px;
-    position: fixed;
-    text-align: center;
-    transform: rotate(180deg);
-    width: 31px;
-    z-index: 5;
-    writing-mode: vertical-rl;
-}
-
-.textPlaceholder{
+.textPlaceholder {
     background-color: #99b954;
     color: white;
     padding: 10px;

@@ -1,0 +1,23 @@
+#cuprinsSlideContainer {
+    display: flex;
+    background-color: black;
+    color: white;
+    float: left;
+    font-family: "Century Gothic";
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+}
+
+#slider {
+    font-size: 21px;
+    height: 100%;
+    text-align: center;
+    transform: rotate(180deg);
+    width: 30px;
+    writing-mode: vertical-rl;
+}
+
+#cuprins {
+    padding: 15px 50px 15px 15px;
+}

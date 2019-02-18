@@ -1,0 +1,15 @@
+<div id="cuprinsSlideContainer">
+    <div id="cuprins">daaaaaaaaaaaaaaaaaab</div>
+    <div id="slider">Cuprins</div>
+</div>
+<script id="initCuprinsSlider">
+    $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth()+'px');
+    $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+    $("#cuprinsSlideContainer").removeClass("noTransition");
+    animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
+        $("#cuprinsSlideContainer")[0].offsetHeight;
+        $("#cuprinsSlideContainer").css("transition-duration", "3s").css("transition-timing-function", "ease").css("opacity","0.1");
+    });
+    $("#initCuprinsSlider").remove();
+
+</script>
