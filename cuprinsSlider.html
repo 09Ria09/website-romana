@@ -1,15 +1,35 @@
 <div id="cuprinsSlideContainer">
-    <div id="cuprins">daaaaaaaaaaaaaaaaaab</div>
+    <div id="cuprins"></div>
     <div id="slider">Cuprins</div>
 </div>
 <script id="initCuprinsSlider">
-    $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth()+'px');
-    $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
-    $("#cuprinsSlideContainer").removeClass("noTransition");
-    animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
+	animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
         $("#cuprinsSlideContainer")[0].offsetHeight;
-        $("#cuprinsSlideContainer").css("transition-duration", "3s").css("transition-timing-function", "ease").css("opacity","0.1");
+        $("#cuprinsSlideContainer").css("cursor", "pointer").css("transition-duration", "1s").css("transition-timing-function", "ease").css("opacity","0.1");
     });
+    $.get("texts/"+$("body").attr("id").replace('Body', '')+"Cuprins.txt", function(data){
+		var parsed=data.split('\n');
+		$.each(parsed, function(n, data){
+			console.log(data)
+			$("#cuprins").append('<p style="margin: auto;">'+ data +'</p>');
+		});
+		$("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth()+'px');
+		$("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+		$("#cuprinsSlideContainer").removeClass("noTransition");
+		
+		$("#cuprinsSlideContainer").on("click", function(){
+				if($("#cuprinsSlideContainer").css("margin-left")=="0px")
+				{
+					$("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
+						.css("opacity","0.1").css("margin-left", '-' + $("#cuprins").outerWidth()+'px'); 	
+				}
+				else
+					$("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
+						.css("opacity","1").css("margin-left","0"); 
+			});
+	});
+	$("#cuprinsSlideContainer").one("transitionend", function (){
+		
+	});
     $("#initCuprinsSlider").remove();
-
 </script>

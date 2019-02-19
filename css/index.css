@@ -6,7 +6,6 @@ html, body {
 
 body {
     color: black;
-    cursor: pointer;
     font-family: "Century Gothic";
 }
 
@@ -23,6 +22,7 @@ body {
     background-color: moccasin;
     height: 100vh;
     width: 100%;
+	padding-left:35px;
 }
 
 #carti {
@@ -30,6 +30,7 @@ body {
     height: 100vh;
     position: relative;
     width: 100%;
+	padding-left:35px;
 }
 
 .textPlaceholder {
@@ -37,4 +38,5 @@ body {
     color: white;
     padding: 10px;
     text-align: justify;
+	padding-left:35px;
 }
