@@ -6,10 +6,12 @@ html, body {
 
 body {
     color: black;
+    background-color: darkslategrey;
     font-family: "Century Gothic";
 }
 
 #start {
+    box-sizing: border-box;
     color: black;
     display: flex;
     flex-direction: row;
@@ -19,24 +21,57 @@ body {
 }
 
 #startFantastic {
+    background-attachment: fixed;
     background-color: moccasin;
+    background-image: url("../images/placeholder.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
     height: 100vh;
+    padding-left: 35px;
+    padding-top: 25vh;
     width: 100%;
-	padding-left:35px;
 }
 
 #carti {
     background-color: brown;
-    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 50px 0 50px 35px;
     position: relative;
     width: 100%;
-	padding-left:35px;
+}
+
+.carte{
+    flex-grow: 1;
+    height: 100%;
+    text-align: justify;
+    margin: auto 50px;
+
+}
+
+.imagineCarte{
+    height: 20vh;
+    display: block;
+    margin: 0 auto;
 }
 
 .textPlaceholder {
     background-color: #99b954;
+    box-sizing: border-box;
     color: white;
     padding: 10px;
+    padding-left: 35px;
     text-align: justify;
-	padding-left:35px;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 800px) {
+    #carti{
+        flex-direction: column;
+    }
 }

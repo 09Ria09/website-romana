@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6be7f8fc-2309-477b-b17d-b8fb5b306078" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/css/cuprinsSlider.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cuprinsSlider.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carti.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/placeholder.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moaraLuiCalifar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texts/carti/inMijloculLupilor/indexDescription.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texts/carti/laHanulLuiManjoala/indexDescription.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texts/carti/laTiganci/indexDescription.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texts/carti/moaraLuiCalifar/indexDescription.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/texts/fantastic/cuprins.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/cuprinsSlider.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/cuprinsSlider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuprinsSlider.html" beforeDir="false" afterPath="$PROJECT_DIR$/cuprinsSlider.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/access_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/access_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/agent_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/agent_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/referer_log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/referer_log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,20 +32,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="39" column="23" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="23" />
+            <state relative-caret-position="430">
+              <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cuprinsSlider.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moaraLuiCalifar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/moaraLuiCalifar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carti.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/carti.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cuprins.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/texts/fantastic/cuprins.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="22" selection-start-column="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cuprinsSlider.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cuprinsSlider.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="481">
+              <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,8 +104,8 @@
       <file leaf-file-name="cuprinsSlider.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/cuprinsSlider.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="119">
+              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -57,21 +119,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -96,6 +150,10 @@
       <find>carte_subcontainer</find>
       <find>_</find>
       <find>fantastic</find>
+      <find>startFantastic</find>
+      <find>split</find>
+      <find>/\r\n|\n|\r/</find>
+      <find>changePage</find>
     </findStrings>
     <replaceStrings>
       <replace>texts/LoremIpsum.txt</replace>
@@ -116,6 +174,8 @@
       <replace>fantasticSubcontainer</replace>
       <replace>carteSubcontainer</replace>
       <replace>carte</replace>
+      <replace>startaFantastic</replace>
+      <replace>/\r?\n/</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Rares Iordan\Documents\Work\Website Romana</dir>
@@ -140,11 +200,18 @@
         <option value="$PROJECT_DIR$/fantastic.html" />
         <option value="$PROJECT_DIR$/switchBar.html" />
         <option value="$PROJECT_DIR$/css/cuprinsSlider.html" />
-        <option value="$PROJECT_DIR$/css/index.css" />
         <option value="$PROJECT_DIR$/css/global.css" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/texts/carti.txt" />
+        <option value="$PROJECT_DIR$/texts/carti/inMijloculLupilor/indexDescription.txt" />
+        <option value="$PROJECT_DIR$/texts/fantastic/cuprins.txt" />
+        <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/moaraLuiCalifar.html" />
+        <option value="$PROJECT_DIR$/js.js" />
+        <option value="$PROJECT_DIR$/global.js" />
         <option value="$PROJECT_DIR$/css/cuprinsSlider.css" />
+        <option value="$PROJECT_DIR$/js/tilt.jquery.js" />
         <option value="$PROJECT_DIR$/cuprinsSlider.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -174,6 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,13 +252,17 @@
             <path>
               <item name="Website Romana" type="b2602c69:ProjectViewProjectNode" />
               <item name="Website Romana" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Website Romana" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Website Romana" type="462c0819:PsiDirectoryNode" />
+              <item name="texts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,15 +273,20 @@
     <property name="node.js.selected.package.jscs" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Rares Iordan\Documents\Work\Website Romana" />
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana\js" />
       <recent name="D:\Rares Iordan\Documents\Work\Website Romana\texts" />
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana\texts\carti\fantastic" />
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana" />
       <recent name="D:\Rares Iordan\Documents\Work\Website Romana\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana\texts\carti\moaraLuiCalifar" />
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana\texts\carti\laTiganci" />
+      <recent name="D:\Rares Iordan\Documents\Work\Website Romana\texts\carti\laHanulLuiManjoala" />
       <recent name="D:\Rares Iordan\Documents\Work\Website Romana\images" />
     </key>
   </component>
@@ -254,6 +331,11 @@
       <workItem from="1550429080572" duration="5073000" />
       <workItem from="1550516527287" duration="4527000" />
       <workItem from="1550521078981" duration="4304000" />
+      <workItem from="1550585963655" duration="826000" />
+      <workItem from="1550603104984" duration="10000" />
+      <workItem from="1550603146794" duration="170000" />
+      <workItem from="1550667390150" duration="11166000" />
+      <workItem from="1550685532633" duration="2045000" />
     </task>
     <task id="LOCAL-00001" summary="changed a few things">
       <created>1550171280116</created>
@@ -273,14 +355,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53392000" />
+    <option name="totallyTimeSpent" value="67609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" visible="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Version Control" order="3" />
@@ -289,14 +371,14 @@
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49947917" visible="true" weight="0.32943678" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49947917" visible="true" weight="0.32943678" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49895832" weight="0.32943678" />
     </layout>
   </component>
@@ -317,52 +399,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/switchBar.html" />
-    <entry file="file://$PROJECT_DIR$/css/switchBar.css" />
-    <entry file="file://$PROJECT_DIR$/fantastic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/carte.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Website Clasa/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="29" selection-start-line="15" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/fantastic.css" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/switchBar.html" />
     <entry file="file://$PROJECT_DIR$/css/switchBar.css" />
     <entry file="file://$PROJECT_DIR$/fantastic.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -497,13 +533,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/selectorStyle.css" />
-    <entry file="file://$PROJECT_DIR$/texts/LoremIpsum.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="418" selection-start-column="410" selection-end-column="418" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/global-types/node_modules/@types/jquery/JQuery.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -549,17 +578,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
+    <entry file="file://$PROJECT_DIR$/texts/Carti/moaraLuiCalifar.txt" />
+    <entry file="file://$PROJECT_DIR$/texts/LoremIpsum.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/texts/carti/laTiganci/indexDescription.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/texts/carti/laHanulLuiManjoala/indexDescription.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/texts/carti/inMijloculLupilor/indexDescription.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="23" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/moaraLuiCalifar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/carti.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js.js" />
+    <entry file="file://$PROJECT_DIR$/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -570,17 +635,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/tilt.jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1059">
+          <caret line="304" column="4" selection-start-line="304" selection-start-column="4" selection-end-line="304" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/cuprinsSlider.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="119">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/texts/fantastic/cuprins.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cuprinsSlider.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        <state relative-caret-position="481">
+          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="46" column="7" selection-start-line="46" selection-start-column="7" selection-end-line="46" selection-end-column="7" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

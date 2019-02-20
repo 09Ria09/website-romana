@@ -1,12 +1,16 @@
 #cuprinsSlideContainer {
-    display: flex;
     background-color: black;
     color: white;
+    display: flex;
     float: left;
     font-family: "Century Gothic";
     height: 100%;
     position: fixed;
     z-index: 5;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #slider {
@@ -19,7 +23,12 @@
 }
 
 #cuprins {
+    display: flex;
+    flex-direction: column;
     padding: 25vh 50px 25vh 15px;
-	display:flex;
-	flex-direction:column;
+}
+
+.textCuprins {
+    color: white;
+    text-decoration: none;
 }

@@ -3,33 +3,42 @@
     <div id="slider">Cuprins</div>
 </div>
 <script id="initCuprinsSlider">
-	animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
+    animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
         $("#cuprinsSlideContainer")[0].offsetHeight;
-        $("#cuprinsSlideContainer").css("cursor", "pointer").css("transition-duration", "1s").css("transition-timing-function", "ease").css("opacity","0.1");
+        $("#cuprinsSlideContainer").css("cursor", "pointer").css("transition-duration", "1s").css("transition-timing-function", "ease").css("opacity", "0.1");
+        $("#cuprinsSlideContainer").on("click", function (e) {
+            if ($(e.target).hasClass('textCuprins') === true)
+                return;
+            if ($("#cuprinsSlideContainer").css("margin-left") === "0px") {
+                $("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
+                    .css("opacity", "0.1").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
+            }
+            else
+                $("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
+                    .css("opacity", "1").css("margin-left", "0");
+        });
     });
-    $.get("texts/"+$("body").attr("id").replace('Body', '')+"Cuprins.txt", function(data){
-		var parsed=data.split('\n');
-		$.each(parsed, function(n, data){
-			console.log(data)
-			$("#cuprins").append('<p style="margin: auto;">'+ data +'</p>');
-		});
-		$("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth()+'px');
-		$("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
-		$("#cuprinsSlideContainer").removeClass("noTransition");
-		
-		$("#cuprinsSlideContainer").on("click", function(){
-				if($("#cuprinsSlideContainer").css("margin-left")=="0px")
-				{
-					$("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
-						.css("opacity","0.1").css("margin-left", '-' + $("#cuprins").outerWidth()+'px'); 	
-				}
-				else
-					$("#cuprinsSlideContainer").css("transition-duration", "0.5s").css("transition-timing-function", "ease")
-						.css("opacity","1").css("margin-left","0"); 
-			});
-	});
-	$("#cuprinsSlideContainer").one("transitionend", function (){
-		
-	});
+    $.get("texts/" + $("body").attr("id").replace('Body', '') + "/cuprins.txt", function (data) {
+        var parsed = data.split(/\r?\n/);
+        console.log(parsed);
+        $.each(parsed, function (outerN, data) {
+            var parsed = data.split("!link!");
+            $.each(parsed, function (n, data) {
+                console.log(parsed);
+                if (n === 0)
+                    $("#cuprins").append('<a class="textCuprins" id="textCuprins' + outerN + '" style="margin: auto;">' + data + '</a>');
+                else if(n===1)
+                    $("#textCuprins" + outerN).attr("href", data);
+            })
+        });
+        $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
+        $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+        $("#cuprinsSlideContainer").removeClass("noTransition");
+    });
+    $(function () {
+        setTimeout(function () {
+            $('#switchBar').css("opacity", "0.2");
+        }, 1000);
+    })
     $("#initCuprinsSlider").remove();
 </script>

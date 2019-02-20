@@ -12,13 +12,30 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cuprinsSlider.css">
+
+    <script type="text/javascript" src="js/global.js"></script>
 </head>
 <body id="fantasticBody">
 
-<div id="startFantastic"></div>
+<div id="startFantastic"><p style="font-size:60px; text-align: center">Opera Fantastica</p></div>
 <div id="carti"></div>
 
 <script>
+
+    $.get("carti.txt", function (data) {
+        parsed = data.split(/\r?\n/);
+        $.each(parsed, function (n, data) {
+            $("#carti").append('<div class="carte" id="carte' + n + '"></div>');
+            $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
+            $("#carte" + n).on("click", function () {
+                changePage(data);
+
+            });
+            $.get("texts/carti/" + data + "/indexDescription.txt", function (data) {
+                $("#carte" + n).append('<p>' + data + '<\p>');
+            })
+        })
+    });
     for (var i = 1; i <= 20; ++i)
         $("body").append('<div class="textPlaceholder"></div>');
     $.get("texts/LoremIpsum.txt", function (data) {
@@ -28,60 +45,6 @@
     $.get("cuprinsSlider.html", function (data) {
         $("body").prepend(data);
     });
-</script>
-<script>
-    $(function () {
-        setTimeout(function () {
-            $('#switchBar').css("opacity", "0.2");
-        }, 1000);
-    })
-</script>
-<script>
-    function animateCss(element, animationName, callback) {
-        element.addClass("animated" + ' ' + animationName);
-
-        function handleAnimationEnd() {
-            element.removeClass("animated" + ' ' + animationName);
-
-            if (typeof callback === 'function') callback()
-        }
-
-        element.on('animationend', handleAnimationEnd);
-    }
-
-     /**
-     function switchSides(chosen, htmlFile = chosen + ".html") {
-
-        if (chosen === 'fantastic')
-            notChosen = 'carte';
-        else notChosen = 'fantastic';
-
-        $("#" + notChosen).contents().addClass("deleting");
-        $(".deleting").css("animation-duration", "0.5s");
-        animateCss($(".deleting"), "fadeOut", function () {
-            $(".deleting").remove();
-
-            $("#" + chosen).css("flex", "1 0 0");
-            $("#" + notChosen).css("flex", "0 0 30px");
-
-            setTimeout(function () {
-
-                $.get(htmlFile, function (data) {
-                    $("#" + chosen).append(data);
-                });
-
-                current = chosen;
-                $("#" + notChosen).append('<div id="switchBar"></div>');
-                $("#switchBarScript").remove();
-                $.get('switchBar.html', function (data) {
-                    $("body").append(data);
-                });
-                animateCss($("#switchBar"), "fadeIn");
-
-            }, parseFloat($("#" + notChosen).css("transition-duration").replace('s', '')) * 1000);
-        });
-    }
-     **/
 </script>
 </body>
 </html>
