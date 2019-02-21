@@ -17,10 +17,11 @@
 </head>
 <body id="fantasticBody">
 
-<div id="startFantastic"><p style="font-size:60px; text-align: center">Opera Fantastica</p></div>
+<div id="start"><p style="font-size:60px; text-align: center">Opera Fantastica</p></div>
 <div id="carti"></div>
 
 <script>
+    var backgroundList=[], numberOfBackgrounds=5;
 
     $.get("carti.txt", function (data) {
         parsed = data.split(/\r?\n/);
@@ -31,20 +32,26 @@
                 changePage(data);
 
             });
-            $.get("texts/carti/" + data + "/indexDescription.txt", function (data) {
+            $.get("texts/" + data + "/indexDescription.txt", function (data) {
                 $("#carte" + n).append('<p>' + data + '<\p>');
             })
         })
     });
-    for (var i = 1; i <= 20; ++i)
-        $("body").append('<div class="textPlaceholder"></div>');
-    $.get("texts/LoremIpsum.txt", function (data) {
+
+    for (var i = 1; i <= 4; ++i) {
+        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="textPlaceholder"></div>');
+        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+    }
+
+    $.get("texts/longLoremIpsum.txt", function (data) {
         $(".textPlaceholder").append(data);
     });
 
     $.get("cuprinsSlider.html", function (data) {
         $("body").prepend(data);
     });
+
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
 </script>
 </body>
 </html>

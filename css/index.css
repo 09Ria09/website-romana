@@ -1,41 +1,5 @@
-html, body {
-    margin: 0;
-    overflow: auto;
-    padding: 0;
-}
-
-body {
-    color: black;
-    background-color: darkslategrey;
-    font-family: "Century Gothic";
-}
-
-#start {
-    box-sizing: border-box;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    transition-duration: 0.5s;
-    transition-property: all;
-    transition-timing-function: ease;
-}
-
-#startFantastic {
-    background-attachment: fixed;
-    background-color: moccasin;
-    background-image: url("../images/placeholder.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-sizing: border-box;
-    height: 100vh;
-    padding-left: 35px;
-    padding-top: 25vh;
-    width: 100%;
-}
-
 #carti {
-    background-color: brown;
+    background-color: moccasin;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -45,33 +9,31 @@ body {
     width: 100%;
 }
 
-.carte{
+.carte {
     flex-grow: 1;
     height: 100%;
-    text-align: justify;
     margin: auto 50px;
+    text-align: justify;
 
 }
 
-.imagineCarte{
-    height: 20vh;
+.imagineCarte {
     display: block;
+    height: 20vh;
     margin: 0 auto;
 }
 
 .textPlaceholder {
-    background-color: #99b954;
+    background-color: moccasin;
     box-sizing: border-box;
-    color: white;
-    padding: 10px;
-    padding-left: 35px;
+    color: black;
+    padding: 5% 25%;
     text-align: justify;
     width: 100%;
 }
 
-
 @media screen and (max-width: 800px) {
-    #carti{
+    #carti {
         flex-direction: column;
     }
 }

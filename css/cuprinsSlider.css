@@ -20,6 +20,7 @@
     transform: rotate(180deg);
     width: 30px;
     writing-mode: vertical-rl;
+    cursor:pointer;
 }
 
 #cuprins {
@@ -30,5 +31,6 @@
 
 .textCuprins {
     color: white;
+    padding: 25px;
     text-decoration: none;
 }
