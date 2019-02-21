@@ -14,21 +14,18 @@
     height: 100%;
     margin: auto 50px;
     text-align: justify;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+.carte:hover {
+    transform: scale(1.10);
 }
 
 .imagineCarte {
     display: block;
     height: 20vh;
     margin: 0 auto;
-}
-
-.textPlaceholder {
-    background-color: moccasin;
-    box-sizing: border-box;
-    color: black;
-    padding: 5% 25%;
-    text-align: justify;
-    width: 100%;
 }
 
 @media screen and (max-width: 1279px) {

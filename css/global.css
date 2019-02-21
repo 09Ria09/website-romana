@@ -35,6 +35,15 @@ body {
     padding-left: 35px;
 }
 
+.contentDiv {
+    background-color: moccasin;
+    box-sizing: border-box;
+    color: black;
+    padding: 5% 25%;
+    text-align: justify;
+    width: 100%;
+}
+
 @media screen and (min-height: 1081px) {
     #start, .spacers {
         background-attachment: unset;

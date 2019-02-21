@@ -1,15 +1,16 @@
 <div id="start"><p style="font-size:60px; text-align: center">Moara Lui Califar</p></div>
 <script>
-    var backgroundList = [], numberOfBackgrounds = 5;
+    var backgroundList = [];
+    var numberOfBackgrounds = 5;
 
-    $("body").append('<div class="textPlaceholder"></div>');
-    for (var i = 2; i <= 4; ++i) {
-        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="textPlaceholder"></div>');
+    $("body").append('<div class="contentDiv"></div>');
+    for (let i = 2; i <= 4; ++i) {
+        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="contentDiv"></div>');
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
     $.get("texts/longLoremIpsum.txt", function (data) {
-        $(".textPlaceholder").append(data);
+        $(".contentDiv").append(data);
     });
 
     $.get("cuprinsSlider.html", function (data) {
