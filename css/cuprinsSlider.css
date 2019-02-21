@@ -14,13 +14,13 @@
 }
 
 #slider {
+    cursor: pointer;
     font-size: 21px;
     height: 100%;
     text-align: center;
     transform: rotate(180deg);
     width: 30px;
     writing-mode: vertical-rl;
-    cursor:pointer;
 }
 
 #cuprins {

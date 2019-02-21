@@ -21,17 +21,26 @@
 <div id="carti"></div>
 
 <script>
-    var backgroundList=[], numberOfBackgrounds=5;
+    var backgroundList = [], numberOfBackgrounds = 5;
 
     $.get("carti.txt", function (data) {
         parsed = data.split(/\r?\n/);
         $.each(parsed, function (n, data) {
             $("#carti").append('<div class="carte" id="carte' + n + '"></div>');
             $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
+
+            /*
+            $("#carte" + n).on("mouseenter", function () {
+                $("#carte" + n).show({effect:scale});
+            });
+            $("#carte" + n).on("mouseleave", function () {
+                $("#carte" + n).show({effect:scale});
+            });
+            */
             $("#carte" + n).on("click", function () {
                 changePage(data);
-
             });
+
             $.get("texts/" + data + "/indexDescription.txt", function (data) {
                 $("#carte" + n).append('<p>' + data + '<\p>');
             })
