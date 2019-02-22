@@ -13,9 +13,8 @@
         $(".contentDiv").append(data);
     });
 
-    $.get("cuprinsSlider.html", function (data) {
-        $("body").prepend(data);
-    });
+
+    addCuprinsSlider();
 
     randomBackground($("#start"), backgroundList, numberOfBackgrounds);
 </script>

@@ -45,25 +45,22 @@ function randomBackground(element, backgroundList, numberOfBackgrounds) {
     backgroundList[rand] = true;
 }
 
-let initiatedCuprinsSlider = false;
+const closedOpacity = 0.1;
+const hoverOpacity = 0.7;
+const openOpacity = 1;
+
+const startTransDuration = "2s";
+const stateTransDuration = "0.5s";
+const hoverTransDuration = "0.3s";
+
+let state = "closed";
+let hovered = false;
+
+
 function addCuprinsSlider() {
+
     $("body").prepend("<div id=\"cuprinsSlideContainer\"><div id=\"cuprins\"></div><div id=\"slider\">Cuprins</div></div>")
-    if(initiatedCuprinsSlider===false)
-    {
-        initiatedCuprinsSlider=true;
-
-        const closedOpacity = 0.1;
-        const hoverOpacity = 0.7;
-        const openOpacity = 1;
-
-        const startTransDuration = "2s";
-        const stateTransDuration = "0.5s";
-        const hoverTransDuration = "0.3s";
-
-        let state = "closed";
-        let hovered = false;
-
-        $.get("texts/" + $("body").attr("id").replace("Body", '') + "/cuprins.txt", function (data) {
+	$.get("texts/" + $("body").attr("id").replace("Body", '') + "/cuprins.txt", function (data) {
             let parsed = data.split(/\r?\n/);
             // console.log(parsed);
             $.each(parsed, function (outerN, data) {
@@ -74,7 +71,7 @@ function addCuprinsSlider() {
                         $("#cuprins").append('<a class="textCuprins" id="textCuprins' + outerN + '" style="margin: auto;">' + data + '</a>');
                     else if (n === 1)
                         $("#textCuprins" + outerN).attr("href", data);
-                })
+                });
             });
 
             $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
@@ -82,8 +79,7 @@ function addCuprinsSlider() {
             $("#cuprinsSlideContainer").removeClass("noTransition");
             $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
         });
-
-        animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
+	animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
 
             setTimeout(function () {
                 if (state === "closed" && hovered === false)
@@ -128,5 +124,4 @@ function addCuprinsSlider() {
                 }
             });
         });
-    }
 }
