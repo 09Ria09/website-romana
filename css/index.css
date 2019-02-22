@@ -16,6 +16,7 @@
     text-align: justify;
     transition-duration: 0.3s;
     transition-timing-function: ease;
+	cursor:pointer;
 }
 
 .carte:hover {
