@@ -108,6 +108,14 @@ function addCuprinsSlider(backButton = false) {
             }
         });
 
+        $("#cuprinsSlideContainer").on('click', 'a[href^="#"]', function (event) {
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($.attr(this, 'href')).offset().top
+            }, 500);
+        });
+
         $("#cuprinsSlideContainer").on("click", function (e) {
             if ($(e.target).hasClass('textCuprins') === true)
                 return;

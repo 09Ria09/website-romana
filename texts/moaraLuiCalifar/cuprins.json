@@ -4,7 +4,15 @@
     "href": "#start"
   },
   {
-    "text": "Opere",
-    "href": "#carti"
+    "text": "Text",
+    "href": "#contentDiv1"
+  },
+  {
+    "text": "Repere spatio-temporale",
+    "href": "#graph"
+  },
+  {
+    "text": "Personaje",
+    "href": "#outerContainerPersonaje"
   }
 ]
