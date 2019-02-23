@@ -1,0 +1,38 @@
+<div id="start"><p style="font-size:60px; text-align: center">Fantasticul</p></div>
+<div id="carti"></div>
+
+<script>
+    var backgroundList = [];
+    var numberOfBackgrounds = 6;
+
+    $.get("carti.txt", function (data) {
+
+        parsed = data.split(/\r?\n/);
+        $.each(parsed, function (n, data) {
+
+            $("#carti").append('<div class="carte" id="carte' + n + '"></div>');
+            $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
+
+            $.get("texts/" + data + "/indexDescription.txt", function (data) {
+                $("#carte" + n).append('<p>' + data + '<\p>');
+            });
+
+            $("#carte" + n).on("click", function () {
+                changePage(data);
+            });
+        });
+    });
+
+    for (let i = 1; i <= 4; ++i) {
+        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="contentDiv"></div>');
+        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+    }
+
+    $.get("texts/longLoremIpsum.txt", function (data) {
+        $(".contentDiv").append(data);
+    });
+
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+
+    addCuprinsSlider();
+</script>

@@ -10,13 +10,13 @@
 }
 
 .carte {
+    cursor: pointer;
     flex-grow: 1;
     height: 100%;
     margin: auto 50px;
     text-align: justify;
     transition-duration: 0.3s;
     transition-timing-function: ease;
-	cursor:pointer;
 }
 
 .carte:hover {

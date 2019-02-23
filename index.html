@@ -7,53 +7,23 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/cuprinsSlider.css">
+    <link rel="stylesheet" href="css/graph.css">
+    <link rel="stylesheet" href="css/personaje.css">
 
     <script type="text/javascript" src="js/global.js"></script>
 </head>
 <body id="fantasticBody">
-
-<div id="start"><p style="font-size:60px; text-align: center">Opera Fantastica</p></div>
-<div id="carti"></div>
-
-<script>
-    var backgroundList = [];
-    var numberOfBackgrounds = 5;
-
-    $.get("carti.txt", function (data) {
-
-        parsed = data.split(/\r?\n/);
-        $.each(parsed, function (n, data) {
-
-            $("#carti").append('<div class="carte" id="carte' + n + '"></div>');
-            $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
-
-            $.get("texts/" + data + "/indexDescription.txt", function (data) {
-                $("#carte" + n).append('<p>' + data + '<\p>');
-            });
-
-            $("#carte" + n).on("click", function () {
-                changePage(data);
-            });
-        });
+<script id="indexInitScript">
+    $.get("fantastic.html", function (data) {
+        $("body").append(data);
     });
-
-    for (let i = 1; i <= 4; ++i) {
-        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="contentDiv"></div>');
-        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
-    }
-
-    $.get("texts/longLoremIpsum.txt", function (data) {
-        $(".contentDiv").append(data);
-    });
-
-    addCuprinsSlider();
-
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+    $("#indexInitScript").remove();
 </script>
 </body>
 </html>
