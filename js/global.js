@@ -137,7 +137,7 @@ function addCuprinsSlider(backButton = false) {
 
 function addGraph(element) {
 
-    $("#"+element).append(
+    $("#" + element).append(
         '<div id="graphCanvasContainer"></div><div id="nodeData"><div id="nodeDataText"></div></div>'
     );
 
@@ -190,7 +190,7 @@ function addGraph(element) {
     };
 
     // initialize your network!
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element+".json", function (data) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + ".json", function (data) {
         console.log(data);
         // create an array with nodes
         var nodes = new vis.DataSet(data.nodes);
@@ -216,41 +216,46 @@ function addPersonaje() {
     $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/personaje.json", function (data) {
         for (let i = 0; i < data.length; ++i) {
             $("#outerContainerPersonaje").append(
-                '<div id="containerPersonaj'+i+'" class="containerPersonaje">' +
+                '<div id="containerPersonaj' + i + '" class="containerPersonaje">' +
                 '<div id    ="personaj' + i + '" class="personaje">' +
-                '<img src="images/'+ $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
-                '<h1>' +data[i].nume + '</h1>' +
-                '<p>' +data[i].descriereScurta + '</p>' +
+                '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
+                '<h1>' + data[i].nume + '</h1>' +
+                '<p>' + data[i].descriereScurta + '</p>' +
                 '</div>' +
-                '<div id="extinderePersonaj'+i+'" class="extinderePersonaje">'+ data[i].descriereLunga +'</div>' +
+                '<div id="extinderePersonajContainer' + i +
+                '" class="extinderePersonajeContainer"><div id="extinderePersonaj' + i +
+                '" class="extinderePersonaj">' + data[i].descriereLunga + '</div></div>' +
                 '</div>'
             );
 
-            let slideMargin="";
+            let slideMargin = "";
             if (i % 2 === 0) {
-                    $("#personaj"+i).css("float", "left").css("padding-left", (parseInt($("#personaj" + i).css("padding-left").replace('px', '')) + 35) + 'px')
+                $("#personaj" + i).css("float", "left").css("padding-left", (parseInt($("#personaj" + i).css("padding-left").replace('px', '')) + 35) + 'px')
                     .css("border-radius", "0 25px 25px 0");
-                    $("#extinderePersonaj"+i).css("float", "right").css("padding-right", "30vw").css("border-radius", "25px 0 0 25px");
-                    slideMargin="right";
+                $("#extinderePersonajContainer" + i).css("float", "right").css("padding-right", "30vw")
+                $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "25px 0 0 25px");
+                slideMargin = "right";
             }
             else {
-                $("#personaj"+i).css("float", "right").css("border-radius", "25px 0 0 25px");
-                $("#extinderePersonaj"+i).css("float", "left").css("padding-left", "30vw")  //.css("padding-left", (parseInt($("#extinderePersonaj" + i).css("padding-left").replace('px', '')) + 35) + 'px')
-                    .css("border-radius", "0 25px 25px 0");
-                slideMargin="left";
+                $("#personaj" + i).css("float", "right").css("border-radius", "25px 0 0 25px");
+                $("#extinderePersonajContainer" + i).css("float", "left").css("padding-left", "30vw")  //.css("padding-left", (parseInt($("#extinderePersonajContainer" + i).css("padding-left").replace('px', '')) + 35) + 'px')
+                $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "0 25px 25px 0");
+                slideMargin = "left";
             }
 
-            $("#extinderePersonaj"+i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                .css("margin-"+slideMargin, '-' + $("#extinderePersonaj"+i).outerWidth() + 'px');
+            $("#extinderePersonajContainer" + i).addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
+            $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
+            $("#extinderePersonajContainer" + i).removeClass("noTransition");
+            $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
 
-            $("#personaj"+i).on("mouseenter", function () {
-                $("#extinderePersonaj"+i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                    .css("margin-"+slideMargin, '0');
+            $("#personaj" + i).on("mouseenter", function () {
+                $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                    .css("margin-" + slideMargin, '0');
             });
 
-            $("#personaj"+i).on("mouseleave", function () {
-                $("#extinderePersonaj"+i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                    .css("margin-"+slideMargin, '-' + $("#extinderePersonaj"+i).outerWidth() + 'px');
+            $("#personaj" + i).on("mouseleave", function () {
+                $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                    .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
             });
         }
     });

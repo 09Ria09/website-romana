@@ -1,11 +1,11 @@
 #graph {
-    background-color: moccasin;
     background-attachment: fixed;
+    background-color: moccasin;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
     height: 100vh;
     width: 100%;
-    display: flex;
 }
 
 #nodeData {
