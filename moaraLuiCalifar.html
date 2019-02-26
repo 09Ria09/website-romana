@@ -1,4 +1,4 @@
-<div id="start"><p style="font-size:60px; text-align: center">Moara Lui Califar</p></div>
+<div id="start"><p id="startText">Moara Lui Califar</p></div>
 <div id="contentDiv1" class="contentDiv"></div>
 <div id="spacer1" class="spacers"></div>
 <div id="graph"></div>
@@ -9,7 +9,7 @@
     var backgroundList = [];
     var numberOfBackgrounds = 5;
 
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+    randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider(true);
     addPersonaje();
     addGraph("graph");
