@@ -1,4 +1,10 @@
-<div id="start"><p id="startText">Moara Lui Califar</p></div>
+<div id="start">
+    <div id="upperStart">
+        <p id="startTitle">Moara Lui Califar</p>
+    </div>
+    <div id="bottomPart">
+    </div>
+</div>
 <div id="contentDiv1" class="contentDiv"></div>
 <div id="spacer1" class="spacers"></div>
 <div id="graph"></div>
@@ -11,6 +17,7 @@
 
     randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider(true);
+    addRezumat();
     addPersonaje();
     addGraph("graph");
 
@@ -20,5 +27,9 @@
 
     $.get("texts/longLoremIpsum.txt", function (data) {
         $(".contentDiv").append(data);
+    });
+
+    $.get("texts/loremIpsum.txt", function (data) {
+        $("#rezumat").append(data);
     });
 </script>

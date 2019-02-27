@@ -1,4 +1,4 @@
-#graph {
+.graph {
     background-attachment: fixed;
     background-color: moccasin;
     background-position: center;
@@ -8,13 +8,13 @@
     width: 100%;
 }
 
-#nodeData {
+.graphNodeData {
     background-color: #e5cda2;
     flex-basis: 25vw;
     padding: 10% 3%;
     text-align: justify;
 }
 
-#graphCanvasContainer {
+.graphCanvasContainer {
     flex-basis: 75vw;
 }

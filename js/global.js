@@ -143,10 +143,60 @@ function addCuprinsSlider(backButton = false) {
 }
 
 
+function addRezumat() {
+    var rezumatDisableSomeEvents = true;
+
+    $("#bottomPart").append(
+        '<div id="buttonRezumat">Rezumat</div>' +
+        '<div id="rezumat" style="display:none;">' +
+        '<img id="exitRezumat" src="images/icons/exit.png" height="35">' +
+        '</div>'
+    );
+
+    $("#buttonRezumat").on('click', function () {
+        if (rezumatDisableSomeEvents === false)
+            return;
+        rezumatDisableSomeEvents = false;
+        $("#rezumat").css("display", "");
+        animateCss($("#rezumat"), "zoomIn");
+        animateCss($("#buttonRezumat"), "zoomOut", function () {
+            $("#buttonRezumat").css("display", "none");
+            rezumatDisableSomeEvents = true;
+        });
+    });
+    $("#buttonRezumat").on('mouseover', function () {
+        // console.log(rezumatDisableSomeEvents);
+        if (rezumatDisableSomeEvents === false)
+            return;
+        $("#buttonRezumat").css("transform", "scale(1.10)");
+        $("#buttonRezumat").css("background-color", "#ffe6bc");
+    });
+    $("#buttonRezumat").on('mouseleave', function () {
+        $("#buttonRezumat").css("transform", "scale(1)");
+        $("#buttonRezumat").css("background-color", "moccasin");
+    });
+
+    $("#exitRezumat").on('click', function () {
+        if (rezumatDisableSomeEvents === false)
+            return;
+        rezumatDisableSomeEvents = false;
+        $("#buttonRezumat").css("display", "");
+        animateCss($("#buttonRezumat"), "zoomIn");
+        animateCss($("#rezumat"), "zoomOut", function () {
+            $("#rezumat").css("display", "None");
+            rezumatDisableSomeEvents = true;
+        });
+    })
+}
+
+
 function addGraph(element) {
 
+    $("#" + element).addClass("graph");
     $("#" + element).append(
-        '<div id="graphCanvasContainer"></div><div id="nodeData"><div id="nodeDataText"></div></div>'
+        '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer"></div>' +
+        '<div id="' + element + 'NodeData" class="graphNodeData">' +
+        '<div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div>'
     );
 
     let option = {};
@@ -158,10 +208,10 @@ function addGraph(element) {
     let nodeId = 0;
 
     let nodeDataDefault = "Apasa pe orice nod pentru a afla mai multe informatii.";
-    $("#nodeData").empty().append(nodeDataDefault);
+    $("#" + element + "NodeData").empty().append(nodeDataDefault);
 
     // create a network
-    var container = document.getElementById("graphCanvasContainer");
+    var container = document.getElementById(element + "CanvasContainer");
 
     var options = {
         layout: {
@@ -210,10 +260,10 @@ function addGraph(element) {
         };
         var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params) {
-            $("#nodeData").empty().append(data.nodeDataById[params.nodes[0]].data);
+            $("#" + element + "NodeData").empty().append(data.nodeDataById[params.nodes[0]].data);
         });
         network.on("deselectNode", function (params) {
-            $("#nodeData").empty().append(nodeDataDefault);
+            $("#" + element + "NodeData").empty().append(nodeDataDefault);
         });
     });
 }

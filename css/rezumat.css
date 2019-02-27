@@ -1,0 +1,28 @@
+#buttonRezumat {
+    background-color: moccasin;
+    display: inline-block;
+    left: 0;
+    margin: auto;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    width: 100px;
+}
+
+#rezumat {
+    background-color: rgba(229, 205, 162, 0.9);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 5% 25%;
+    position: relative;
+    text-align: justify;
+    width: 100%;
+}
+
+#exitRezumat {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}

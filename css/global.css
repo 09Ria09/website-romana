@@ -16,18 +16,25 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    padding-left: 35px;
-    padding-top: 25vh;
-    width: 100%;
     text-align: center;
+    width: 100%;
 }
 
-#startText {
+#upperStart {
+    padding-top: 25vh;
+}
+
+#startTitle {
     color: white;
-    display: inline-block;
     font-size: 60px;
     text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
+}
+
+#bottomPart {
+    flex-grow: 1;
 }
 
 .noTransition {
