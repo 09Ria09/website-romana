@@ -1,5 +1,4 @@
 #outerContainerPersonaje {
-    background-color: #ccb690;
     height: auto;
     overflow-x: hidden;
     padding: 15px 0;
@@ -14,7 +13,6 @@
 }
 
 .personaje {
-    background-color: moccasin;
     box-sizing: border-box;
     height: 100%;
     padding: 35px 35px;
@@ -22,14 +20,12 @@
 }
 
 .extinderePersonajeContainer {
-    background-color: #e5cda2;
     box-sizing: border-box;
     height: 100%;
     text-align: justify;
 }
 
 .extinderePersonaj {
-    background-color: moccasin;
     box-sizing: border-box;
     height: 100%;
     padding: 35px 35px;

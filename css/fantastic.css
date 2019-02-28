@@ -1,10 +1,29 @@
-#carti {
+.normalBackgroundColor {
     background-color: moccasin;
+}
+
+.lighterBackgroundColor {
+    background-color: #ffe6bc;
+}
+
+.darkBackgroundColor {
+    background-color: #e5cda2;
+}
+
+.darkerBackgroundColor {
+    background-color: #ccb690;
+}
+
+.transparentBackgroundColor {
+    background-color: rgba(255, 228, 181, 0.9);
+}
+
+#carti {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     height: auto;
-    padding: 50px 0 50px 35px;
+    padding: 40px 0 40px 35px;
     position: relative;
     width: 100%;
 }
@@ -13,7 +32,7 @@
     cursor: pointer;
     flex-grow: 1;
     height: 100%;
-    margin: auto 50px;
+    margin: 15px 50px;
     text-align: justify;
     transition-duration: 0.3s;
     transition-timing-function: ease;

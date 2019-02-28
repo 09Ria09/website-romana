@@ -25,9 +25,10 @@ function changePage(page, direction = 'lr') {
     $("body").css("animation-duration", "0.5s");
     $("body")[0].offsetHeight; // flushes CSS buffer
     animateCss($("body"), outAnimation, function () {
-        $("body").empty().attr("id", page + "Body");
-
-        // console.log("Going to "+ page);
+        $("body").empty();
+        $("link[href='css/" + $("body").attr("id").replace("Body", '') + ".css']").remove();
+        $("head").append('<link rel="stylesheet" href="css/' + page + '.css">');
+        $("body").attr("id", page + "Body");
         $.get(page + ".html", function (data) {
 
             $("body").append(data);
@@ -147,8 +148,8 @@ function addRezumat() {
     var rezumatDisableSomeEvents = true;
 
     $("#bottomPart").append(
-        '<div id="buttonRezumat">Rezumat</div>' +
-        '<div id="rezumat" style="display:none;">' +
+        '<div id="buttonRezumat" class="normalBackgroundColor">Rezumat</div>' +
+        '<div id="rezumat" class="transparentBackgroundColor" style="display: none;">' +
         '<img id="exitRezumat" src="images/icons/exit.png" height="35">' +
         '</div>'
     );
@@ -169,11 +170,11 @@ function addRezumat() {
         if (rezumatDisableSomeEvents === false)
             return;
         $("#buttonRezumat").css("transform", "scale(1.10)");
-        $("#buttonRezumat").css("background-color", "#ffe6bc");
+        $("#buttonRezumat").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
     });
     $("#buttonRezumat").on('mouseleave', function () {
         $("#buttonRezumat").css("transform", "scale(1)");
-        $("#buttonRezumat").css("background-color", "moccasin");
+        $("#buttonRezumat").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
     });
 
     $("#exitRezumat").on('click', function () {
@@ -192,10 +193,10 @@ function addRezumat() {
 
 function addGraph(element) {
 
-    $("#" + element).addClass("graph");
+    $("#" + element).addClass("graph normalBackgroundColor");
     $("#" + element).append(
         '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer"></div>' +
-        '<div id="' + element + 'NodeData" class="graphNodeData">' +
+        '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor">' +
         '<div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div>'
     );
 
@@ -273,16 +274,16 @@ function addPersonaje() {
 
     $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/personaje.json", function (data) {
         for (let i = 0; i < data.length; ++i) {
-            $("#outerContainerPersonaje").append(
+            $("#outerContainerPersonaje").addClass("darkerBackgroundColor").append(
                 '<div id="containerPersonaj' + i + '" class="containerPersonaje">' +
-                '<div id    ="personaj' + i + '" class="personaje">' +
+                '<div id    ="personaj' + i + '" class="personaje normalBackgroundColor">' +
                 '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
                 '<h1>' + data[i].nume + '</h1>' +
                 '<p>' + data[i].descriereScurta + '</p>' +
                 '</div>' +
                 '<div id="extinderePersonajContainer' + i +
-                '" class="extinderePersonajeContainer"><div id="extinderePersonaj' + i +
-                '" class="extinderePersonaj">' + data[i].descriereLunga + '</div></div>' +
+                '" class="extinderePersonajeContainer darkBackgroundColor"><div id="extinderePersonaj' + i +
+                '" class="extinderePersonaj normalBackgroundColor">' + data[i].descriereLunga + '</div></div>' +
                 '</div>'
             );
 

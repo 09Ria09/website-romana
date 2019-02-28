@@ -1,5 +1,4 @@
 #buttonRezumat {
-    background-color: moccasin;
     display: inline-block;
     left: 0;
     margin: auto;
@@ -12,7 +11,6 @@
 }
 
 #rezumat {
-    background-color: rgba(229, 205, 162, 0.9);
     box-sizing: border-box;
     height: 100%;
     padding: 5% 25%;
