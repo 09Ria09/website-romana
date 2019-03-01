@@ -16,19 +16,18 @@
     var numberOfBackgrounds = 5;
 
     randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
+    for (let i = 1; i <= $(".spacers").length; ++i) {
+        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+    }
+
     addCuprinsSlider(true);
     addRezumat();
     addPersonaje();
     addGraph("graph");
 
-    for (let i = 1; i <= $(".spacers").length; ++i) {
-        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
-    }
-
-    $.get("texts/longLoremIpsum.txt", function (data) {
-        $(".contentDiv").append(data);
+    $.get("texts/moaraLuiCalifar/tema.html", function (data) {
+        $("#contentDiv1").append(data);
     });
-
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
     });
