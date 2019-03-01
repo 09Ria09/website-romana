@@ -36,6 +36,9 @@ function changePage(page, direction = 'lr') {
                 $("html").css("overflow", "");
                 $("body").css("animation-duration", "");
                 $("body")[0].offsetHeight; // flushes CSS buffer
+                $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+                $("#start").css("background-image", "");
+                $(".spacers").css("background-image", "");
             });
         });
     });
@@ -49,6 +52,7 @@ function randomBackground(element, backgroundList, numberOfBackgrounds) {
     }
     while (backgroundList[rand] === true);
 
+    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png"});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
     element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png)");
     backgroundList[rand] = true;
 }
@@ -60,6 +64,7 @@ const displayedOpacity = 1;
 
 const startTransDuration = "2s";
 const stateTransDuration = "0.5s";
+const state2TransDuration = "0.25s";
 const hoverTransDuration = "0.3s";
 
 let state = "hidden";
@@ -195,8 +200,8 @@ function addGraph(element) {
 
     $("#" + element).addClass("graph normalBackgroundColor");
     $("#" + element).append(
-        '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer"></div>' +
-        '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor">' +
+        '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor wow slideInLeft" data-wow-offset="125"></div>' +
+        '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor wow slideInRight" data-wow-offset="125">' +
         '<div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div>'
     );
 
@@ -249,7 +254,7 @@ function addGraph(element) {
     };
 
     // initialize your network!
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodes&edges.json", function (data) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodesAndEdges.json", function (data) {
         console.log(data);
         // create an array with nodes
         var nodes = new vis.DataSet(data.nodes);
@@ -311,11 +316,13 @@ function addPersonaje() {
             $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
 
             $("#personaj" + i).on("mouseenter", function () {
+                $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '0');
             });
 
             $("#personaj" + i).on("mouseleave", function () {
+                $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
             });

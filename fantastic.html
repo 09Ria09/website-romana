@@ -3,7 +3,9 @@
         <p id="startTitle">Fantasticul</p>
     </div>
 </div>
-<div id="carti" class="normalBackgroundColor"></div>
+<div class="normalBackgroundColor">
+    <div id="carti" class="wow zoomIn" data-wow-offset="25"></div>
+</div>
 
 <script>
     var backgroundList = [];
@@ -14,7 +16,7 @@
         parsed = data.split(/\r?\n/);
         $.each(parsed, function (n, data) {
 
-            $("#carti").append('<div class="carte" id="carte' + n + '"></div>');
+            $("#carti").append('<div id="carte' + n + '" class="carte"></div>');
             $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
 
             $.get("texts/" + data + "/indexDescription.txt", function (data) {
@@ -28,7 +30,7 @@
     });
 
     for (let i = 1; i <= 4; ++i) {
-        $("body").append('<div id="spacer' + i + '"class="spacers"></div>').append('<div class="contentDiv normalBackgroundColor"></div>');
+        $("body").append('<div id="spacer' + i + '" class="spacers"></div>').append('<div class="normalBackgroundColor"><div class="contentDiv wow zoomIn" data-wow-offset="25"></div></div>');
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
