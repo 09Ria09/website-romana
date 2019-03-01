@@ -249,7 +249,7 @@ function addGraph(element) {
     };
 
     // initialize your network!
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + ".json", function (data) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodes&edges.json", function (data) {
         console.log(data);
         // create an array with nodes
         var nodes = new vis.DataSet(data.nodes);
@@ -261,7 +261,10 @@ function addGraph(element) {
         };
         var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params) {
-            $("#" + element + "NodeData").empty().append(data.nodeDataById[params.nodes[0]].data);
+            $("#" + element + "NodeData").empty()
+            $.get('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html', function (data) {
+                $("#" + element + "NodeData").append(data);
+            })
         });
         network.on("deselectNode", function (params) {
             $("#" + element + "NodeData").empty().append(nodeDataDefault);

@@ -5,10 +5,12 @@
     <div id="bottomPart">
     </div>
 </div>
-<div id="contentDiv1" class="contentDiv normalBackgroundColor"></div>
+<div id="tema" class="contentDiv normalBackgroundColor"></div>
 <div id="spacer1" class="spacers"></div>
-<div id="graph"></div>
+<div id="actiune" class="contentDiv normalBackgroundColor"></div>
 <div id="spacer2" class="spacers"></div>
+<div id="graph"></div>
+<div id="spacer3" class="spacers"></div>
 <div id="outerContainerPersonaje"></div>
 
 <script>
@@ -26,7 +28,10 @@
     addGraph("graph");
 
     $.get("texts/moaraLuiCalifar/tema.html", function (data) {
-        $("#contentDiv1").append(data);
+        $("#tema").append(data);
+    });
+    $.get("texts/loremIpsum.txt", function (data) {
+        $("#actiune").append(data);
     });
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
