@@ -40,4 +40,6 @@
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
     });
+
+    $(window).trigger('resize');
 </script>

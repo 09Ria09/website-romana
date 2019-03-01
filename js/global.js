@@ -32,13 +32,16 @@ function changePage(page, direction = 'lr') {
         $.get(page + ".html", function (data) {
 
             $("body").append(data);
+            window.scrollTo(0, 0);
             animateCss($("body"), inAnimation, function () {
                 $("html").css("overflow", "");
                 $("body").css("animation-duration", "");
                 $("body")[0].offsetHeight; // flushes CSS buffer
-                $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-                $("#start").css("background-image", "");
-                $(".spacers").css("background-image", "");
+                $(function () {
+                    $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+                    $("#start").css("background-image", "");
+                    $(".spacers").css("background-image", "");
+                });
             });
         });
     });

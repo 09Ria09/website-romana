@@ -7,7 +7,7 @@
             src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <script src="/js/parallax.min.1.4.2.js"></script>
+    <script src="/js/parallax.min.1.5.0.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
@@ -24,9 +24,12 @@
     $("head").append('<link rel="stylesheet" href="css/fantastic.css">');
     $.get("fantastic.html", function (data) {
         $("body").append(data);
-        $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-        $("#start").css("background-image", "");
-        $(".spacers").css("background-image", "");
+        $(function () {
+            $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+            $("#start").css("background-image", "");
+            $(".spacers").css("background-image", "");
+            window.scrollTo(0, 0);
+        });
     });
     $("#indexInitScript").remove();
 </script>

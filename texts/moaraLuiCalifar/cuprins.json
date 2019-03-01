@@ -4,11 +4,15 @@
     "href": "#start"
   },
   {
-    "text": "Text",
-    "href": "#contentDiv1"
+    "text": "Tema",
+    "href": "#tema"
   },
   {
-    "text": "Repere spatio-temporale",
+    "text": "Actiune",
+    "href": "#actiune"
+  },
+  {
+    "text": "Spatio-Temporalitatea",
     "href": "#graph"
   },
   {
