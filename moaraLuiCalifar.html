@@ -28,18 +28,17 @@
 
     addCuprinsSlider(true);
     addRezumat();
-    addPersonaje();
-    addGraph("graph");
-
-    $.get("texts/moaraLuiCalifar/tema.html", function (data) {
-        $("#tema").append(data);
-    });
-    $.get("texts/loremIpsum.txt", function (data) {
-        $("#actiune").append(data);
-    });
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
     });
+    $.get("texts/moaraLuiCalifar/tema.html", function (data) {
+        $("#tema").append(data);
+    });
+    $.get("texts/moaraLuiCalifar/actiune.html", function (data) {
+        $("#actiune").append(data);
+    });
+    addGraph("graph");
+    addPersonaje();
 
     $(function () {
         $(window).trigger('resize');

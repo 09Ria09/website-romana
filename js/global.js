@@ -288,7 +288,7 @@ function addPersonaje() {
             $("#outerContainerPersonaje").addClass("darkerBackgroundColor").append(
                 '<div id="containerPersonaj' + i + '" class="containerPersonaje">' +
                 '<div id    ="personaj' + i + '" class="personaje normalBackgroundColor">' +
-                '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
+                // '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
                 '<h1>' + data[i].nume + '</h1>' +
                 '<p>' + data[i].descriereScurta + '</p>' +
                 '</div>' +
@@ -317,6 +317,13 @@ function addPersonaje() {
             $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
             $("#extinderePersonajContainer" + i).removeClass("noTransition");
             $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
+
+            $(window).on("resize", function () {
+                $(".extinderePersonajeContainer").addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
+                $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
+                $(".extinderePersonajeContainer").removeClass("noTransition");
+                $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
+            });
 
             $("#personaj" + i).on("mouseenter", function () {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");

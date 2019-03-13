@@ -1,0 +1,52 @@
+<div id="start">
+    <div id="upperStart">
+        <p id="startTitle">La hanul lui Manjoala</p>
+    </div>
+    <div id="bottomPart">
+    </div>
+</div>
+<div class="normalBackgroundColor">
+    <div id="tema" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+</div>
+<div id="spacer1" class="spacers"></div>
+<div class="normalBackgroundColor">
+    <div id="actiune" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+</div>
+<div id="spacer2" class="spacers"></div>
+<div id="graph" class="darkerBackgroundColor"></div>
+<div id="spacer3" class="spacers"></div>
+<div id="outerContainerPersonaje"></div>
+
+<script>
+    var backgroundList = [];
+    var numberOfBackgrounds = 5;
+
+    randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
+    for (let i = 1; i <= $(".spacers").length; ++i) {
+        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+    }
+
+    addCuprinsSlider(true);
+    addRezumat();
+    $.get("texts/loremIpsum.txt", function (data) {
+        $("#rezumat").append(data);
+    });
+    $.get("texts/laHanulLuiManjoala/titlu.html", function (data) {
+        $("#tema").append(data);
+    });
+    $.get("texts/laHanulLuiManjoala/tema.html", function (data) {
+        $("#tema").append(data);
+    });
+    $.get("texts/laHanulLuiManjoala/actiune.html", function (data) {
+        $("#actiune").append(data);
+    });
+    $.get("texts/laHanulLuiManjoala/perspectivaNarativa.html", function (data) {
+        $("#tema").append(data);
+    });
+    addGraph("graph");
+    addPersonaje();
+
+    $(function () {
+        $(window).trigger('resize');
+    });
+</script>

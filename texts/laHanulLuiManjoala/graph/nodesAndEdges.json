@@ -1,0 +1,142 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "label": "Temporalitate",
+      "level": 0
+    },
+    {
+      "id": "1",
+      "label": "Repere",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "label": "Motivul: Avansului Temporal",
+      "level": 1
+    },
+    {
+      "id": "3",
+      "label": "Reper 1",
+      "level": 2
+    },
+    {
+      "id": "4",
+      "label": "Reper 2",
+      "level": 2
+    },
+    {
+      "id": "5",
+      "label": "Reper 3",
+      "level": 2
+    },
+    {
+      "id": "6",
+      "label": "Spatialitate",
+      "level": 0
+    },
+    {
+      "id": "7",
+      "label": "Repere",
+      "level": 1
+    },
+    {
+      "id": "8",
+      "label": "Satul Ălăutesti",
+      "level": 2
+    },
+    {
+      "id": "9",
+      "label": "Padurea",
+      "level": 2
+    },
+    {
+      "id": "10",
+      "label": "Iazul si moara",
+      "level": 2
+    },
+    {
+      "id": "11",
+      "label": "Cronotopul: Hanul",
+      "level": 2
+    },
+    {
+      "id": "12",
+      "label": "Influente",
+      "level": 3
+    },
+    {
+      "id": "13",
+      "label": "Pozitive",
+      "level": 4
+    },
+    {
+      "id": "14",
+      "label": "Negative",
+      "level": 4
+    },
+    {
+      "id": "15",
+      "label": "Descriere",
+      "level": 3
+    }
+  ],
+  "edges": [
+    {
+      "from": "0",
+      "to": "1"
+    },
+    {
+      "from": "0",
+      "to": "2"
+    },
+    {
+      "from": "1",
+      "to": "3"
+    },
+    {
+      "from": "1",
+      "to": "4"
+    },
+    {
+      "from": "1",
+      "to": "5"
+    },
+    {
+      "from": "6",
+      "to": "7"
+    },
+    {
+      "from": "6",
+      "to": "11"
+    },
+    {
+      "from": "7",
+      "to": "8"
+    },
+    {
+      "from": "7",
+      "to": "9"
+    },
+    {
+      "from": "7",
+      "to": "10"
+    },
+    {
+      "from": "11",
+      "to": "12"
+    },
+    {
+      "from": "11",
+      "to": "15"
+    },
+    {
+      "from": "12",
+      "to": "13"
+    },
+    {
+      "from": "12",
+      "to": "14"
+    }
+  ]
+}
