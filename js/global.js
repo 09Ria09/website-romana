@@ -55,7 +55,7 @@ function randomBackground(element, backgroundList, numberOfBackgrounds) {
     }
     while (backgroundList[rand] === true);
 
-    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png"});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png", bleed: 150});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
     element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png)");
     backgroundList[rand] = true;
 }
