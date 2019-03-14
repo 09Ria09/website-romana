@@ -1,0 +1,30 @@
+[
+  {
+    "text": "Start",
+    "href": "#start"
+  },
+  {
+    "text": "Analiza Titlului",
+    "href": "#titlu"
+  },
+  {
+    "text": "Tema",
+    "href": "#tema"
+  },
+  {
+    "text": "Actiune",
+    "href": "#actiune"
+  },
+  {
+    "text": "Perspectiva Narativa",
+    "href": "#perspectivaNarativa"
+  },
+  {
+    "text": "Spatio-Temporalitatea",
+    "href": "#graph"
+  },
+  {
+    "text": "Personaje",
+    "href": "#outerContainerPersonaje"
+  }
+]

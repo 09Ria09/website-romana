@@ -25,13 +25,12 @@ function changePage(page, direction = 'lr') {
     $("body").css("animation-duration", "0.5s");
     $("body")[0].offsetHeight; // flushes CSS buffer
     animateCss($("body"), outAnimation, function () {
+        $(window).off("resize.personaje");
         $("body").empty();
         $("link[href='css/" + $("body").attr("id").replace("Body", '') + ".css']").remove();
         $("head").append('<link rel="stylesheet" href="css/' + page + '.css">');
         $("body").attr("id", page + "Body");
-        $.get(page + ".html", function (data) {
-
-            $("body").append(data);
+        $("body").load(page + ".html", function () {
             window.scrollTo(0, 0);
             animateCss($("body"), inAnimation, function () {
                 $("html").css("overflow", "");
@@ -55,7 +54,7 @@ function randomBackground(element, backgroundList, numberOfBackgrounds) {
     }
     while (backgroundList[rand] === true);
 
-    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png", bleed: 150});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png"/* , bleed: 150 */});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
     element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png)");
     backgroundList[rand] = true;
 }
@@ -269,10 +268,8 @@ function addGraph(element) {
         };
         var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params) {
-            $("#" + element + "NodeData").empty()
-            $.get('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html', function (data) {
-                $("#" + element + "NodeData").append(data);
-            })
+            $("#" + element + "NodeData").empty();
+            $("#" + element + "NodeData").load('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html');
         });
         network.on("deselectNode", function (params) {
             $("#" + element + "NodeData").empty().append(nodeDataDefault);
@@ -318,7 +315,7 @@ function addPersonaje() {
             $("#extinderePersonajContainer" + i).removeClass("noTransition");
             $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
 
-            $(window).on("resize", function () {
+            $(window).on("resize.personaje", function () {
                 $(".extinderePersonajeContainer").addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
                 $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
                 $(".extinderePersonajeContainer").removeClass("noTransition");

@@ -11,22 +11,22 @@
     var backgroundList = [];
     var numberOfBackgrounds = 5;
 
-    $.get("carti.txt", function (data) {
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+    addCuprinsSlider();
 
-        parsed = data.split(/\r?\n/);
-        $.each(parsed, function (n, data) {
+    $.getJSON("texts/carti.json", function (data) {
+        for (let i = 0; i < data.length; ++i) {
+            $("#carti").append('<div id="carte' + i + '" class="carte"></div>');
+            $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '.jpg">');
 
-            $("#carti").append('<div id="carte' + n + '" class="carte"></div>');
-            $("#carte" + n).append('<img class="imagineCarte" src="images/' + data + '.jpg">');
-
-            $.get("texts/" + data + "/indexDescription.txt", function (data) {
-                $("#carte" + n).append('<p>' + data + '<\p>');
+            $.get("texts/" + data[i].id + "/indexDescription.html", function (data) {
+                $("#carte" + i).append(data);
             });
 
-            $("#carte" + n).on("click", function () {
-                changePage(data);
+            $("#carte" + i).on("click", function () {
+                changePage(data[i].id);
             });
-        });
+        }
     });
 
     for (let i = 1; i <= 4; ++i) {
@@ -34,12 +34,7 @@
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
-    $.get("texts/longLoremIpsum.txt", function (data) {
-        $(".contentDiv").append(data);
-    });
-
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
-    addCuprinsSlider();
+    $(".contentDiv").load("texts/longLoremIpsum.txt");
 
     $(function () {
         $(window).trigger('resize');

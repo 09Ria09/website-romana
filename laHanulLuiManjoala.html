@@ -5,44 +5,55 @@
     <div id="bottomPart">
     </div>
 </div>
+
+<div class="normalBackgroundColor">
+    <div id="titlu" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+</div>
+
+<div id="spacer1" class="spacers"></div>
+
 <div class="normalBackgroundColor">
     <div id="tema" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
 </div>
-<div id="spacer1" class="spacers"></div>
+
+<div id="spacer2" class="spacers"></div>
+
 <div class="normalBackgroundColor">
     <div id="actiune" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
 </div>
-<div id="spacer2" class="spacers"></div>
-<div id="graph" class="darkerBackgroundColor"></div>
+
 <div id="spacer3" class="spacers"></div>
+
+<div class="normalBackgroundColor">
+    <div id="perspectivaNarativa" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+</div>
+
+<div id="spacer4" class="spacers"></div>
+
+<div id="graph" class="darkerBackgroundColor"></div>
+
+<div id="spacer5" class="spacers"></div>
+
 <div id="outerContainerPersonaje"></div>
 
 <script>
     var backgroundList = [];
-    var numberOfBackgrounds = 5;
+    var numberOfBackgrounds = 7;
 
-    randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+    addCuprinsSlider(true);
+    addRezumat();
     for (let i = 1; i <= $(".spacers").length; ++i) {
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
-    addCuprinsSlider(true);
-    addRezumat();
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
     });
-    $.get("texts/laHanulLuiManjoala/titlu.html", function (data) {
-        $("#tema").append(data);
-    });
-    $.get("texts/laHanulLuiManjoala/tema.html", function (data) {
-        $("#tema").append(data);
-    });
-    $.get("texts/laHanulLuiManjoala/actiune.html", function (data) {
-        $("#actiune").append(data);
-    });
-    $.get("texts/laHanulLuiManjoala/perspectivaNarativa.html", function (data) {
-        $("#tema").append(data);
-    });
+    $("#titlu").load("texts/laHanulLuiManjoala/titlu.html");
+    $("#tema").load("texts/laHanulLuiManjoala/tema.html");
+    $("#actiune").load("texts/laHanulLuiManjoala/actiune.html");
+    $("#perspectivaNarativa").load("texts/laHanulLuiManjoala/perspectivaNarativa.html");
     addGraph("graph");
     addPersonaje();
 

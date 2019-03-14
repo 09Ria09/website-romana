@@ -74,11 +74,6 @@
       "id": "14",
       "label": "Negative",
       "level": 4
-    },
-    {
-      "id": "15",
-      "label": "Descriere",
-      "level": 3
     }
   ],
   "edges": [
@@ -125,10 +120,6 @@
     {
       "from": "11",
       "to": "12"
-    },
-    {
-      "from": "11",
-      "to": "15"
     },
     {
       "from": "12",

@@ -21,22 +21,18 @@
     var backgroundList = [];
     var numberOfBackgrounds = 5;
 
-    randomBackground($("#start, #backgroundBlur"), backgroundList, numberOfBackgrounds);
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
+    addCuprinsSlider(true);
+    addRezumat();
     for (let i = 1; i <= $(".spacers").length; ++i) {
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
-    addCuprinsSlider(true);
-    addRezumat();
     $.get("texts/loremIpsum.txt", function (data) {
         $("#rezumat").append(data);
     });
-    $.get("texts/moaraLuiCalifar/tema.html", function (data) {
-        $("#tema").append(data);
-    });
-    $.get("texts/moaraLuiCalifar/actiune.html", function (data) {
-        $("#actiune").append(data);
-    });
+    $("#tema").load("texts/moaraLuiCalifar/tema.html");
+    $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
     addGraph("graph");
     addPersonaje();
 
