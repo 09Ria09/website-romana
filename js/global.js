@@ -11,45 +11,33 @@ function animateCss(element, animationName, callback) {
 }
 
 
-function changePage(page, direction = 'lr') {
-    let outAnimation = "rotateOutDownRight";
-    let inAnimation = "rotateInDownRight";
-    if (direction === 'rl') {
-        inAnimation = inAnimation.replace("Right", "Left");
-        outAnimation = outAnimation.replace("Right", "Left");
-    }
-
-    $("html").css("overflow", "hidden");
-    $("html")[0].offsetHeight; // flushes CSS buffer
-
-    $("body").css("animation-duration", "0.5s");
-    $("body")[0].offsetHeight; // flushes CSS buffer
-    animateCss($("body"), outAnimation, function () {
+function changePage(page) {
+    $("body").empty();
+    $("body").append("<div id='preloader'><img id='preloaderImage' src='images/copper-loader.gif' ></div>");
+    animateCss($("#preloader"), "fadeIn", function () {
         $(window).off("resize.personaje");
-        $("body").empty();
+
         $("link[href='css/" + $("body").attr("id").replace("Body", '') + ".css']").remove();
         $("head").append('<link rel="stylesheet" href="css/' + page + '.css">');
+
         $("body").attr("id", page + "Body");
-        $("body").load(page + ".html", function () {
-            window.scrollTo(0, 0);
-            animateCss($("body"), inAnimation, function () {
-                $("html").css("overflow", "");
-                $("body").css("animation-duration", "");
-                $("body")[0].offsetHeight; // flushes CSS buffer
-                $(function () {
-                    $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-                    for (let i = 0; i < movableParallaxElements.length; ++i) {
-                        movableParallaxElements[i].css("background-image", "");
-                    }
-                });
+        $.get(page + ".html", function (data) {
+            $("html").css("overflow-y", "hidden");
+            $("body").append(data);
+            $(function () {
+                window.scrollTo(0, 0);
+            });
+            $("#preloader").css("animation-delay", "0.5s");
+            animateCss($("#preloader"), "fadeOut", function () {
+                AOS.refresh();
+                $("#preloader").remove();
+                $("html").css("overflow-y", "");
             });
         });
     });
 }
 
-var movableParallaxElements = [];
-
-function randomBackground(element, backgroundList, numberOfBackgrounds, movableParallax = false) {
+function randomBackground(element, backgroundList, numberOfBackgrounds) {
     let rand;
     do {
         rand = Math.floor((Math.random() * numberOfBackgrounds) + 1);
@@ -57,13 +45,8 @@ function randomBackground(element, backgroundList, numberOfBackgrounds, movableP
     while (backgroundList[rand] === true);
 
     element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".jpg)");
-    if (movableParallax == true) {
-        element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".jpg"/* , bleed: 150 */});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-        movableParallaxElements.push(element);
-    }
     backgroundList[rand] = true;
 }
-
 
 const hiddenOpacity = 0.1;
 const hoverOpacity = 0.8;
@@ -74,17 +57,16 @@ const stateTransDuration = "0.5s";
 const state2TransDuration = "0.25s";
 const hoverTransDuration = "0.3s";
 
-let state = "hidden";
-let hovered = false;
-
 function addCuprinsSlider(backButton = false) {
+    let state = "hidden";
+    let hovered = false;
 
     if (backButton === false)
         $("body").prepend('<div id="cuprinsSlideContainer"><div id="cuprins"></div><div id="slider">Cuprins</div></div>');
     else {
         $("body").prepend('<div id="cuprinsSlideContainer"><div id="cuprins"></div><div id="slider" style="display: flex">' +
             '<div style="flex-basis: 95vh">Cuprins</div>' +
-            '<div id="back" style="flex-basis: 5vh; padding: 15px 0; border-top: 1px solid white">Inapoi</div>' +
+            '<div id="back">Inapoi</div>' +
             '</div></div>');
     }
 
@@ -93,10 +75,12 @@ function addCuprinsSlider(backButton = false) {
             $("#cuprins").append('<a class="textCuprins" id="textCuprins' + i + '" href="' + data[i].href + '" style="margin: auto;">' + data[i].text + '</a>');
         }
 
-        $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
-        $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
-        $("#cuprinsSlideContainer").removeClass("noTransition");
-        $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+        $(function () {
+            $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
+            $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+            $("#cuprinsSlideContainer").removeClass("noTransition");
+            $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+        });
 
     });
 
@@ -114,7 +98,7 @@ function addCuprinsSlider(backButton = false) {
             }
         });
 
-        $("#cuprinsSlideContainer").on("mouseleave", function () {
+        $("#cuprinsSlideContainer").on("mouseout", function () {
             hovered = false;
             if (state === "hidden") {
                 $("#cuprinsSlideContainer").css("transition-duration", hoverTransDuration).css("transition-timing-function", "ease").css("opacity", hiddenOpacity);
@@ -184,7 +168,7 @@ function addRezumat() {
         $("#buttonRezumat").css("transform", "scale(1.10)");
         $("#buttonRezumat").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
     });
-    $("#buttonRezumat").on('mouseleave', function () {
+    $("#buttonRezumat").on('mouseout', function () {
         $("#buttonRezumat").css("transform", "scale(1)");
         $("#buttonRezumat").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
     });
@@ -207,8 +191,8 @@ function addGraph(element) {
 
     $("#" + element).addClass("graph normalBackgroundColor");
     $("#" + element).append(
-        '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor wow slideInLeft" data-wow-offset="125"></div>' +
-        '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor wow slideInRight" data-wow-offset="125">' +
+        '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor" data-aos="slide-right"></div>' +
+        '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor" data-aos="slide-left">' +
         '<div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div>'
     );
 
@@ -333,7 +317,7 @@ function addPersonaje() {
                     .css("margin-" + slideMargin, '0');
             });
 
-            $("#personaj" + i).on("mouseleave", function () {
+            $("#personaj" + i).on("mouseout", function () {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');

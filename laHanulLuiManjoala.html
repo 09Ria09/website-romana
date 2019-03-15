@@ -7,25 +7,25 @@
 </div>
 
 <div class="normalBackgroundColor">
-    <div id="titlu" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="titlu" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div id="spacer1" class="spacers"></div>
 
 <div class="normalBackgroundColor">
-    <div id="tema" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div id="spacer2" class="spacers"></div>
 
 <div class="normalBackgroundColor">
-    <div id="actiune" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="actiune" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div id="spacer3" class="spacers"></div>
 
 <div class="normalBackgroundColor">
-    <div id="perspectivaNarativa" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="perspectivaNarativa" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div id="spacer4" class="spacers"></div>
@@ -40,7 +40,7 @@
     var backgroundList = [];
     var numberOfBackgrounds = 7;
 
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds, false);
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider(true);
     addRezumat();
     for (let i = 1; i <= $(".spacers").length; ++i) {
@@ -56,8 +56,5 @@
     $("#perspectivaNarativa").load("texts/laHanulLuiManjoala/perspectivaNarativa.html");
     addGraph("graph");
     addPersonaje();
-
-    $(function () {
-        $(window).trigger('resize');
-    });
+    AOS.refresh();
 </script>

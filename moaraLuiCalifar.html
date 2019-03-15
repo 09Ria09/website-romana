@@ -6,11 +6,11 @@
     </div>
 </div>
 <div class="normalBackgroundColor">
-    <div id="tema" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 <div id="spacer1" class="spacers"></div>
 <div class="normalBackgroundColor">
-    <div id="actiune" class="contentDiv wow zoomIn" data-wow-offset="25"></div>
+    <div id="actiune" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 <div id="spacer2" class="spacers"></div>
 <div id="graph" class="darkerBackgroundColor"></div>
@@ -21,7 +21,7 @@
     var backgroundList = [];
     var numberOfBackgrounds = 5;
 
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds, false);
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider(true);
     addRezumat();
     for (let i = 1; i <= $(".spacers").length; ++i) {
@@ -35,8 +35,5 @@
     $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
     addGraph("graph");
     addPersonaje();
-
-    $(function () {
-        $(window).trigger('resize');
-    });
+    AOS.refresh();
 </script>

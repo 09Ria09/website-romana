@@ -4,14 +4,14 @@
     </div>
 </div>
 <div class="normalBackgroundColor">
-    <div id="carti" class="wow zoomIn" data-wow-offset="25"></div>
+    <div id="carti" data-aos="zoom-in"></div>
 </div>
 
 <script>
     var backgroundList = [];
     var numberOfBackgrounds = 5;
 
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds, false);
+    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider();
 
     $.getJSON("texts/carti.json", function (data) {
@@ -30,13 +30,9 @@
     });
 
     for (let i = 1; i <= 4; ++i) {
-        $("body").append('<div id="spacer' + i + '" class="spacers"></div>').append('<div class="normalBackgroundColor"><div class="contentDiv wow zoomIn" data-wow-offset="25"></div></div>');
+        $("body").append('<div id="spacer' + i + '" class="spacers"></div>').append('<div class="normalBackgroundColor"><div class="contentDiv" data-aos="zoom-in"></div></div>');
         randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
     }
 
     $(".contentDiv").load("texts/longLoremIpsum.txt");
-
-    $(function () {
-        $(window).trigger('resize');
-    });
 </script>
