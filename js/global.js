@@ -38,24 +38,29 @@ function changePage(page, direction = 'lr') {
                 $("body")[0].offsetHeight; // flushes CSS buffer
                 $(function () {
                     $(window).trigger('resize');  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-                    $("#start").css("background-image", "");
-                    $(".spacers").css("background-image", "");
+                    for (let i = 0; i < movableParallaxElements.length; ++i) {
+                        movableParallaxElements[i].css("background-image", "");
+                    }
                 });
             });
         });
     });
 }
 
+var movableParallaxElements = [];
 
-function randomBackground(element, backgroundList, numberOfBackgrounds) {
+function randomBackground(element, backgroundList, numberOfBackgrounds, movableParallax = false) {
     let rand;
     do {
         rand = Math.floor((Math.random() * numberOfBackgrounds) + 1);
     }
     while (backgroundList[rand] === true);
 
-    element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png"/* , bleed: 150 */});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
-    element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".png)");
+    element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".jpg)");
+    if (movableParallax == true) {
+        element.parallax({imageSrc: "images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".jpg"/* , bleed: 150 */});  // parallax effect breaks if it's loaded before the elements are stationary, so, during the animation, background-image is set
+        movableParallaxElements.push(element);
+    }
     backgroundList[rand] = true;
 }
 
