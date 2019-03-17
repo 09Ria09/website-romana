@@ -1,4 +1,5 @@
 html, body {
+    background-color: black;
     margin: 0;
     overflow: auto;
     padding: 0;
@@ -11,22 +12,22 @@ body {
     overflow-x: hidden;
 }
 
-#preloader {
+#preloaderContainer {
     animation-duration: 0.5s;
-    background-color: white;
+    background-color: black;
     box-sizing: border-box;
     height: 100vh;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     z-index: 1000;
 }
 
-#preloaderImage {
+#preloader {
     left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -75%);
-    z-index: 1000;
+    z-index: 1001;
 }
 
 #start {
@@ -37,7 +38,8 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 111vh;
+    position: relative;
     text-align: center;
     width: 100%;
 }
@@ -63,13 +65,14 @@ body {
 .contentDiv {
     box-sizing: border-box;
     color: black;
-    padding: 5vh 10vw;
+    padding: 5vh 25vw;
     text-align: justify;
     width: 100%;
 }
 
 .spacerContainer {
-    height: 50vh;
+    height: 55vh;
+    margin: -5px 0;
     position: relative;
 }
 
@@ -79,11 +82,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    height: 50vh;
+    height: 55vh;
     left: 0;
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 .spacerTrianglesTL {
@@ -112,7 +115,6 @@ body {
     width: 0;
     z-index: 2;
 }
-
 
 @media screen and (min-height: 1081px) {
     #start, .spacers {

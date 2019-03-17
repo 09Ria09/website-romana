@@ -4,21 +4,47 @@
     </div>
     <div id="bottomPart">
     </div>
+    <div class="spacerTrianglesBR"></div>
 </div>
+
 <div class="normalBackgroundColor">
     <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
 </div>
-<div id="spacer1" class="spacers"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer1" class="spacers"></div>
+    <div class="spacerTrianglesBR"></div>
+</div>
+
 <div class="normalBackgroundColor">
     <div id="structuraText" class="contentDiv" data-aos="zoom-in"></div>
 </div>
-<div id="spacer2" class="spacers"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer2" class="spacers"></div>
+    <div class="spacerTrianglesBR"></div>
+</div>
+
 <div class="normalBackgroundColor">
     <div id="actiune" class="contentDiv" data-aos="zoom-in"></div>
 </div>
-<div id="spacer3" class="spacers"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer3" class="spacers"></div>
+    <div class="spacerTrianglesBR" data-border-color="darkerBackgroundColor"></div>
+</div>
+
 <div id="graph" class="darkerBackgroundColor"></div>
-<div id="spacer4" class="spacers"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL" data-border-color="darkerBackgroundColor"></div>
+    <div id="spacer4" class="spacers"></div>
+    <div class="spacerTrianglesBR" data-border-color="darkerBackgroundColor"></div>
+</div>
+
 <div id="outerContainerPersonaje"></div>
 
 <script>
@@ -29,7 +55,8 @@
     addBackground($("#start"), backgroundList);
 
     // addRezumat();
-    for (let i = 1; i <= $(".spacers").length; ++i) {
+    for (let i = 1; i <= $(".spacers").length; ++i)
+    {
         addBackground($("#spacer" + i), backgroundList);
     }
 

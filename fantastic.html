@@ -2,6 +2,7 @@
     <div id="upperStart">
         <p id="startTitle">Fantasticul</p>
     </div>
+    <div class="spacerTrianglesBR"></div>
 </div>
 <div class="normalBackgroundColor">
     <div id="carti" data-aos="zoom-in"></div>
@@ -14,24 +15,29 @@
     backgroundList = shuffleArray(backgroundList);
     addBackground($("#start"), backgroundList);
 
-    $.getJSON("texts/pages.json", function (data) {
-        for (let i = 0; i < data.length; ++i) {
+    $.getJSON("texts/pages.json", function (data)
+    {
+        for (let i = 0; i < data.length; ++i)
+        {
             if (data[i].id === "fantastic")
                 continue;
             $("#carti").append('<div id="carte' + i + '" class="carte"></div>');
             $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '.jpg">');
 
-            $.get("texts/" + data[i].id + "/indexDescription.html", function (data) {
+            $.get("texts/" + data[i].id + "/indexDescription.html", function (data)
+            {
                 $("#carte" + i).append(data);
             });
 
-            $("#carte" + i).on("click", function () {
+            $("#carte" + i).on("click", function ()
+            {
                 changePage(data[i].id);
             });
         }
     });
 
-    for (let i = 1; i <= 4; ++i) {
+    for (let i = 1; i <= 4; ++i)
+    {
         $("body").append('<div class="spacerContainer"><div class="spacerTrianglesTL"></div><div id="spacer' + i + '" class="spacers"></div><div class="spacerTrianglesBR"></div></div>').append('<div class="normalBackgroundColor"><div class="contentDiv" data-aos="zoom-in"></div></div>');
         addBackground($("#spacer" + i), backgroundList);
     }

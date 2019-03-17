@@ -1,7 +1,9 @@
-function animateCss(element, animationName, callback) {
+function animateCss(element, animationName, callback)
+{
     element.addClass("animated" + ' ' + animationName);
 
-    function handleAnimationEnd() {
+    function handleAnimationEnd()
+    {
         element.removeClass("animated" + ' ' + animationName);
 
         if (typeof callback === 'function') callback()
@@ -11,45 +13,69 @@ function animateCss(element, animationName, callback) {
 }
 
 
-function changePage(page) {
-    $.getJSON("texts/pages.json", function (data) {
-        for (let i = 0; i < data.length; ++i) {
-            if (data[i].id === page) {
+function changePage(page)
+{
+    $.getJSON("texts/pages.json", function (data)
+    {
+        for (let i = 0; i < data.length; ++i)
+        {
+            if (data[i].id === page)
+            {
                 document.title = data[i].name;
                 break;
             }
         }
     });
     $("body").empty();
-    $("body").append("<div id='preloader'><img id='preloaderImage' src='images/copper-loader.gif' ></div>");
-    animateCss($("#preloader"), "fadeIn", function () {
+    $("body").prepend("<div id='preloaderContainer'><div id='preloader' class='line-scale'><div></div><div></div><div></div><div></div><div></div></div></div>");
+    animateCss($("#preloaderContainer"), "fadeIn", function ()
+    {
         $(window).off("resize.personaje");
+        $(window).off("resize.graph");
 
         $("link[href='css/" + $("body").attr("id").replace("Body", '') + ".css']").remove();
         $("head").append('<link rel="stylesheet" href="css/' + page + '.css">');
 
         $("body").attr("id", page + "Body");
-        $.get(page + ".html", function (data) {
+        $.get(page + ".html", function (data)
+        {
             $("html").css("overflow-y", "hidden");
             $("body").append(data);
-            $(".spacerTrianglesTL").css("border-top-color", $(".normalBackgroundColor").css("background-color"));
-            $(".spacerTrianglesBR").css("border-bottom-color", $(".normalBackgroundColor").css("background-color"));
-            $(function () {
-                window.scrollTo(0, 0);
+            window.scrollTo(0, 0);
+
+            $(".spacerTrianglesTL").each(function (n, element)
+            {
+                let color = "normalBackgroundColor";
+                if ($(element)[0].hasAttribute("data-border-color"))
+                    color = $(element).attr("data-border-color");
+                $(element).css("border-top-color", $('.' + color).css("background-color"));
             });
-            $("#preloader").css("animation-delay", "0.5s");
-            animateCss($("#preloader"), "fadeOut", function () {
+
+            $(".spacerTrianglesBR").each(function (n, element)
+            {
+                let color = "normalBackgroundColor";
+                if ($(element)[0].hasAttribute("data-border-color"))
+                    color = $(element).attr("data-border-color");
+                $(element).css("border-bottom-color", $('.' + color).css("background-color"));
+            });
+
+            $("#preloaderContainer").css("animation-delay", "0.5s");
+            animateCss($("#preloaderContainer"), "fadeOut", function ()
+            {
                 AOS.refresh();
-                $("#preloader").remove();
+                $("#preloaderContainer").remove();
                 $("html").css("overflow-y", "");
             });
         });
     });
 }
 
-function addBackground(element, backgroundList) {
-    for (let i = 0; i < backgroundList.length; ++i) {
-        if (backgroundList[i] !== -1) {
+function addBackground(element, backgroundList)
+{
+    for (let i = 0; i < backgroundList.length; ++i)
+    {
+        if (backgroundList[i] !== -1)
+        {
             element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg)");
             backgroundList[i] = -1;
             return;
@@ -68,25 +94,30 @@ const stateTransDuration = "0.5s";
 const state2TransDuration = "0.25s";
 const hoverTransDuration = "0.3s";
 
-function addCuprinsSlider(backButton = false) {
+function addCuprinsSlider(backButton = false)
+{
     let state = "hidden";
     let hovered = false;
 
     if (backButton === false)
         $("body").prepend('<div id="cuprinsSlideContainer"><div id="cuprins"></div><div id="slider">Cuprins</div></div>');
-    else {
+    else
+    {
         $("body").prepend('<div id="cuprinsSlideContainer"><div id="cuprins"></div><div id="slider" style="display: flex">' +
             '<div style="flex-basis: 95vh">Cuprins</div>' +
             '<div id="back">Inapoi</div>' +
             '</div></div>');
     }
 
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/cuprins.json", function (data) {
-        for (let i = 0; i < data.length; ++i) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/cuprins.json", function (data)
+    {
+        for (let i = 0; i < data.length; ++i)
+        {
             $("#cuprins").append('<a class="textCuprins" id="textCuprins' + i + '" href="' + data[i].href + '" style="margin: auto;">' + data[i].text + '</a>');
         }
 
-        $(function () {
+        $(function ()
+        {
             $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
             $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
             $("#cuprinsSlideContainer").removeClass("noTransition");
@@ -95,27 +126,34 @@ function addCuprinsSlider(backButton = false) {
 
     });
 
-    animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
-        setTimeout(function () {
+    animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function ()
+    {
+        setTimeout(function ()
+        {
             if (state === "hidden" && hovered === false)
                 $("#cuprinsSlideContainer").css("transition-duration", startTransDuration).css("transition-timing-function", "ease").css("opacity", hiddenOpacity);
         }, 1000);
 
-        $("#cuprinsSlideContainer").on("mouseenter", function () {
+        $("#cuprinsSlideContainer").on("mouseenter", function ()
+        {
             hovered = true;
-            if (state === "hidden") {
+            if (state === "hidden")
+            {
                 $("#cuprinsSlideContainer").css("transition-duration", hoverTransDuration).css("transition-timing-function", "ease").css("opacity", hoverOpacity);
             }
         });
 
-        $("#cuprinsSlideContainer").on("mouseleave", function () {
+        $("#cuprinsSlideContainer").on("mouseleave", function ()
+        {
             hovered = false;
-            if (state === "hidden") {
+            if (state === "hidden")
+            {
                 $("#cuprinsSlideContainer").css("transition-duration", hoverTransDuration).css("transition-timing-function", "ease").css("opacity", hiddenOpacity);
             }
         });
 
-        $("#cuprinsSlideContainer").on('click', 'a[href^="#"]', function (event) {
+        $("#cuprinsSlideContainer").on('click', 'a[href^="#"]', function (event)
+        {
             event.preventDefault();
 
             $('html, body').animate({
@@ -123,22 +161,26 @@ function addCuprinsSlider(backButton = false) {
             }, 500);
         });
 
-        $("#cuprinsSlideContainer").on("click", function (e) {
+        $("#cuprinsSlideContainer").on("click", function (e)
+        {
             if ($(e.target).hasClass('textCuprins') === true)
                 return;
-            else if ($(e.target).attr('id') === 'back') {
+            else if ($(e.target).attr('id') === 'back')
+            {
                 changePage("fantastic", 'rl');
                 return;
             }
 
-            if (state === "displayed") {
+            if (state === "displayed")
+            {
 
                 $("#cuprinsSlideContainer").css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("opacity", hiddenOpacity).css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
 
                 state = "hidden";
             }
-            else {
+            else
+            {
 
                 $("#cuprinsSlideContainer").css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("opacity", displayedOpacity).css('margin-left', '0');
@@ -150,7 +192,8 @@ function addCuprinsSlider(backButton = false) {
 }
 
 
-function addRezumat() {
+function addRezumat()
+{
     var rezumatDisableSomeEvents = false;
 
     $("#bottomPart").append(
@@ -160,35 +203,41 @@ function addRezumat() {
         '</div>'
     );
 
-    $("#buttonRezumat").on('click', function () {
+    $("#buttonRezumat").on('click', function ()
+    {
         if (rezumatDisableSomeEvents === true)
             return;
         rezumatDisableSomeEvents = true;
         $("#rezumat").css("display", "");
         animateCss($("#rezumat"), "zoomIn");
-        animateCss($("#buttonRezumat"), "zoomOut", function () {
+        animateCss($("#buttonRezumat"), "zoomOut", function ()
+        {
             $("#buttonRezumat").css("display", "none");
             rezumatDisableSomeEvents = false;
         });
     });
-    $("#buttonRezumat").on('mouseenter', function () {
+    $("#buttonRezumat").on('mouseenter', function ()
+    {
         if (rezumatDisableSomeEvents === true)
             return;
         $("#buttonRezumat").css("transform", "scale(1.10)");
         $("#buttonRezumat").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
     });
-    $("#buttonRezumat").on('mouseleave', function () {
+    $("#buttonRezumat").on('mouseleave', function ()
+    {
         $("#buttonRezumat").css("transform", "scale(1)");
         $("#buttonRezumat").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
     });
 
-    $("#exitRezumat").on('click', function () {
+    $("#exitRezumat").on('click', function ()
+    {
         if (rezumatDisableSomeEvents === true)
             return;
         rezumatDisableSomeEvents = true;
         $("#buttonRezumat").css("display", "");
         animateCss($("#buttonRezumat"), "zoomIn");
-        animateCss($("#rezumat"), "zoomOut", function () {
+        animateCss($("#rezumat"), "zoomOut", function ()
+        {
             $("#rezumat").css("display", "None");
             rezumatDisableSomeEvents = false;
         });
@@ -196,7 +245,8 @@ function addRezumat() {
 }
 
 
-function addGraph(element) {
+function addGraph(element)
+{
 
     $("#" + element).addClass("graph normalBackgroundColor");
     $("#" + element).append(
@@ -253,8 +303,8 @@ function addGraph(element) {
         }
     };
 
-    // initialize your network!
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodesAndEdges.json", function (data) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodesAndEdges.json", function (data)
+    {
         console.log(data);
         // create an array with nodes
         var nodes = new vis.DataSet(data.nodes);
@@ -264,25 +314,31 @@ function addGraph(element) {
             nodes: nodes,
             edges: edges
         };
-        var network = new vis.Network(container, dataFromDataSets, options);
-        network.on("selectNode", function (params) {
+        let network = new vis.Network(container, dataFromDataSets, options);
+        network.on("selectNode", function (params)
+        {
             $("#" + element + "NodeData").empty();
             $("#" + element + "NodeData").load('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html');
         });
-        network.on("deselectNode", function (params) {
+        network.on("deselectNode", function (params)
+        {
             $("#" + element + "NodeData").empty().append(nodeDataDefault);
         });
-        $(window).on("resize", function () {
+        $(window).on("resize.graph", function ()
+        {
             network.fit();
         });
     });
 }
 
 
-function addPersonaje() {
+function addPersonaje()
+{
 
-    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/personaje.json", function (data) {
-        for (let i = 0; i < data.length; ++i) {
+    $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/personaje.json", function (data)
+    {
+        for (let i = 0; i < data.length; ++i)
+        {
             $("#outerContainerPersonaje").addClass("darkerBackgroundColor").append(
                 '<div id="containerPersonaj' + i + '" class="containerPersonaje">' +
                 '<div id    ="personaj' + i + '" class="personaje normalBackgroundColor">' +
@@ -297,14 +353,16 @@ function addPersonaje() {
             );
 
             let slideMargin = "";
-            if (i % 2 === 0) {
+            if (i % 2 === 0)
+            {
                 $("#personaj" + i).css("float", "left").css("padding-left", (parseInt($("#personaj" + i).css("padding-left").replace('px', '')) + 35) + 'px')
                     .css("border-radius", "0 25px 25px 0");
                 $("#extinderePersonajContainer" + i).css("float", "right").css("padding-right", "30vw")
                 $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "25px 0 0 25px");
                 slideMargin = "right";
             }
-            else {
+            else
+            {
                 $("#personaj" + i).css("float", "right").css("border-radius", "25px 0 0 25px");
                 $("#extinderePersonajContainer" + i).css("float", "left").css("padding-left", "30vw")  //.css("padding-left", (parseInt($("#extinderePersonajContainer" + i).css("padding-left").replace('px', '')) + 35) + 'px')
                 $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "0 25px 25px 0");
@@ -316,20 +374,23 @@ function addPersonaje() {
             $("#extinderePersonajContainer" + i).removeClass("noTransition");
             $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
 
-            $(window).on("resize.personaje", function () {
+            $(window).on("resize.personaje", function ()
+            {
                 $(".extinderePersonajeContainer").addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
                 $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
                 $(".extinderePersonajeContainer").removeClass("noTransition");
                 $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
             });
 
-            $("#personaj" + i).on("mouseenter", function () {
+            $("#personaj" + i).on("mouseenter", function ()
+            {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '0');
             });
 
-            $("#personaj" + i).on("mouseleave", function () {
+            $("#personaj" + i).on("mouseleave", function ()
+            {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
@@ -339,11 +400,13 @@ function addPersonaje() {
 }
 
 
-function shuffleArray(array) {
+function shuffleArray(array)
+{
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    while (0 !== currentIndex)
+    {
 
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);

@@ -1,7 +1,7 @@
 #cuprinsSlideContainer {
     animation-delay: 0.5s;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     display: flex;
     float: left;
     font-family: "Century Gothic";
@@ -15,7 +15,7 @@
 }
 
 #slider {
-    border-left: 1px solid #cccccc;
+    border-left: 1px solid #2d2d2d;
     cursor: pointer;
     font-size: 21px;
     height: 100%;
@@ -32,13 +32,13 @@
 }
 
 .textCuprins {
-    color: black;
+    color: white;
     padding: 0px 25px;
     text-decoration: none;
 }
 
 #back {
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     flex-basis: 5vh;
     padding: 15px 0;
 }
