@@ -12,6 +12,14 @@ function animateCss(element, animationName, callback) {
 
 
 function changePage(page) {
+    $.getJSON("texts/pages.json", function (data) {
+        for (let i = 0; i < data.length; ++i) {
+            if (data[i].id === page) {
+                document.title = data[i].name;
+                break;
+            }
+        }
+    });
     $("body").empty();
     $("body").append("<div id='preloader'><img id='preloaderImage' src='images/copper-loader.gif' ></div>");
     animateCss($("#preloader"), "fadeIn", function () {
@@ -24,6 +32,8 @@ function changePage(page) {
         $.get(page + ".html", function (data) {
             $("html").css("overflow-y", "hidden");
             $("body").append(data);
+            $(".spacerTrianglesTL").css("border-top-color", $(".normalBackgroundColor").css("background-color"));
+            $(".spacerTrianglesBR").css("border-bottom-color", $(".normalBackgroundColor").css("background-color"));
             $(function () {
                 window.scrollTo(0, 0);
             });
@@ -37,15 +47,16 @@ function changePage(page) {
     });
 }
 
-function randomBackground(element, backgroundList, numberOfBackgrounds) {
-    let rand;
-    do {
-        rand = Math.floor((Math.random() * numberOfBackgrounds) + 1);
+function addBackground(element, backgroundList) {
+    for (let i = 0; i < backgroundList.length; ++i) {
+        if (backgroundList[i] !== -1) {
+            element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg)");
+            backgroundList[i] = -1;
+            return;
+        }
     }
-    while (backgroundList[rand] === true);
-
-    element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + rand + ".jpg)");
-    backgroundList[rand] = true;
+    element.css("background-color", "red");
+    console.log("ERROR: not enough backgrounds");
 }
 
 const hiddenOpacity = 0.1;
@@ -85,20 +96,19 @@ function addCuprinsSlider(backButton = false) {
     });
 
     animateCss($("#cuprinsSlideContainer"), "bounceInLeft", function () {
-
         setTimeout(function () {
             if (state === "hidden" && hovered === false)
                 $("#cuprinsSlideContainer").css("transition-duration", startTransDuration).css("transition-timing-function", "ease").css("opacity", hiddenOpacity);
         }, 1000);
 
-        $("#cuprinsSlideContainer").on("mouseover", function () {
+        $("#cuprinsSlideContainer").on("mouseenter", function () {
             hovered = true;
             if (state === "hidden") {
                 $("#cuprinsSlideContainer").css("transition-duration", hoverTransDuration).css("transition-timing-function", "ease").css("opacity", hoverOpacity);
             }
         });
 
-        $("#cuprinsSlideContainer").on("mouseout", function () {
+        $("#cuprinsSlideContainer").on("mouseleave", function () {
             hovered = false;
             if (state === "hidden") {
                 $("#cuprinsSlideContainer").css("transition-duration", hoverTransDuration).css("transition-timing-function", "ease").css("opacity", hiddenOpacity);
@@ -141,7 +151,7 @@ function addCuprinsSlider(backButton = false) {
 
 
 function addRezumat() {
-    var rezumatDisableSomeEvents = true;
+    var rezumatDisableSomeEvents = false;
 
     $("#bottomPart").append(
         '<div id="buttonRezumat" class="normalBackgroundColor">Rezumat</div>' +
@@ -151,37 +161,36 @@ function addRezumat() {
     );
 
     $("#buttonRezumat").on('click', function () {
-        if (rezumatDisableSomeEvents === false)
+        if (rezumatDisableSomeEvents === true)
             return;
-        rezumatDisableSomeEvents = false;
+        rezumatDisableSomeEvents = true;
         $("#rezumat").css("display", "");
         animateCss($("#rezumat"), "zoomIn");
         animateCss($("#buttonRezumat"), "zoomOut", function () {
             $("#buttonRezumat").css("display", "none");
-            rezumatDisableSomeEvents = true;
+            rezumatDisableSomeEvents = false;
         });
     });
-    $("#buttonRezumat").on('mouseover', function () {
-        // console.log(rezumatDisableSomeEvents);
-        if (rezumatDisableSomeEvents === false)
+    $("#buttonRezumat").on('mouseenter', function () {
+        if (rezumatDisableSomeEvents === true)
             return;
         $("#buttonRezumat").css("transform", "scale(1.10)");
         $("#buttonRezumat").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
     });
-    $("#buttonRezumat").on('mouseout', function () {
+    $("#buttonRezumat").on('mouseleave', function () {
         $("#buttonRezumat").css("transform", "scale(1)");
         $("#buttonRezumat").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
     });
 
     $("#exitRezumat").on('click', function () {
-        if (rezumatDisableSomeEvents === false)
+        if (rezumatDisableSomeEvents === true)
             return;
-        rezumatDisableSomeEvents = false;
+        rezumatDisableSomeEvents = true;
         $("#buttonRezumat").css("display", "");
         animateCss($("#buttonRezumat"), "zoomIn");
         animateCss($("#rezumat"), "zoomOut", function () {
             $("#rezumat").css("display", "None");
-            rezumatDisableSomeEvents = true;
+            rezumatDisableSomeEvents = false;
         });
     })
 }
@@ -263,6 +272,9 @@ function addGraph(element) {
         network.on("deselectNode", function (params) {
             $("#" + element + "NodeData").empty().append(nodeDataDefault);
         });
+        $(window).on("resize", function () {
+            network.fit();
+        });
     });
 }
 
@@ -317,11 +329,31 @@ function addPersonaje() {
                     .css("margin-" + slideMargin, '0');
             });
 
-            $("#personaj" + i).on("mouseout", function () {
+            $("#personaj" + i).on("mouseleave", function () {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
                     .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
             });
         }
     });
+}
+
+
+function shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
 }

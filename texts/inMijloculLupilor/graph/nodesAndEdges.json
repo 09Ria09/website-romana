@@ -1,0 +1,61 @@
+{
+  "nodes": [
+    {
+      "id": "0",
+      "label": "Temporalitate",
+      "level": 0
+    },
+    {
+      "id": "1",
+      "label": "Repere",
+      "level": 1
+    },
+    {
+      "id": "2",
+      "label": "Spatialitate",
+      "level": 0
+    },
+    {
+      "id": "3",
+      "label": "Repere",
+      "level": 1
+    },
+    {
+      "id": "4",
+      "label": "Tinut deluros",
+      "level": 2
+    },
+    {
+      "id": "5",
+      "label": "Pestera",
+      "level": 2
+    },
+    {
+      "id": "6",
+      "label": "Copac",
+      "level": 2
+    }
+  ],
+  "edges": [
+    {
+      "from": 0,
+      "to": 1
+    },
+    {
+      "from": 2,
+      "to": 3
+    },
+    {
+      "from": 3,
+      "to": 4
+    },
+    {
+      "from": 3,
+      "to": 5
+    },
+    {
+      "from": 3,
+      "to": 6
+    }
+  ]
+}

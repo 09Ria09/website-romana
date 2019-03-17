@@ -8,14 +8,16 @@
 </div>
 
 <script>
-    var backgroundList = [];
-    var numberOfBackgrounds = 5;
-
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider();
 
-    $.getJSON("texts/carti.json", function (data) {
+    var backgroundList = [0, 1, 2, 3, 4];
+    backgroundList = shuffleArray(backgroundList);
+    addBackground($("#start"), backgroundList);
+
+    $.getJSON("texts/pages.json", function (data) {
         for (let i = 0; i < data.length; ++i) {
+            if (data[i].id === "fantastic")
+                continue;
             $("#carti").append('<div id="carte' + i + '" class="carte"></div>');
             $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '.jpg">');
 
@@ -30,8 +32,8 @@
     });
 
     for (let i = 1; i <= 4; ++i) {
-        $("body").append('<div id="spacer' + i + '" class="spacers"></div>').append('<div class="normalBackgroundColor"><div class="contentDiv" data-aos="zoom-in"></div></div>');
-        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+        $("body").append('<div class="spacerContainer"><div class="spacerTrianglesTL"></div><div id="spacer' + i + '" class="spacers"></div><div class="spacerTrianglesBR"></div></div>').append('<div class="normalBackgroundColor"><div class="contentDiv" data-aos="zoom-in"></div></div>');
+        addBackground($("#spacer" + i), backgroundList);
     }
 
     $(".contentDiv").load("texts/longLoremIpsum.txt");

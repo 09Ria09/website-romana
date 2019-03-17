@@ -5,27 +5,42 @@
     <div id="bottomPart">
     </div>
 </div>
-<div class="normalBackgroundColor">
-    <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
+<div id="tema" class="contentDiv normalBackgroundColor" data-aos="zoom-in"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer1" class="spacers"></div>
+    <div class="spacerTrianglesBR"></div>
 </div>
-<div id="spacer1" class="spacers"></div>
-<div class="normalBackgroundColor">
-    <div id="actiune" class="contentDiv" data-aos="zoom-in"></div>
+
+<div id="actiune" class="contentDiv normalBackgroundColor" data-aos="zoom-in"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer2" class="spacers"></div>
+    <div class="spacerTrianglesBR"></div>
 </div>
-<div id="spacer2" class="spacers"></div>
+
 <div id="graph" class="darkerBackgroundColor"></div>
-<div id="spacer3" class="spacers"></div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL"></div>
+    <div id="spacer3" class="spacers"></div>
+    <div class="spacerTrianglesBR"></div>
+</div>
+
 <div id="outerContainerPersonaje"></div>
 
 <script>
-    var backgroundList = [];
-    var numberOfBackgrounds = 5;
-
-    randomBackground($("#start"), backgroundList, numberOfBackgrounds);
     addCuprinsSlider(true);
+
+    var backgroundList = [0, 1, 2, 3, 4];
+    backgroundList = shuffleArray(backgroundList);
+    addBackground($("#start"), backgroundList);
+
     addRezumat();
     for (let i = 1; i <= $(".spacers").length; ++i) {
-        randomBackground($("#spacer" + i), backgroundList, numberOfBackgrounds);
+        addBackground($("#spacer" + i), backgroundList);
     }
 
     $.get("texts/loremIpsum.txt", function (data) {

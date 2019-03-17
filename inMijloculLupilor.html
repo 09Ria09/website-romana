@@ -1,0 +1,45 @@
+<div id="start">
+    <div id="upperStart">
+        <p id="startTitle">In Mijlocul Lupilor</p>
+    </div>
+    <div id="bottomPart">
+    </div>
+</div>
+<div class="normalBackgroundColor">
+    <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
+</div>
+<div id="spacer1" class="spacers"></div>
+<div class="normalBackgroundColor">
+    <div id="structuraText" class="contentDiv" data-aos="zoom-in"></div>
+</div>
+<div id="spacer2" class="spacers"></div>
+<div class="normalBackgroundColor">
+    <div id="actiune" class="contentDiv" data-aos="zoom-in"></div>
+</div>
+<div id="spacer3" class="spacers"></div>
+<div id="graph" class="darkerBackgroundColor"></div>
+<div id="spacer4" class="spacers"></div>
+<div id="outerContainerPersonaje"></div>
+
+<script>
+    // addCuprinsSlider(true);
+
+    var backgroundList = [];
+    backgroundList = shuffleArray(backgroundList);
+    addBackground($("#start"), backgroundList);
+
+    // addRezumat();
+    for (let i = 1; i <= $(".spacers").length; ++i) {
+        addBackground($("#spacer" + i), backgroundList);
+    }
+
+    //$.get("texts/loremIpsum.txt", function (data) {
+    //    $("#rezumat").append(data);
+    //});
+    // $("#tema").load("texts/moaraLuiCalifar/tema.html");
+    $("#structuraText").load("texts/inMijloculLupilor/structuraText.html");
+    // $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
+    addGraph("graph");
+    // addPersonaje();
+    AOS.refresh();
+</script>

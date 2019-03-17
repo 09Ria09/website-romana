@@ -1,0 +1,19 @@
+.normalBackgroundColor {
+    background-color: #98BF64;
+}
+
+.lighterBackgroundColor {
+    background-color: #accb83;
+}
+
+.darkBackgroundColor {
+    background-color: #88ab5a;
+}
+
+.darkerBackgroundColor {
+    background-color: #799850;
+}
+
+.transparentBackgroundColor {
+    background-color: rgba(152, 191, 100, 0.9);
+}

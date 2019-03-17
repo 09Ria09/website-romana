@@ -60,23 +60,59 @@ body {
     transition: none !important;
 }
 
+.contentDiv {
+    box-sizing: border-box;
+    color: black;
+    padding: 5vh 10vw;
+    text-align: justify;
+    width: 100%;
+}
+
+.spacerContainer {
+    height: 50vh;
+    position: relative;
+}
+
 .spacers {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
-    height: 40vh;
-    padding-left: 35px;
+    height: 50vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
 }
 
-.contentDiv {
+.spacerTrianglesTL {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 10vh 100vw 0 0;
     box-sizing: border-box;
-    color: black;
-    padding: 5% 25%;
-    text-align: justify;
-    width: 100%;
+    display: inline-block;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: 2;
 }
+
+.spacerTrianglesBR {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 10vh 100vw;
+    bottom: 0;
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+    z-index: 2;
+}
+
 
 @media screen and (min-height: 1081px) {
     #start, .spacers {
