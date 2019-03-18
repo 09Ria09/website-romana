@@ -4,7 +4,7 @@
     </div>
     <div id="bottomPart">
     </div>
-    <div class="spacerTrianglesBR"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor"></div>
 </div>
 
 <div class="normalBackgroundColor">
@@ -12,9 +12,9 @@
 </div>
 
 <div class="spacerContainer">
-    <div class="spacerTrianglesTL"></div>
+    <div class="spacerTrianglesTR normalBackgroundColor"></div>
     <div id="spacer1" class="spacers"></div>
-    <div class="spacerTrianglesBR"></div>
+    <div class="spacerTrianglesBL normalBackgroundColor"></div>
 </div>
 
 <div class="normalBackgroundColor">
@@ -22,17 +22,17 @@
 </div>
 
 <div class="spacerContainer">
-    <div class="spacerTrianglesTL"></div>
+    <div class="spacerTrianglesTL normalBackgroundColor"></div>
     <div id="spacer2" class="spacers"></div>
-    <div class="spacerTrianglesBR" data-border-color="darkerBackgroundColor"></div>
+    <div class="spacerTrianglesBR darkerBackgroundColor"></div>
 </div>
 
 <div id="graph" class="darkerBackgroundColor"></div>
 
 <div class="spacerContainer">
-    <div class="spacerTrianglesTL" data-border-color="darkerBackgroundColor"></div>
+    <div class="spacerTrianglesTR darkerBackgroundColor"></div>
     <div id="spacer3" class="spacers"></div>
-    <div class="spacerTrianglesBR" data-border-color="darkerBackgroundColor"></div>
+    <div class="spacerTrianglesBL darkerBackgroundColor"></div>
 </div>
 
 <div id="outerContainerPersonaje"></div>
@@ -45,12 +45,13 @@
     addBackground($("#start"), backgroundList);
 
     addRezumat();
+
     for (let i = 1; i <= $(".spacers").length; ++i)
     {
         addBackground($("#spacer" + i), backgroundList);
     }
 
-    $.get("texts/loremIpsum.txt", function (data)
+    $.get("texts/moaraLuiCalifar/rezumat.html", function (data)
     {
         $("#rezumat").append(data);
     });

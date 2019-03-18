@@ -4,10 +4,10 @@
     color: white;
     display: flex;
     float: left;
-    font-family: "Century Gothic";
+    font-family: "ralewayregular";
     height: 100%;
     position: fixed;
-    z-index: 5;
+    z-index: 50;
     -ms-user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;

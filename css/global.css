@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('../fonts/raleway/raleway-regular-webfont.woff2') format('woff2'),
+    url('../fonts/raleway/raleway-regular-webfont.woff') format('woff'),
+    url('../fonts/raleway/raleway-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html, body {
     background-color: black;
     margin: 0;
@@ -8,7 +18,7 @@ html, body {
 body {
     background-color: white;
     color: black;
-    font-family: "Century Gothic";
+    font-family: "ralewayregular";
     overflow-x: hidden;
 }
 
@@ -87,10 +97,14 @@ body {
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 10;
 }
 
 .spacerTrianglesTL {
-    border-color: transparent;
+    background-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
     border-style: solid;
     border-width: 10vh 100vw 0 0;
     box-sizing: border-box;
@@ -100,20 +114,59 @@ body {
     position: absolute;
     top: 0;
     width: 0;
-    z-index: 2;
+    z-index: 15;
+}
+
+.spacerTrianglesTR {
+    background-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-left-color: transparent !important;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-width: 0 100vw 10vh 0;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    z-index: 15;
 }
 
 .spacerTrianglesBR {
-    border-color: transparent;
+    background-color: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
     border-style: solid;
+    border-top-color: transparent !important;
     border-width: 0 0 10vh 100vw;
     bottom: 0;
+    box-sizing: border-box;
     display: inline-block;
     height: 0;
     position: absolute;
     right: 0;
     width: 0;
-    z-index: 2;
+    z-index: 15;
+}
+
+.spacerTrianglesBL {
+    background-color: transparent !important;
+    border-bottom-color: transparent !important;
+    border-color: transparent;
+    border-style: solid;
+    border-top-color: transparent !important;
+    border-top-color: transparent !important;
+    border-width: 10vh 0 0 100vw;
+    bottom: 0;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+    z-index: 15;
 }
 
 @media screen and (min-height: 1081px) {

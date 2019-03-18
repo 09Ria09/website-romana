@@ -43,21 +43,45 @@ function changePage(page)
             $("body").append(data);
             window.scrollTo(0, 0);
 
-            $(".spacerTrianglesTL").each(function (n, element)
-            {
-                let color = "normalBackgroundColor";
-                if ($(element)[0].hasAttribute("data-border-color"))
-                    color = $(element).attr("data-border-color");
-                $(element).css("border-top-color", $('.' + color).css("background-color"));
-            });
+            /*
+            $(function(){
+                $(".spacerTrianglesTL").each(function (n, element)
+                {
+                    let color = "normalBackgroundColor";
+                    if ($(element)[0].hasAttribute("data-border-color"))
+                        color = $(element).attr("data-border-color");
+                    console.log(color);
+                    $(element).css("border-top-color", $('.' + color).css("background-color"));
+                });
 
-            $(".spacerTrianglesBR").each(function (n, element)
-            {
-                let color = "normalBackgroundColor";
-                if ($(element)[0].hasAttribute("data-border-color"))
-                    color = $(element).attr("data-border-color");
-                $(element).css("border-bottom-color", $('.' + color).css("background-color"));
+                $(".spacerTrianglesTR").each(function (n, element)
+                {
+                    let color = "normalBackgroundColor";
+                    if ($(element)[0].hasAttribute("data-border-color"))
+                        color = $(element).attr("data-border-color");
+                    console.log(color);
+                    $(element).css("border-right-color", $('.' + color).css("background-color"));
+                });
+
+                $(".spacerTrianglesBR").each(function (n, element)
+                {
+                    let color = "normalBackgroundColor";
+                    if ($(element)[0].hasAttribute("data-border-color"))
+                        color = $(element).attr("data-border-color");
+                    console.log(color);
+                    $(element).css("border-bottom-color", $('.' + color).css("background-color"));
+                });
+
+                $(".spacerTrianglesBL").each(function (n, element)
+                {
+                    let color = "normalBackgroundColor";
+                    if ($(element)[0].hasAttribute("data-border-color"))
+                        color = $(element).attr("data-border-color");
+                    console.log(color);
+                    $(element).css("border-left-color", $('.' + color).css("background-color"));
+                });
             });
+            */
 
             $("#preloaderContainer").css("animation-delay", "0.5s");
             animateCss($("#preloaderContainer"), "fadeOut", function ()
@@ -293,7 +317,7 @@ function addGraph(element)
             shape: "diamond",
             size: 20,
             font: {
-                face: "Century Gothic",
+                face: "ralewayregular",
                 size: 16
             }
         },

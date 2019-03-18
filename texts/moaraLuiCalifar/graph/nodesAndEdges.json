@@ -11,26 +11,6 @@
       "level": 1
     },
     {
-      "id": "2",
-      "label": "Motivul: Avansului Temporal",
-      "level": 1
-    },
-    {
-      "id": "3",
-      "label": "Reper 1",
-      "level": 2
-    },
-    {
-      "id": "4",
-      "label": "Reper 2",
-      "level": 2
-    },
-    {
-      "id": "5",
-      "label": "Reper 3",
-      "level": 2
-    },
-    {
       "id": "6",
       "label": "Spatialitate",
       "level": 0
@@ -52,7 +32,7 @@
     },
     {
       "id": "10",
-      "label": "Iazul si moara",
+      "label": "Iazul",
       "level": 2
     },
     {
@@ -65,22 +45,6 @@
     {
       "from": "0",
       "to": "1"
-    },
-    {
-      "from": "0",
-      "to": "2"
-    },
-    {
-      "from": "1",
-      "to": "3"
-    },
-    {
-      "from": "1",
-      "to": "4"
-    },
-    {
-      "from": "1",
-      "to": "5"
     },
     {
       "from": "6",

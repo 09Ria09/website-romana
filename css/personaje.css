@@ -1,13 +1,13 @@
 #outerContainerPersonaje {
     height: auto;
-    overflow-x: hidden;
     padding: 15px 0;
     width: 100%;
 }
 
 .containerPersonaje {
     box-sizing: border-box;
-    height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
     margin: 35px 0;
     width: 100%;
 }

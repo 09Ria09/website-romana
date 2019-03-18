@@ -1,37 +1,13 @@
 [
   {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
+    "id": "stoicea",
+    "nume": "Stoicea",
+    "descriereScurta": "Este personajul experimentator al acestui text.",
+    "descriereLunga": "Stoicea este personajul experimentator din acest text, el fiind un copil orfan şi sărac, deci are un statut social bine determinat, neînfricat, gata de orice pentru a se căpătui. Despre el aflăm că era un băiat puternic și inteligent, însă sărac pentru că nu avea nici o rudă, din acest motiv el este ușor de atras de către Călifar și, prin urmare, deschis aventurii de tip fantastic. Totodată prin intermediul caracterizării indirecte știm că acesta este curajos."
   },
   {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
-  },
-  {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
-  },
-  {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
-  },
-  {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
-  },
-  {
-    "id": "ionPopa",
-    "nume": "Ion Popa",
+    "id": "califar",
+    "nume": "Moș Călifar",
     "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
   }

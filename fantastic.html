@@ -2,10 +2,41 @@
     <div id="upperStart">
         <p id="startTitle">Fantasticul</p>
     </div>
-    <div class="spacerTrianglesBR"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor"></div>
 </div>
+
 <div class="normalBackgroundColor">
     <div id="carti" data-aos="zoom-in"></div>
+</div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTR normalBackgroundColor"></div>
+    <div id="spacer1" class="spacers"></div>
+    <div class="spacerTrianglesBL normalBackgroundColor"></div>
+</div>
+
+<div class="normalBackgroundColor">
+    <div class="contentDiv" data-aos="zoom-in"></div>
+</div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTL normalBackgroundColor"></div>
+    <div id="spacer2" class="spacers"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor"></div>
+</div>
+
+<div class="normalBackgroundColor">
+    <div class="contentDiv" data-aos="zoom-in"></div>
+</div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTR normalBackgroundColor"></div>
+    <div id="spacer3" class="spacers"></div>
+    <div class="spacerTrianglesBL normalBackgroundColor"></div>
+</div>
+
+<div class="normalBackgroundColor">
+    <div class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <script>
@@ -36,9 +67,8 @@
         }
     });
 
-    for (let i = 1; i <= 4; ++i)
+    for (let i = 1; i <= $(".spacers").length; ++i)
     {
-        $("body").append('<div class="spacerContainer"><div class="spacerTrianglesTL"></div><div id="spacer' + i + '" class="spacers"></div><div class="spacerTrianglesBR"></div></div>').append('<div class="normalBackgroundColor"><div class="contentDiv" data-aos="zoom-in"></div></div>');
         addBackground($("#spacer" + i), backgroundList);
     }
 
