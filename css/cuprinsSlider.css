@@ -28,13 +28,14 @@
 #cuprins {
     display: flex;
     flex-direction: column;
-    padding: 25vh 50px 25vh 15px;
+    padding: 15vh 50px 15vh 15px;
 }
 
 .textCuprins {
     color: white;
-    padding: 0px 25px;
     text-decoration: none;
+    margin: auto;
+    padding: 1vh 1vw;
 }
 
 #back {

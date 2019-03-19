@@ -1,6 +1,6 @@
 <div id="start">
     <div id="upperStart">
-        <p id="startTitle">La Tigănci</p>
+        <p id="startTitle">Douăsprezece mii de capete de vită</p>
     </div>
     <div id="bottomPart">
     </div>
@@ -51,13 +51,13 @@
         addBackground($("#spacer" + i), backgroundList);
     }
 
-    $.get("texts/loremIpsum.txt", function (data)
-    {
-        $("#rezumat").append(data);
-    });
-    // $("#tema").load("texts/moaraLuiCalifar/tema.html");
+    // $.get("texts/moaraLuiCalifar/rezumat.html", function (data)
+    // {
+    //     $("#rezumat").append(data);
+    // });
+    $("#tema").load("texts/capeteDeVita/tema.html");
     // $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
-    addGraph("graph");
-    addPersonaje();
+    // addGraph("graph");
+    // addPersonaje();
     AOS.refresh();
 </script>

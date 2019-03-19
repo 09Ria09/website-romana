@@ -137,7 +137,7 @@ function addCuprinsSlider(backButton = false)
     {
         for (let i = 0; i < data.length; ++i)
         {
-            $("#cuprins").append('<a class="textCuprins" id="textCuprins' + i + '" href="' + data[i].href + '" style="margin: auto;">' + data[i].text + '</a>');
+            $("#cuprins").append('<a class="textCuprins" id="textCuprins' + i + '" href="' + data[i].href + '">' + data[i].text + '</a>');
         }
 
         $(function ()
@@ -367,7 +367,7 @@ function addPersonaje()
                 '<div id="containerPersonaj' + i + '" class="containerPersonaje">' +
                 '<div id    ="personaj' + i + '" class="personaje normalBackgroundColor">' +
                 // '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
-                '<h1>' + data[i].nume + '</h1>' +
+                '<h2>' + data[i].nume + '</h2>' +
                 '<p>' + data[i].descriereScurta + '</p>' +
                 '</div>' +
                 '<div id="extinderePersonajContainer' + i +

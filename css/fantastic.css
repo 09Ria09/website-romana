@@ -37,7 +37,7 @@
     cursor: pointer;
     flex-grow: 1;
     height: 100%;
-    margin: 15px 50px;
+    margin: 15px 2vw;
     text-align: justify;
     transition-duration: 0.3s;
     transition-timing-function: ease;
@@ -49,7 +49,8 @@
 
 .imagineCarte {
     display: block;
-    height: 20vh;
+    height: 15vw;
+    width: 15vw;
     margin: 0 auto;
 }
 

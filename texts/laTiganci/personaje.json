@@ -1,0 +1,38 @@
+[
+  {
+    "id": "brijarul",
+    "nume": "Brijarul",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Brijarul este cel care îl duce pe Gavrilescu din nou la țigănci și care îl duce apoi spre pădure. Observăm despre el că îi plac florile și că este impresionat mai ales de Regina-nopții(lucru care îl determină pe profesorul de pian să îi spună că are fire de artist) și devine nostalgic când își amintește de tinerețe. Putem spune despre el că este asociat cu Charon deoarece îl duce spre pădure, pădurea fiind asociată cu cealaltă lume.</p>"
+  },
+  {
+    "id": "treiFete",
+    "nume": "Cele trei fete",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Sunt personaje episodice, apar doar cât timp Gavrilescu stă în bordei. Din faptele lor ne dăm seama că toate au aproape aceleași trăsături de caracter, adică sunt vesele și nerăbdătoare(n-au răbdare să asculte povestea lui Gavrilescu). Totodată observăm și aici că reapare cifra trei care se repetă de mai multe ori în text (avea de ales dintre patru fete, însă el alege trei). Mai putem spune că naționalitatea lor nu este aleasă întâmplătore (ele aparțin unor popoare ale căror culturi l-au fascinat pe Eliade). În final mai precizăm că fetele pot fi asociate cu ielele (ființe supranaturale care atrăgeau bărbații).</p>"
+  },
+  {
+    "id": "gavrilescu",
+    "nume": "Gavrilescu",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Gavrilescu este personajul experimentator al acestui text, el este un profesor de pian în vârstă de 49 de ani(vârsta simbolizând sfârșitul unui ciclu al existenței) . Acesta este deschis aventurii de tip fantastic deoarece este împins de curiozitate către casa țigăncilor. El face parte din tipologia oamenilor care și-au ratat menirea( spunea că are fire de artist însă era doar profesor). Totodată din comportamentul lui pe parcursul textului concluzionăm că este o fire sensibilă și nostalgică , însă  econom cu banii și puțin zgârcit (calculează toate cheltuielile deoarece când ajunge la țigănci spune că 300 de lei înseamnă trei lecții de pian la care se mai adaugă și drumul cu tramvaiul). Mai departe deducem că el este respectuos însă și mândru de meseria lui (spune că „eu nu sunt un oarecine” și că este o diferență între un artist și „un muritor de rând”). În final observăm că el nu se poate readapta la lumea reală, deoarece a fost foarte absorbit de aventura fantastică și din acest motiv nu a înțeles ce a pățit.</p><p>În final vom analiza modalitatea de realizare a personajelor. Astfel observăm că este folosită preponderent caracterizarea indirectă și că nu este realizat nici un portret fizic (despre aspectul exterior nu aflăm decât că poartă unele accesorii vestimentare).</p>"
+  },
+  {
+    "id": "hildegard",
+    "nume": "Hildegard",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Hildegard este un personaj care apare în finalul textului. Din descrierile pe care le face Gavrilescu ne dăm seama că este frumoasă și că deși aproape uitată, amintirea ei revine în minte profesorului o dată cu intrarea în bordeiul țigăncilor. Ea este asociată cu nemțoaica de către Gavrilescu (nu o alege la început ba chiar atrage atenția să nu se întâlnească cu ea) și reprezintă iubirea veșnică (după atâția ani îi spune că încă îl așteaptă). Tot ea este cea care îl și conduce spre pădure, astfel putem spune că este valorificat un mit conform căruia fiecare suflet are un suflet pereche.</p>"
+  },
+  {
+    "id": "baba",
+    "nume": "Baba de la intrare",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Baba de la intrare este un personaj care apare de  mai multe ori în text. Observăm că ea este cea care colectează taxa de intrare, din acest motiv fiind asociată îngerului vameș. Nu în ultimul rând observăm că nici nu ține cont de timp („avem timp”, „nu e nici trei”), dar în final îi spune că e târziu. Totodată observăm că de dânsa ascultă toată lumea din bordei („așa a spus baba”).</p>"
+  },
+  {
+    "id": "fataOachesa",
+    "nume": "Fata oacheșă",
+    "descriereScurta": "",
+    "descriereLunga": "<p>Fata oacheșă este un personaj care apare la începutul aventurii fantastice. Ea este cea care îl aduce pe Gavrilescu în bordei și tot ea îi dă sfaturi(„să nu uiți”, „să nu bei prea multă cafea”). Despre ea putem spune că simbolizează îngerul morții(este cea care îl duce în bordei).</p>"
+  }
+]
