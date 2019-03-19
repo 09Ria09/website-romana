@@ -41,6 +41,7 @@
     text-align: justify;
     transition-duration: 0.3s;
     transition-timing-function: ease;
+    backface-visibility: hidden;
 }
 
 .carte:hover {
@@ -50,8 +51,8 @@
 .imagineCarte {
     display: block;
     height: 15vw;
-    width: 15vw;
     margin: 0 auto;
+    width: 15vw;
 }
 
 @media screen and (max-width: 1279px) {

@@ -6,9 +6,9 @@
 
 .containerPersonaje {
     box-sizing: border-box;
+    margin: 35px 0;
     overflow-x: hidden;
     overflow-y: auto;
-    margin: 35px 0;
     width: 100%;
 }
 
