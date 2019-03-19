@@ -30,8 +30,9 @@ function changePage(page)
     $("body").prepend("<div id='preloaderContainer'><div id='preloader' class='line-scale'><div></div><div></div><div></div><div></div><div></div></div></div>");
     animateCss($("#preloaderContainer"), "fadeIn", function ()
     {
-        $(window).off("resize.personaje");
+        $(window).off("resize.cuprinsSlider");
         $(window).off("resize.graph");
+        $(window).off("resize.personaje");
 
         $("link[href='css/" + $("body").attr("id").replace("Body", '') + ".css']").remove();
         $("head").append('<link rel="stylesheet" href="css/' + page + '.css">');
@@ -142,10 +143,10 @@ function addCuprinsSlider(backButton = false)
 
         $(function ()
         {
-            $("#cuprinsSlideContainer").addClass("noTransition").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
-            $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
-            $("#cuprinsSlideContainer").removeClass("noTransition");
-            $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+            $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
+            // $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
+            // $("#cuprinsSlideContainer").removeClass("noTransition");
+            // $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
         });
 
     });
@@ -210,6 +211,14 @@ function addCuprinsSlider(backButton = false)
                     .css("opacity", displayedOpacity).css('margin-left', '0');
 
                 state = "displayed";
+            }
+        });
+
+        $(window).on("resize.cuprinsSlider", function ()
+        {
+            if (state === "hidden")
+            {
+                $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
             }
         });
     });
@@ -393,17 +402,17 @@ function addPersonaje()
                 slideMargin = "left";
             }
 
-            $("#extinderePersonajContainer" + i).addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
-            $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
-            $("#extinderePersonajContainer" + i).removeClass("noTransition");
-            $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
+            $("#extinderePersonajContainer" + i).css("transition-duration", "").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
+            // $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
+            // $("#extinderePersonajContainer" + i).removeClass("noTransition");
+            // $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
 
             $(window).on("resize.personaje", function ()
             {
-                $(".extinderePersonajeContainer").addClass("noTransition").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
-                $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
-                $(".extinderePersonajeContainer").removeClass("noTransition");
-                $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
+                $(".extinderePersonajeContainer").css("transition-duration", "").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
+                // $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
+                // $(".extinderePersonajeContainer").removeClass("noTransition");
+                // $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
             });
 
             $("#personaj" + i).on("mouseenter", function ()
