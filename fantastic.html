@@ -71,7 +71,7 @@
             if (data[i].id === "fantastic")
                 continue;
             $("#carti").append('<div id="carte' + i + '" class="carte"></div>');
-            $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '.jpg">');
+            $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '/indexImage.jpg">');
 
             $.get("texts/" + data[i].id + "/indexDescription.html", function (data)
             {
