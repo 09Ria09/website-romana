@@ -17,10 +17,9 @@
 }
 
 .personaje {
-    box-sizing: border-box;
     height: 100%;
     padding: 35px 35px;
-    width: 25vw;
+    width: 22vw;
 }
 
 .extinderePersonajeContainer {
