@@ -2,11 +2,11 @@
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    box-sizing: border-box;
     display: flex;
     height: 75vh;
-    width: 100%;
-    box-sizing: border-box;
     padding-left: 35px;
+    width: 100%;
 }
 
 .graphNodeData {
