@@ -381,6 +381,7 @@ function addPersonaje()
                 // '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
                 '<h2>' + data[i].nume + '</h2>' +
                 '<p>' + data[i].descriereScurta + '</p>' +
+                '<p style="opacity: 0.6; font-style: italic; text-align: center;">Mută mouse-ul deasupra mea pentru a afla mai multe!</p>' +
                 '</div>' +
                 '<div id="extinderePersonajContainer' + i +
                 '" class="extinderePersonajeContainer darkBackgroundColor"><div id="extinderePersonaj' + i +
