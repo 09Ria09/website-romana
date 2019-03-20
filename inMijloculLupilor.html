@@ -37,7 +37,7 @@
     <div class="spacerTrianglesBL darkerBackgroundColor"></div>
 </div>
 
-<div id="graph" class="darkerBackgroundColor"></div>
+<div id="graph"></div>
 
 <div class="spacerContainer">
     <div class="spacerTrianglesTL darkerBackgroundColor"></div>
@@ -48,7 +48,7 @@
 <div id="outerContainerPersonaje"></div>
 
 <script>
-    // addCuprinsSlider(true);
+    addCuprinsSlider(true);
 
     var backgroundList = [0, 1, 2, 3, 4];
     backgroundList = shuffleArray(backgroundList);
@@ -65,10 +65,10 @@
     {
         $("#rezumat").append(data);
     });
-    // $("#tema").load("texts/moaraLuiCalifar/tema.html");
+    $("#tema").load("texts/inMijloculLupilor/tema.html");
     $("#structuraText").load("texts/inMijloculLupilor/structuraText.html");
     // $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
     addGraph("graph");
-    // addPersonaje();
+    addPersonaje();
     AOS.refresh();
 </script>

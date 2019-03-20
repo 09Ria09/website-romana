@@ -359,7 +359,10 @@ function addGraph(element)
         });
         $(window).on("resize.graph", function ()
         {
-            network.fit();
+            setTimeout(function ()
+            {
+                network.fit();
+            }, 150);
         });
     });
 }
@@ -435,7 +438,7 @@ function addPersonaje()
 
 function shuffleArray(array)
 {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex)

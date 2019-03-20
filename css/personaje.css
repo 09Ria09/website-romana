@@ -4,6 +4,10 @@
     width: 100%;
 }
 
+#outerContainerPersonaje h2 {
+    text-align: center;
+}
+
 .containerPersonaje {
     box-sizing: border-box;
     margin: 35px 0;
