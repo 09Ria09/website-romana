@@ -40,9 +40,9 @@
 <script>
     addCuprinsSlider(true);
 
-    var backgroundList = [0, 1, 2, 3];
+    var backgroundList = [0, 1, 2];
     backgroundList = shuffleArray(backgroundList);
-    addBackground($("#start"), backgroundList);
+    $("#start").css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/start.jpg)");
 
     addRezumat();
 

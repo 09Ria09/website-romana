@@ -42,7 +42,7 @@
 
     var backgroundList = [];
     backgroundList = shuffleArray(backgroundList);
-    addBackground($("#start"), backgroundList);
+    $("#start").css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/start.jpg)");
 
     addRezumat();
 
@@ -56,7 +56,7 @@
     //     $("#rezumat").append(data);
     // });
     $("#tema").load("texts/capeteDeVita/tema.html");
-    // $("#actiune").load("texts/moaraLuiCalifar/actiune.html");
+    $("#actiune").load("texts/capeteDeVita/actiune.html");
     // addGraph("graph");
     addPersonaje();
     AOS.refresh();
