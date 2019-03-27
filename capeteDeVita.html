@@ -4,7 +4,7 @@
     </div>
     <div id="bottomPart">
     </div>
-    <div class="spacerTrianglesBR normalBackgroundColor"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor" style="margin-bottom: -5px"></div>
 </div>
 
 <div class="normalBackgroundColor">
@@ -51,10 +51,10 @@
         addBackground($("#spacer" + i), backgroundList);
     }
 
-    // $.get("texts/moaraLuiCalifar/rezumat.html", function (data)
-    // {
-    //     $("#rezumat").append(data);
-    // });
+    $.get("texts/moaraLuiCalifar/rezumat.html", function (data)
+    {
+        $("#rezumatText").append(data);
+    });
     $("#tema").load("texts/capeteDeVita/tema.html");
     $("#actiune").load("texts/capeteDeVita/actiune.html");
     // addGraph("graph");

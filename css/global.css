@@ -49,18 +49,21 @@ body {
     display: flex;
     flex-direction: column;
     height: 111vh;
-    position: relative;
     text-align: center;
     width: 100%;
+    margin: 0 0 -5px 0;
+    position: relative;
+    z-index: 10;
 }
 
 #upperStart {
-    padding-top: 25vh;
+    padding-top: 30vh;
 }
 
 #startTitle {
     color: white;
-    font-size: 60px;
+    font-size: 6vh;
+    margin: 0 0 6vh 0;
     text-shadow: 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black, 0px 0px 10px black;
 }
 
@@ -75,7 +78,7 @@ body {
 .contentDiv {
     box-sizing: border-box;
     color: black;
-    padding: 5vh 25vw;
+    padding: 5vh 15vw;
     text-align: justify;
     width: 100%;
 }
@@ -167,6 +170,16 @@ body {
     right: 0;
     width: 0;
     z-index: 15;
+}
+
+#imagePreloader {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: -2;
 }
 
 @media screen and (min-height: 1081px) {

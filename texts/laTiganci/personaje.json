@@ -1,9 +1,9 @@
 [
   {
-    "id": "brijarul",
-    "nume": "Brijarul",
+    "id": "birjarul",
+    "nume": "Birjarul",
     "descriereScurta": "",
-    "descriereLunga": "<p>Brijarul este cel care îl duce pe Gavrilescu din nou la țigănci și care îl duce apoi spre pădure. Observăm despre el că îi plac florile și că este impresionat mai ales de Regina-nopții(lucru care îl determină pe profesorul de pian să îi spună că are fire de artist) și devine nostalgic când își amintește de tinerețe. Putem spune despre el că este asociat cu Charon deoarece îl duce spre pădure, pădurea fiind asociată cu cealaltă lume.</p>"
+    "descriereLunga": "<p>Birjarul este cel care îl duce pe Gavrilescu din nou la țigănci și care îl duce apoi spre pădure. Observăm despre el că îi plac florile și că este impresionat mai ales de Regina-nopții(lucru care îl determină pe profesorul de pian să îi spună că are fire de artist) și devine nostalgic când își amintește de tinerețe. Putem spune despre el că este asociat cu Charon deoarece îl duce spre pădure, pădurea fiind asociată cu cealaltă lume.</p>"
   },
   {
     "id": "treiFete",
@@ -34,17 +34,5 @@
     "nume": "Fata oacheșă",
     "descriereScurta": "",
     "descriereLunga": "<p>Fata oacheșă este un personaj care apare la începutul aventurii fantastice. Ea este cea care îl aduce pe Gavrilescu în bordei și tot ea îi dă sfaturi(„să nu uiți”, „să nu bei prea multă cafea”). Despre ea putem spune că simbolizează îngerul morții(este cea care îl duce în bordei).</p>"
-  },
-  {
-    "id": "",
-    "nume": "",
-    "descriereScurta": "",
-    "descriereLunga": ""
-  },
-  {
-    "id": "",
-    "nume": "",
-    "descriereScurta": "",
-    "descriereLunga": ""
   }
 ]

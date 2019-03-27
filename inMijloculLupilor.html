@@ -4,7 +4,7 @@
     </div>
     <div id="bottomPart">
     </div>
-    <div class="spacerTrianglesBR normalBackgroundColor"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor" style="margin-bottom: -5px"></div>
 </div>
 
 <div class="normalBackgroundColor">
@@ -63,7 +63,7 @@
 
     $.get("texts/inMijloculLupilor/rezumat.html", function (data)
     {
-        $("#rezumat").append(data);
+        $("#rezumatText").append(data);
     });
     $("#tema").load("texts/inMijloculLupilor/tema.html");
     $("#structuraText").load("texts/inMijloculLupilor/structuraText.html");

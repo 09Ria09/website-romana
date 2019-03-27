@@ -2,13 +2,13 @@
   {
     "id": "stoicea",
     "nume": "Stoicea",
-    "descriereScurta": "<p>Este personajul experimentator al acestui text.</p>",
+    "descriereScurta": "<p>Este personajul experimentator al acestui text, fiind un orfan sărac.</p>",
     "descriereLunga": "<p>Stoicea este personajul experimentator din acest text, el fiind un copil orfan şi sărac, deci are un statut social bine determinat, neînfricat, gata de orice pentru a se căpătui. Despre el aflăm că era un băiat puternic și inteligent, însă sărac pentru că nu avea nici o rudă, din acest motiv el este ușor de atras de către Călifar și, prin urmare, deschis aventurii de tip fantastic. Totodată prin intermediul caracterizării indirecte știm că acesta este curajos.</p>"
   },
   {
     "id": "califar",
     "nume": "Moș Călifar",
-    "descriereScurta": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "descriereLunga": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean posuere condimentum tellus a tristique. Nulla vehicula est id lorem blandit mattis. Proin egestas porttitor dolor, eget ultrices ante tempor sit amet. Fusce tristique justo sit amet varius aliquam. Maecenas venenatis vel nulla in consequat. Nulla ullamcorper felis ut rutrum ullamcorper. Etiam vitae commodo felis, id volutpat enim. Pellentesque lobortis viverra eros, nec dignissim ipsum tempus eu."
+    "descriereScurta": "<p>Este personajul experimentator al acestui text, un bătrân  care a facut pact cu diavolul",
+    "descriereLunga": "Călifar este un personaj iniţiator care a făcut un pact cu diavolul pentru a-şi prelungi viaţa. Scopul lui este de a ademeni pe cei doritori de avere pentru a-i trimite în iad. Moş Călifar avea o „înfăţişare sură ”, iar ochii săi „iscodeau tăios din stuful sprâncenelor”. Barba  sporea și ea înfățișarea sură(are aceeași culoare),sprâncenele sunt  neîngrijite și mari ( „sprâncene de muşchi uscate”) şi nasul îl are ca un „cioc de cucuvaie”, deci inclusiv din descrierea trăsăturilor fizice este, conform mentalității acelor vremuri, personajul negativ."
   }
 ]

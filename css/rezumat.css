@@ -18,12 +18,18 @@
 
 #rezumat {
     box-sizing: border-box;
-    height: 100%;
-    padding: 5% 25%;
+    height: 68vh;
+    padding: 5vh 15vw 16vh 15vw;
     position: relative;
-    text-align: justify;
     width: 100%;
     backface-visibility: hidden;
+}
+
+#rezumatTextContainer {
+    height: 100%;
+    overflow-x: hidden;
+    padding-right: 5px;
+    text-align: justify;
 }
 
 #exitRezumat {

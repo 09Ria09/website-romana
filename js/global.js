@@ -31,6 +31,7 @@ function changePage(page)
     animateCss($("#preloaderContainer"), "fadeIn", function ()
     {
         $(window).off("resize.cuprinsSlider");
+        $(window).off("resize.rezumat");
         $(window).off("resize.graph");
         $(window).off("resize.personaje");
 
@@ -101,6 +102,7 @@ function addBackground(element, backgroundList)
     {
         if (backgroundList[i] !== -1)
         {
+            preloadImage("/images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg");
             element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg)");
             backgroundList[i] = -1;
             return;
@@ -232,9 +234,17 @@ function addRezumat()
     $("#bottomPart").append(
         '<div id="buttonRezumat" class="normalBackgroundColor">Rezumat</div>' +
         '<div id="rezumat" class="transparentBackgroundColor" style="display: none;">' +
+        '<div id="rezumatTextContainer" data-simplebar-auto-hide="false"><div id="rezumatText"></div></div>' +
         '<img id="exitRezumat" src="images/icons/exit.png" height="35">' +
         '</div>'
     );
+
+    const el = new SimpleBar($('#rezumatTextContainer')[0]);
+
+    $(window).on("resize.rezumat", function ()
+    {
+        el.recalculate();
+    });
 
     $("#buttonRezumat").on('click', function ()
     {
@@ -242,7 +252,10 @@ function addRezumat()
             return;
         rezumatDisableSomeEvents = true;
         $("#rezumat").css("display", "");
-        animateCss($("#rezumat"), "zoomIn");
+        animateCss($("#rezumat"), "zoomIn", function ()
+        {
+            el.recalculate();
+        });
         animateCss($("#buttonRezumat"), "zoomOut", function ()
         {
             $("#buttonRezumat").css("display", "none");
@@ -285,7 +298,7 @@ function addGraph(element)
     $("#" + element).append(
         '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor" data-aos="slide-right"></div>' +
         '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor" data-aos="slide-left">' +
-        '<div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div>'
+        '<div id="' + element + 'NodeDataTextContainer" class="graphNodeDataTextContainer" data-simplebar data-simplebar-auto-hide="false"><div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div></div>'
     );
 
     let option = {};
@@ -297,7 +310,7 @@ function addGraph(element)
     let nodeId = 0;
 
     let nodeDataDefault = "Apasa pe orice nod pentru a afla mai multe informatii.";
-    $("#" + element + "NodeData").empty().append(nodeDataDefault);
+    $("#" + element + "NodeDataText").empty().append(nodeDataDefault);
 
     // create a network
     var container = document.getElementById(element + "CanvasContainer");
@@ -347,16 +360,22 @@ function addGraph(element)
             nodes: nodes,
             edges: edges
         };
-        let network = new vis.Network(container, dataFromDataSets, options);
+        var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params)
         {
-            $("#" + element + "NodeData").empty();
-            $("#" + element + "NodeData").load('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html');
+            $("#" + element + "NodeDataText").empty();
+            $("#" + element + "NodeDataText").load('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html');
         });
         network.on("deselectNode", function (params)
         {
-            $("#" + element + "NodeData").empty().append(nodeDataDefault);
+            $("#" + element + "NodeDataText").empty().append(nodeDataDefault);
         });
+
+        $(function ()
+        {
+            network.fit();
+        });
+
         $(window).on("resize.graph", function ()
         {
             setTimeout(function ()
@@ -394,43 +413,49 @@ function addPersonaje()
             {
                 $("#personaj" + i).css("float", "left").css("padding-left", (parseInt($("#personaj" + i).css("padding-left").replace('px', '')) + 35) + 'px')
                     .css("border-radius", "0 25px 25px 0");
-                $("#extinderePersonajContainer" + i).css("float", "right").css("padding-right", "30vw")
+                $("#extinderePersonajContainer" + i).css("float", "right").css("padding-right", "20vw");
                 $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "25px 0 0 25px");
                 slideMargin = "right";
             }
             else
             {
                 $("#personaj" + i).css("float", "right").css("border-radius", "25px 0 0 25px");
-                $("#extinderePersonajContainer" + i).css("float", "left").css("padding-left", "30vw")  //.css("padding-left", (parseInt($("#extinderePersonajContainer" + i).css("padding-left").replace('px', '')) + 35) + 'px')
+                $("#extinderePersonajContainer" + i).css("float", "left").css("padding-left", "20vw");  //.css("padding-left", (parseInt($("#extinderePersonajContainer" + i).css("padding-left").replace('px', '')) + 35) + 'px')
                 $("#extinderePersonajContainer" + i + ", #extinderePersonaj" + i).css("border-radius", "0 25px 25px 0");
                 slideMargin = "left";
             }
 
-            $("#extinderePersonajContainer" + i).css("transition-duration", "").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
-            // $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
-            // $("#extinderePersonajContainer" + i).removeClass("noTransition");
-            // $("#extinderePersonajContainer" + i)[0].offsetHeight; // flushes CSS buffer
+            if (slideMargin === "left")
+                $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+            else if (slideMargin === "right")
+                $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
 
             $(window).on("resize.personaje", function ()
             {
-                $(".extinderePersonajeContainer").css("transition-duration", "").css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
-                // $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
-                // $(".extinderePersonajeContainer").removeClass("noTransition");
-                // $(".extinderePersonajeContainer")[0].offsetHeight; // flushes CSS buffer
+                if (slideMargin === "left")
+                    $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                else if (slideMargin === "right")
+                    $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
             });
 
             $("#personaj" + i).on("mouseenter", function ()
             {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
+
                 $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                    .css("margin-" + slideMargin, '0');
+                    .css("transform", "translateX(" + '0' + ")");
             });
 
             $("#personaj" + i).on("mouseleave", function ()
             {
                 $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
-                $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                    .css("margin-" + slideMargin, '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px');
+
+                if (slideMargin === "left")
+                    $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                        .css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                if (slideMargin === "right")
+                    $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                        .css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
             });
         }
     });
@@ -456,4 +481,12 @@ function shuffleArray(array)
     }
 
     return array;
+}
+
+
+function preloadImage(image)
+{
+    if ($("#imagePreloader").length === 0)
+        $("body").prepend("<div id='imagePreloader'></div>");
+    $('<img />').attr('src', image).prependTo('#imagePreloader').css("position", "absolute").css("top", "0").css("left", "0");
 }
