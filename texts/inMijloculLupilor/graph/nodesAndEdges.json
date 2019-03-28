@@ -22,17 +22,17 @@
     },
     {
       "id": "4",
-      "label": "Tinut deluros",
+      "label": "Casa Luparului",
       "level": 2
     },
     {
       "id": "5",
-      "label": "Pestera",
+      "label": "Gurguiul",
       "level": 2
     },
     {
-      "id": "6",
-      "label": "Copac",
+      "id": "7",
+      "label": "Cronotopul: Satul de Munte",
       "level": 2
     }
   ],
@@ -56,6 +56,10 @@
     {
       "from": 3,
       "to": 6
+    },
+    {
+      "from": 2,
+      "to": 7
     }
   ]
 }
