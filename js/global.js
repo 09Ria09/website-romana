@@ -45,46 +45,6 @@ function changePage(page)
             $("body").append(data);
             window.scrollTo(0, 0);
 
-            /*
-            $(function(){
-                $(".spacerTrianglesTL").each(function (n, element)
-                {
-                    let color = "normalBackgroundColor";
-                    if ($(element)[0].hasAttribute("data-border-color"))
-                        color = $(element).attr("data-border-color");
-                    console.log(color);
-                    $(element).css("border-top-color", $('.' + color).css("background-color"));
-                });
-
-                $(".spacerTrianglesTR").each(function (n, element)
-                {
-                    let color = "normalBackgroundColor";
-                    if ($(element)[0].hasAttribute("data-border-color"))
-                        color = $(element).attr("data-border-color");
-                    console.log(color);
-                    $(element).css("border-right-color", $('.' + color).css("background-color"));
-                });
-
-                $(".spacerTrianglesBR").each(function (n, element)
-                {
-                    let color = "normalBackgroundColor";
-                    if ($(element)[0].hasAttribute("data-border-color"))
-                        color = $(element).attr("data-border-color");
-                    console.log(color);
-                    $(element).css("border-bottom-color", $('.' + color).css("background-color"));
-                });
-
-                $(".spacerTrianglesBL").each(function (n, element)
-                {
-                    let color = "normalBackgroundColor";
-                    if ($(element)[0].hasAttribute("data-border-color"))
-                        color = $(element).attr("data-border-color");
-                    console.log(color);
-                    $(element).css("border-left-color", $('.' + color).css("background-color"));
-                });
-            });
-            */
-
             $("#preloaderContainer").css("animation-delay", "0.5s");
             animateCss($("#preloaderContainer"), "fadeOut", function ()
             {
@@ -238,6 +198,14 @@ function addRezumat()
         '</div>'
     );
 
+    $(function ()
+    {
+        setTimeout(function ()
+        {
+            $("#rezumatTextContainer .simplebar-track").css("display", "none");
+        }, 150);
+    });
+
     const el = new SimpleBar($('#rezumatTextContainer')[0], {autoHide: false, scrollbarMinSize: 25});
 
     $(window).on("resize.rezumat", function ()
@@ -253,6 +221,8 @@ function addRezumat()
         $("#rezumat").css("display", "");
         animateCss($("#rezumat"), "zoomIn", function ()
         {
+            el.recalculate();
+            $("#rezumatTextContainer .simplebar-track").css("display", "");
             el.recalculate();
         });
         animateCss($("#buttonRezumat"), "zoomOut", function ()
@@ -279,6 +249,7 @@ function addRezumat()
         if (rezumatDisableSomeEvents === true)
             return;
         rezumatDisableSomeEvents = true;
+        $("#rezumatTextContainer .simplebar-track").css("display", "none");
         $("#buttonRezumat").css("display", "");
         animateCss($("#buttonRezumat"), "zoomIn");
         animateCss($("#rezumat"), "zoomOut", function ()
@@ -296,7 +267,7 @@ function addGraph(element)
     $("#" + element).append(
         '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor" data-aos="slide-right"></div>' +
         '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor" data-aos="slide-left">' +
-        '<div id="' + element + 'NodeDataTextContainer" class="graphNodeDataTextContainer"><div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div></div>'
+        '<div id="' + element + 'NodeDataText" class="graphNodeDataText" data-simplebar data-simplebar-auto-hide="false"></div></div>'
     );
 
     let option = {};
@@ -372,11 +343,11 @@ function addGraph(element)
         var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params)
         {
-            $("#" + element + "NodeDataText").empty().append(nodeData[params.nodes[0]]);
+            $("#" + element + "NodeDataText .simplebar-wrapper .simplebar-mask .simplebar-offset .simplebar-content").empty().append(nodeData[params.nodes[0]]);
         });
         network.on("deselectNode", function (params)
         {
-            $("#" + element + "NodeDataText").empty().append(nodeDataDefault);
+            $("#" + element + "NodeDataText .simplebar-wrapper .simplebar-mask .simplebar-offset .simplebar-content").empty().append(nodeDataDefault);
         });
 
         $(function ()

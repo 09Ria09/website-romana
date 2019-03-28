@@ -1,24 +1,24 @@
 .normalBackgroundColor {
-    background-color: #98BF64;
-    border-color: #98BF64;
+    background-color: beige;
+    border-color: beige;
 }
 
 .lighterBackgroundColor {
-    background-color: #accb83;
-    border-color: #accb83;
+    background-color: #f8f8e6; /* tint exception */
+    border-color: #f8f8e6;
 }
 
 .darkBackgroundColor {
-    background-color: #88ab5a;
-    border-color: #88ab5a;
+    background-color: #dcdcc6;
+    border-color: #dcdcc6;
 }
 
 .darkerBackgroundColor {
-    background-color: #799850;
-    border-color: #799850;
+    background-color: #c4c4b0;
+    border-color: #c4c4b0;
 }
 
 .transparentBackgroundColor {
-    background-color: rgba(152, 191, 100, 0.9);
-    border-color: rgba(152, 191, 100, 0.9);
+    background-color: rgba(245, 245, 220, 0.9);
+    border-color: rgba(245, 245, 220, 0.9);
 }

@@ -2,10 +2,10 @@
     <div id="upperStart">
         <p id="startTitle">Fantasticul</p>
     </div>
-    <div class="spacerTrianglesBR normalBackgroundColor" style="margin-bottom: -5px"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor"></div>
 </div>
 
-<div class="normalBackgroundColor">
+<div class="normalBackgroundColor" style="margin-top: -5px">
     <div id="carti" data-aos="zoom-in"></div>
 </div>
 
@@ -82,6 +82,7 @@
                 continue;
             $("#carti").append('<div id="carte' + i + '" class="carte"></div>');
             $("#carte" + i).append('<img class="imagineCarte" src="images/' + data[i].id + '/indexImage.jpg">');
+            $("#carte" + i).append("<h2>" + data[i].name + "</h2>");
 
             $.get("texts/" + data[i].id + "/indexDescription.html", function (data)
             {

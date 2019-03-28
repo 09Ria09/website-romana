@@ -11,20 +11,16 @@
 .graphNodeData {
     box-sizing: border-box;
     flex-basis: 35vw;
-    padding: 5vh 3%;
     height: 100%;
-}
-
-.graphNodeDataTextContainer {
-    box-sizing: border-box;
-    height: 100%;
-    overflow-x: hidden;
+    padding: 5vh 3vw;
 }
 
 .graphNodeDataText {
     font-size: 16px;
-    text-align: justify;
+    overflow-x: hidden;
     padding-right: 3px;
+    text-align: justify;
+    width: 29vw;
 }
 
 .graphCanvasContainer {

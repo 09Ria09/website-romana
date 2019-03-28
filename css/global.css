@@ -58,10 +58,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 111vh;
-    text-align: center;
-    width: 100%;
     margin: 0 0 -5px 0;
     position: relative;
+    text-align: center;
+    width: 100%;
     z-index: 10;
 }
 

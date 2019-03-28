@@ -4,10 +4,10 @@
     </div>
     <div id="bottomPart">
     </div>
-    <div class="spacerTrianglesBR normalBackgroundColor" style="margin-bottom: -5px"></div>
+    <div class="spacerTrianglesBR normalBackgroundColor"></div>
 </div>
 
-<div class="normalBackgroundColor">
+<div class="normalBackgroundColor" style="margin-top: -5px">
     <div id="tema" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
@@ -40,7 +40,7 @@
 <script>
     addCuprinsSlider(true);
 
-    var backgroundList = [];
+    var backgroundList = [0, 1, 2];
     backgroundList = shuffleArray(backgroundList);
     $("#start").css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/start.jpg)");
 
