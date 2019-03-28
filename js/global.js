@@ -135,6 +135,7 @@ function addCuprinsSlider(backButton = false)
             '<div id="back">Inapoi</div>' +
             '</div></div>');
     }
+    $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
 
     $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/cuprins.json", function (data)
     {
@@ -142,13 +143,11 @@ function addCuprinsSlider(backButton = false)
         {
             $("#cuprins").append('<a class="textCuprins" id="textCuprins' + i + '" href="' + data[i].href + '">' + data[i].text + '</a>');
         }
+        $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
 
         $(function ()
         {
             $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
-            // $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
-            // $("#cuprinsSlideContainer").removeClass("noTransition");
-            // $("#cuprinsSlideContainer")[0].offsetHeight; // flushes CSS buffer
         });
 
     });
@@ -239,7 +238,7 @@ function addRezumat()
         '</div>'
     );
 
-    const el = new SimpleBar($('#rezumatTextContainer')[0]);
+    const el = new SimpleBar($('#rezumatTextContainer')[0], {autoHide: false, scrollbarMinSize: 25});
 
     $(window).on("resize.rezumat", function ()
     {
@@ -294,11 +293,11 @@ function addRezumat()
 function addGraph(element)
 {
 
-    $("#" + element).addClass("graph normalBackgroundColor");
+    $("#" + element).addClass("graph darkerBackgroundColor");
     $("#" + element).append(
         '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor" data-aos="slide-right"></div>' +
         '<div id="' + element + 'NodeData" class="graphNodeData darkBackgroundColor" data-aos="slide-left">' +
-        '<div id="' + element + 'NodeDataTextContainer" class="graphNodeDataTextContainer" data-simplebar data-simplebar-auto-hide="false"><div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div></div>'
+        '<div id="' + element + 'NodeDataTextContainer" class="graphNodeDataTextContainer"><div id="' + element + 'NodeDataText" class="graphNodeDataText"></div></div></div>'
     );
 
     let option = {};

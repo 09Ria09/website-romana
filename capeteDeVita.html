@@ -51,13 +51,13 @@
         addBackground($("#spacer" + i), backgroundList);
     }
 
-    $.get("texts/moaraLuiCalifar/rezumat.html", function (data)
+    $.get("texts/capeteDeVita/rezumat.html", function (data)
     {
         $("#rezumatText").append(data);
     });
     $("#tema").load("texts/capeteDeVita/tema.html");
     $("#actiune").load("texts/capeteDeVita/actiune.html");
-    // addGraph("graph");
+    addGraph("graph");
     addPersonaje();
     AOS.refresh();
 </script>

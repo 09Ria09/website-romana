@@ -22,6 +22,15 @@ body {
     overflow-x: hidden;
 }
 
+.simplebar-mask {
+    max-width: 101% !important;
+    width: 101% !important;
+}
+
+.simplebar-content {
+    padding-right: 16px !important;
+}
+
 #preloaderContainer {
     animation-duration: 0.5s;
     background-color: black;

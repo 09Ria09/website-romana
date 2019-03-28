@@ -5,13 +5,12 @@
     box-sizing: border-box;
     display: flex;
     height: 75vh;
-    padding-left: 35px;
     width: 100%;
 }
 
 .graphNodeData {
     box-sizing: border-box;
-    flex-basis: 25vw;
+    flex-basis: 35vw;
     padding: 5vh 3%;
     height: 100%;
 }
@@ -25,8 +24,10 @@
 .graphNodeDataText {
     font-size: 16px;
     text-align: justify;
+    padding-right: 3px;
 }
 
 .graphCanvasContainer {
-    flex-basis: 75vw;
+    flex-basis: 65vw;
+    padding-left: 35px;
 }
