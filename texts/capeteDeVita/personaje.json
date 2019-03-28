@@ -3,7 +3,7 @@
     "id": "iancuGore",
     "nume": "Iancu Gore",
     "descriereScurta": "<p>Este personajul experimentator al acestui text. Probabil un negustor de vite care se oprește în București pentru a aștepta un transport de vite.</p>",
-    "descriereLunga": "<p>Iancu Gore „era un bărbat între două vîrste,bine legat,aproape gras, cu o față rotundă, congestionată fără expresie.”</p><p>El este personajul principal, și experimentator al nuvelei. El parcurge experiența ieșirii din timp și spațiu, intrând într-o lume fantastică, deși crede cu tărie într-o lume normală, logică și coerentă. La începutul nuvelei era nerăbdator (“omul își căuta nervos ceasul”). Apoi devine agitat și nervos deoarece nu mai vine marfa lui importantă și crede că Păunescu e un escroc. Iancu Gore devine infatuat când îi arată cârciumarului ceasul lui neprețuit de la țar. Când intră în adăpost, îi salută respectuos pe ceilalți. Acest fapt ne demonstrează că era un om politicos. La ieșirea din adăpost se arată fericit pentru că a scăpat de posibila primejdie. Este hotărât, nu vrea să creadă că madam Popovici a murit cu 40 de zile în urma bombardamentului. Se revolta, mereu spunând ”Mama voastră de nebuni!”. Este un om drept, cinstit. Chiar dacă pierde îi plătește banii cuveniți tânărului.</p>"
+    "descriereLunga": "<p>Iancu Gore „era un bărbat între două vîrste, bine legat, aproape gras, cu o față rotundă, congestionată fără expresie”.</p><p>El este personajul principal, și experimentator al nuvelei. El parcurge experiența ieșirii din timp și spațiu, intrând într-o lume fantastică, deși crede cu tărie într-o lume normală, logică și coerentă (din acest motiv el nefiind deschis aventurii de tip fantastic). La începutul nuvelei era nerăbdator („omul își căuta nervos ceasul”). Apoi devine agitat și nervos deoarece nu mai vine marfa lui importantă și crede că Păunescu e un escroc. Iancu Gore devine infatuat când îi arată cârciumarului ceasul lui neprețuit de la țar. Când intră în adăpost, îi salută respectuos pe ceilalți. Acest fapt ne demonstrează că era un om politicos. La ieșirea din adăpost se arată fericit pentru că a scăpat de posibila primejdie. Este hotărât, nu vrea să creadă că madam Popovici a murit cu 40 de zile în urma bombardamentului. Se revoltă, mereu spunând „Mama voastră de nebuni!”. Este un om drept, cinstit. Chiar dacă pierde îi plătește banii cuveniți tânărului.</p>"
   },
   {
     "id": "paunescu",
@@ -15,7 +15,7 @@
     "id": "carciumarul",
     "nume": "Cârciumarul",
     "descriereScurta": "<p>Este un personaj secundar care deține o cârciumă și care conversează deseori cu clienții săi.</p>",
-    "descriereLunga": "<p>Cârciumarul este un personaj secundar.El este realist.Îi spune lui Iancu să nu se mai uite la ceas că nu o să vină marfa.Era tăcut,concentrat la ceea ce face,minuțios(spală paharele le clătește mult).Este un om respectuos deoarece s-a rugat pentru Elisaveta,madam Popovici și domnul Protopopescu când s-a adus vorba de ei.</p>"
+    "descriereLunga": "<p>Cârciumarul este un personaj secundar. El este realist. Îi spune lui Iancu să nu se mai uite la ceas că nu o să vină marfa. Era tăcut, concentrat la ceea ce face, minuțios (spală paharele și le clătește mult). Este un om respectuos deoarece s-a rugat pentru Elisaveta, madam Popovici și domnul Protopopescu când s-a adus vorba de ei.</p>"
   },
   {
     "id": "elisaveta",
@@ -27,12 +27,12 @@
     "id": "madamPopescu",
     "nume": "Madam Popescu",
     "descriereScurta": "<p>Madam Popescu este un personaj episodic care apare doar în momentul în care Gore stă în adăpostul antibombardament.</p>",
-    "descriereLunga": "<p>Madam Popescu este un personaj episodic care apare numai în lumea fictivă deoarece a murit în timpul unui bombardament.</p><p>Madam Popescu era ”o femeie de 50 de ani,uscătiva,nasul lung și ochii reci,spălăciți.Era imbrăcată sobru și totuși cu cochetărie;își tot potrivea,nervoasă,un șal roz-pal în jurul gîtului”.Era destul de agitată din cauza bombardamentului.Ea era etichetată ca o persoană nebună de Iancu.</p>"
+    "descriereLunga": "<p>Madam Popescu este un personaj episodic care apare numai în lumea fictivă deoarece a murit în timpul unui bombardament.</p><p>Madam Popescu era „o femeie de 50 de ani, uscătiva, nasul lung și ochii reci, spălăciți. Era imbrăcată sobru și totuși cu cochetărie; își tot potrivea, nervoasă, un șal roz-pal în jurul gâtului”. Era destul de agitată din cauza bombardamentului. Ea era etichetată ca o persoană nebună de Iancu.</p>"
   },
   {
     "id": "domnulProtopopescu",
     "nume": "Domnul Protopopescu",
     "descriereScurta": "<p>Domnul Protopopescu este un personaj episodic care le cunoștea pe cele două femei cu care s-a întâlnit în adăpost.</p>",
-    "descriereLunga": "<p>Domnul Protopopescu este un personaj episodic care apare numai în lumea fictivă deoarece a murit în timpul unui bombardament.</p><p>Domnul Protopopescu era ”un batrîn demn cu o figură înca frumoasă;avea un păr bogat cărunt,aproape alb,și,clipind neîncetat,ochii păreau că-i inoată în lacrimi”.El era un judecător care afirma în adăpost că era doar un exercițiu care s-a anunțat și la sțiri.</p>"
+    "descriereLunga": "<p>Domnul Protopopescu este un personaj episodic care apare numai în lumea fictivă deoarece a murit în timpul unui bombardament.</p><p>Domnul Protopopescu era „un batrîn demn cu o figură încă frumoasă; avea un păr bogat cărunt, aproape alb, și, clipind neîncetat, ochii păreau că-i inoată în lacrimi”. El era un judecător care afirma în adăpost că era doar un exercițiu care s-a anunțat și la sțiri.</p>"
   }
 ]
