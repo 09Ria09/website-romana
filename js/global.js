@@ -292,7 +292,6 @@ function addRezumat()
 
 function addGraph(element)
 {
-
     $("#" + element).addClass("graph darkerBackgroundColor");
     $("#" + element).append(
         '<div id="' + element + 'CanvasContainer" class="graphCanvasContainer normalBackgroundColor" data-aos="slide-right"></div>' +
@@ -350,9 +349,20 @@ function addGraph(element)
 
     $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/" + element + "/nodesAndEdges.json", function (data)
     {
-        console.log(data);
+        //console.log(data);
+
         // create an array with nodes
         var nodes = new vis.DataSet(data.nodes);
+        var nodeData = [];
+
+        $.each(data.nodes, function (n, outerData)
+        {
+            $.get('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + outerData.id + '.html', function (data)
+            {
+                nodeData[outerData.id] = data;
+            });
+        });
+
         // create an array with edges
         var edges = new vis.DataSet(data.edges);
         var dataFromDataSets = {
@@ -362,8 +372,7 @@ function addGraph(element)
         var network = new vis.Network(container, dataFromDataSets, options);
         network.on("selectNode", function (params)
         {
-            $("#" + element + "NodeDataText").empty();
-            $("#" + element + "NodeDataText").load('texts/' + $("body").attr("id").replace("Body", '') + '/' + element + '/' + params.nodes[0] + '.html');
+            $("#" + element + "NodeDataText").empty().append(nodeData[params.nodes[0]]);
         });
         network.on("deselectNode", function (params)
         {
@@ -372,7 +381,10 @@ function addGraph(element)
 
         $(function ()
         {
-            network.fit();
+            setTimeout(function ()
+            {
+                network.fit();
+            }, 150);
         });
 
         $(window).on("resize.graph", function ()

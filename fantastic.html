@@ -16,7 +16,7 @@
 </div>
 
 <div class="normalBackgroundColor">
-    <div class="contentDiv" data-aos="zoom-in"></div>
+    <div id="definitie" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div class="spacerContainer">
@@ -26,7 +26,7 @@
 </div>
 
 <div class="normalBackgroundColor">
-    <div class="contentDiv" data-aos="zoom-in"></div>
+    <div id="litStiFan" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div class="spacerContainer">
@@ -36,7 +36,7 @@
 </div>
 
 <div class="normalBackgroundColor">
-    <div class="contentDiv" data-aos="zoom-in"></div>
+    <div id="fabFee" class="contentDiv" data-aos="zoom-in"></div>
 </div>
 
 <div class="spacerContainer">
@@ -46,7 +46,17 @@
 </div>
 
 <div class="normalBackgroundColor">
-    <div class="contentDiv" data-aos="zoom-in" style="text-align:center;">
+    <div id="mir" class="contentDiv" data-aos="zoom-in"></div>
+</div>
+
+<div class="spacerContainer">
+    <div class="spacerTrianglesTR normalBackgroundColor"></div>
+    <div id="spacer5" class="spacers"></div>
+    <div class="spacerTrianglesBL normalBackgroundColor"></div>
+</div>
+
+<div class="normalBackgroundColor">
+    <div id="membri" class="contentDiv" data-aos="zoom-in" style="text-align:center;">
         <h2>Membrii echipei:</h2>
         <p>Teofil Bolotă</p>
         <p>Rareş Iordan</p>
@@ -60,7 +70,7 @@
 <script>
     addCuprinsSlider();
 
-    var backgroundList = [0, 1, 2, 3, 4];
+    var backgroundList = [0, 1, 2, 3, 4, 5];
     backgroundList = shuffleArray(backgroundList);
     addBackground($("#start"), backgroundList);
 
@@ -90,5 +100,8 @@
         addBackground($("#spacer" + i), backgroundList);
     }
 
-    // $(".contentDiv").load("texts/longLoremIpsum.txt");
+    $("#definitie").load("texts/fantastic/definitie.html");
+    $("#litStiFan").load("texts/fantastic/litStiFan.html");
+    $("#fabFee").load("texts/fantastic/fabFee.html");
+    $("#mir").load("texts/fantastic/mir.html");
 </script>
