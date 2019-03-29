@@ -177,10 +177,13 @@ function addCuprinsSlider(backButton = false)
 
         $(window).on("resize.cuprinsSlider", function ()
         {
-            if (state === "hidden")
+            setTimeout(function ()
             {
-                $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
-            }
+                if (state === "hidden")
+                {
+                    $("#cuprinsSlideContainer").css("transition-duration", "").css("margin-left", '-' + $("#cuprins").outerWidth() + 'px');
+                }
+            }, 150);
         });
     });
 }
@@ -210,7 +213,10 @@ function addRezumat()
 
     $(window).on("resize.rezumat", function ()
     {
-        el.recalculate();
+        setTimeout(function ()
+        {
+            el.recalculate();
+        }, 150);
     });
 
     $("#buttonRezumat").on('click', function ()
@@ -368,10 +374,9 @@ function addGraph(element)
     });
 }
 
-
+var personajeInterval = [];
 function addPersonaje()
 {
-
     $.getJSON("texts/" + $("body").attr("id").replace("Body", '') + "/personaje.json", function (data)
     {
         for (let i = 0; i < data.length; ++i)
@@ -382,11 +387,11 @@ function addPersonaje()
                 // '<img src="images/' + $("body").attr("id").replace("Body", '') + '/personaje/' + data[i].id + '.png">' +
                 '<h2>' + data[i].nume + '</h2>' +
                 '<p>' + data[i].descriereScurta + '</p>' +
-                '<p style="opacity: 0.6; font-style: italic; text-align: center;">Mută mouse-ul deasupra mea pentru a afla mai multe!</p>' +
+                '<p style="opacity: 0.6; font-style: italic; text-align: center; font-size:13px">Apasă pe mine pentru a afla mai multe și apasă din nou pentru a închide.</p>' +
                 '</div>' +
                 '<div id="extinderePersonajContainer' + i +
                 '" class="extinderePersonajeContainer darkBackgroundColor"><div id="extinderePersonaj' + i +
-                '" class="extinderePersonaj normalBackgroundColor">' + data[i].descriereLunga + '</div></div>' +
+                '" class="extinderePersonaj normalBackgroundColor"><div id="extinderePersonajSubcontainer' + i + '" class="extinderePersonajSubcontainer">' + data[i].descriereLunga + '</div></div></div>' +
                 '</div>'
             );
 
@@ -415,29 +420,72 @@ function addPersonaje()
             $(window).on("resize.personaje", function ()
             {
                 if (slideMargin === "left")
+                {
+                    $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                     $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                    personajExtins = false;
+                }
                 else if (slideMargin === "right")
+                {
+                    $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
                     $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                    personajExtins = false;
+                }
+                setTimeout(function ()
+                {
+                    if (slideMargin === "left")
+                    {
+                        $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
+                        $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                        personajExtins = false;
+                    }
+                    else if (slideMargin === "right")
+                    {
+                        $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
+                        $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                        personajExtins = false;
+                    }
+                }, 125);
+                setTimeout(function ()
+                {
+                    if (slideMargin === "left")
+                    {
+                        $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
+                        $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                        personajExtins = false;
+                    }
+                    else if (slideMargin === "right")
+                    {
+                        $("#personaj" + i).css("transition-duration", "").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
+                        $("#extinderePersonajContainer" + i).css("transition-duration", "").css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                        personajExtins = false;
+                    }
+                }, 250);
             });
 
-            $("#personaj" + i).on("mouseenter", function ()
+            let personajExtins = false;
+            $("#personaj" + i).on("click", function ()
             {
-                $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
+                if (personajExtins === false)
+                {
+                    $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("normalBackgroundColor").addClass("lighterBackgroundColor");
 
-                $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                    .css("transform", "translateX(" + '0' + ")");
-            });
-
-            $("#personaj" + i).on("mouseleave", function ()
-            {
-                $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
-
-                if (slideMargin === "left")
                     $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                        .css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
-                if (slideMargin === "right")
-                    $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
-                        .css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                        .css("transform", "translateX(" + '0' + ")");
+                    personajExtins = true;
+                }
+                else
+                {
+                    $("#personaj" + i).css("transition-duration", state2TransDuration).css("transition-timing-function", "ease").removeClass("lighterBackgroundColor").addClass("normalBackgroundColor");
+
+                    if (slideMargin === "left")
+                        $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                            .css("transform", "translateX(" + '-' + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                    if (slideMargin === "right")
+                        $("#extinderePersonajContainer" + i).css("transition-duration", stateTransDuration).css("transition-timing-function", "ease")
+                            .css("transform", "translateX(" + $("#extinderePersonajContainer" + i).outerWidth() + 'px' + ")");
+                    personajExtins = false;
+                }
             });
         }
     });

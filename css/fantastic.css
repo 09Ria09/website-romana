@@ -31,6 +31,10 @@
     padding: 40px 0 40px 35px;
     position: relative;
     width: 100%;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
 .carte {
@@ -46,6 +50,10 @@
 
 .carte:hover {
     transform: scale(1.10);
+}
+
+.carte h2 {
+    text-align: left;
 }
 
 .imagineCarte {
