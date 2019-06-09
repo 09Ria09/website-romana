@@ -31,7 +31,6 @@
     box-sizing: border-box;
     height: 100%;
     text-align: justify;
-    padding-right: 5px;
 }
 
 .extinderePersonaj {
@@ -39,6 +38,7 @@
     height: 100%;
     padding: 35px 35px;
     width: 40vw;
+
 }
 
 .extinderePersonajSubcontainer {
@@ -47,7 +47,6 @@
     max-height: 50vh;
     overflow-x: hidden;
     overflow-y: auto;
-    width: 35vw;
 }
 
 .personaje img {

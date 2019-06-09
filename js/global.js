@@ -72,7 +72,7 @@ function addBackground(element, backgroundList)
     console.log("ERROR: not enough backgrounds");
 }
 
-const hiddenOpacity = 0.1;
+const hiddenOpacity = 0.5;
 const hoverOpacity = 0.8;
 const displayedOpacity = 1;
 
