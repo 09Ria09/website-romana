@@ -62,8 +62,8 @@ function addBackground(element, backgroundList)
     {
         if (backgroundList[i] !== -1)
         {
-            preloadImage("/images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg");
-            element.css("background-image", "url(../images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg)");
+            preloadImage("./images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg");
+            element.css("background-image", "url(./images/" + $("body").attr("id").replace("Body", '') + "/backgrounds/" + backgroundList[i] + ".jpg)");
             backgroundList[i] = -1;
             return;
         }
